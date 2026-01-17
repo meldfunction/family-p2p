@@ -91,13 +91,15 @@ button:hover{background:var(--terracotta);transform:translateY(-3px);box-shadow:
 .phone-header h4{font-size:1.3rem;margin-bottom:0.5rem}
 .phone-header p{font-size:0.9rem;opacity:0.9}
 .phone-content{padding:1.5rem}
-.request-card{background:var(--cream);padding:1.5rem;border-radius:15px;margin-bottom:1.5rem;border-left:4px solid var(--clay)}
+.request-card{background:var(--cream);padding:1.5rem;border-radius:15px;margin-bottom:1.5rem;border-left:4px solid var(--clay);transition:all 0.3s ease}
 .request-card h5{color:var(--clay);font-size:1.1rem;margin-bottom:0.5rem}
 .request-card .meta{font-size:0.85rem;color:var(--charcoal);opacity:0.7;margin-bottom:1rem}
 .request-card .actions{display:flex;gap:0.75rem}
-.request-card button{padding:0.6rem 1.5rem;font-size:0.9rem;border-radius:25px}
+.request-card button{padding:0.6rem 1.5rem;font-size:0.9rem;border-radius:25px;transition:all 0.3s ease}
 .btn-accept{background:var(--sage);color:var(--warm-white)}
+.btn-accept:hover{background:var(--deep-green);transform:translateY(-2px)}
 .btn-view{background:transparent;border:2px solid var(--clay);color:var(--clay)}
+.btn-view:hover{background:var(--clay);color:var(--warm-white);transform:translateY(-2px)}
 
 /* Example */
 .example{padding:8rem 2rem;background:var(--cream)}
@@ -153,7 +155,7 @@ button:hover{background:var(--terracotta);transform:translateY(-3px);box-shadow:
 .tablet-header{background:linear-gradient(135deg,var(--sage),var(--deep-green));padding:1.2rem 1.5rem;color:var(--warm-white);display:flex;align-items:center;justify-content:space-between}
 .tablet-header h4{font-size:1.2rem}
 .tablet-header .status{font-size:0.85rem;opacity:0.9}
-.messages-container{flex:1;padding:1.5rem;overflow-y:auto;background:var(--cream)}
+.messages-container{flex:1;padding:1.5rem;overflow-y:auto;background:var(--cream);scroll-behavior:smooth}
 .message{margin-bottom:1.2rem;display:flex;flex-direction:column}
 .message.sent{align-items:flex-end}
 .message.received{align-items:flex-start}
@@ -211,8 +213,9 @@ button:hover{background:var(--terracotta);transform:translateY(-3px);box-shadow:
 .final-cta p{font-size:1.3rem;margin-bottom:3rem;line-height:1.7}
 .final-cta button{background:var(--charcoal)}
 .final-cta button:hover{background:var(--deep-green)}
-.success-message{display:none;padding:1rem;background:rgba(255,255,255,0.2);border:2px solid var(--warm-white);border-radius:12px;margin-top:1rem;font-weight:500}
+.success-message{display:none;padding:1.5rem;background:rgba(255,255,255,0.25);border:2px solid var(--warm-white);border-radius:12px;margin-top:1.5rem;font-weight:500;font-size:1rem;line-height:1.6}
 .success-message.show{display:block}
+.success-message strong{font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
 
 /* Responsive */
 @media (max-width:1100px){
@@ -394,32 +397,32 @@ button{width:100%}
       <div class="phone-frame">
         <div class="phone-screen">
           <div class="phone-header">
-            <h4>Your Network</h4>
-            <p>3 new requests • 12 hours banked</p>
+            <h4 id="phone-title">Your Network</h4>
+            <p id="phone-subtitle">3 new requests • 12 hours banked</p>
           </div>
-          <div class="phone-content">
-            <div class="request-card">
+          <div class="phone-content" id="phone-content">
+            <div class="request-card" id="request-1">
               <h5>🎣 Dave needs help with fishing trip</h5>
               <p class="meta">Saturday 8am-2pm • 3 kids welcome • Lake Murphy</p>
               <div class="actions">
-                <button class="btn-accept">Accept (4 hrs)</button>
-                <button class="btn-view">View Details</button>
+                <button class="btn-accept" onclick="acceptRequest('fishing')">Accept (4 hrs)</button>
+                <button class="btn-view" onclick="viewDetails('fishing')">View Details</button>
               </div>
             </div>
-            <div class="request-card">
+            <div class="request-card" id="request-2">
               <h5>🎨 Maria teaching: Art & crafts</h5>
               <p class="meta">Wednesdays 3-4pm • Ages 5-9 • Her studio</p>
               <div class="actions">
-                <button class="btn-accept">Sign Up</button>
-                <button class="btn-view">Details</button>
+                <button class="btn-accept" onclick="acceptRequest('art')">Sign Up</button>
+                <button class="btn-view" onclick="viewDetails('art')">Details</button>
               </div>
             </div>
-            <div class="request-card">
+            <div class="request-card" id="request-3">
               <h5>🛠️ Sarah offering: Pressure washer</h5>
               <p class="meta">Available this weekend • Pick up anytime</p>
               <div class="actions">
-                <button class="btn-accept">Request</button>
-                <button class="btn-view">Message</button>
+                <button class="btn-accept" onclick="acceptRequest('washer')">Request</button>
+                <button class="btn-view" onclick="viewDetails('washer')">Message</button>
               </div>
             </div>
           </div>
@@ -574,7 +577,7 @@ button{width:100%}
           <h4>Conversation with Sarah</h4>
           <span class="status">• Active now</span>
         </div>
-        <div class="messages-container">
+        <div class="messages-container" id="messages-container">
           <div class="message received">
             <div class="message-sender">Sarah</div>
             <div class="message-bubble">
@@ -612,8 +615,8 @@ button{width:100%}
           </div>
         </div>
         <div class="tablet-input">
-          <input type="text" placeholder="Type a message..." disabled>
-          <button class="btn-accept">Send</button>
+          <input type="text" id="message-input" placeholder="Type a message...">
+          <button class="btn-accept" onclick="sendMessage()">Send</button>
         </div>
       </div>
     </div>
@@ -729,7 +732,7 @@ button{width:100%}
       <button type="submit">Build my village →</button>
     </form>
     <div class="success-message" id="success-msg">
-      ✓ You're on the list! We'll notify you when we launch in your area.
+      ✓ Thanks for signing up! Check your email for updates.
     </div>
   </div>
 </section>
@@ -739,7 +742,22 @@ button{width:100%}
 const storage={get:k=>{try{return JSON.parse(localStorage.getItem(k))}catch{return null}},set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}}};
 
 // Signup
-const handleSignup=e=>{e.preventDefault();const email=e.target.querySelector('input[type="email"]').value;let signups=storage.get('village_signups')||[];if(!signups.includes(email)){signups.push(email);storage.set('village_signups',signups)}document.getElementById('success-msg').classList.add('show');e.target.reset();setTimeout(()=>document.getElementById('success-msg').classList.remove('show'),5000)};
+const handleSignup=e=>{
+  e.preventDefault();
+  const email=e.target.querySelector('input[type="email"]').value;
+  let signups=storage.get('village_signups')||[];
+  if(!signups.includes(email)){
+    signups.push(email);
+    storage.set('village_signups',signups);
+  }
+  
+  const successMsg = document.getElementById('success-msg');
+  successMsg.innerHTML = `✓ Thanks for signing up! Check your email at <strong>${email}</strong> for updates.`;
+  successMsg.classList.add('show');
+  e.target.reset();
+  
+  setTimeout(()=>successMsg.classList.remove('show'),8000);
+};
 document.getElementById('hero-form').addEventListener('submit',handleSignup);
 document.getElementById('footer-form').addEventListener('submit',handleSignup);
 
@@ -769,6 +787,169 @@ carouselDots.forEach(dot=>{
   });
 });
 setInterval(()=>showSlide(currentSlide+1),6000);
+
+// Phone Mockup Interactivity
+function acceptRequest(type) {
+  const content = document.getElementById('phone-content');
+  const title = document.getElementById('phone-title');
+  const subtitle = document.getElementById('phone-subtitle');
+  
+  if(type === 'fishing') {
+    title.textContent = '✓ Request Accepted';
+    subtitle.textContent = '2 new requests • 16 hours banked';
+    content.innerHTML = `
+      <div class="request-card" style="background:linear-gradient(135deg,var(--sage),var(--deep-green));border-left-color:var(--warm-white)">
+        <h5 style="color:var(--warm-white)">🎣 Fishing trip confirmed!</h5>
+        <p class="meta" style="color:var(--cream);opacity:0.9">Saturday 8am-2pm • Dave will pick up your kids</p>
+        <p style="color:var(--warm-white);margin-top:1rem;font-size:0.9rem">✓ Added to your calendar<br>✓ Dave notified<br>✓ You earned 4 hours credit</p>
+        <div class="actions" style="margin-top:1rem">
+          <button class="btn-view" onclick="location.reload()" style="background:var(--warm-white);color:var(--sage)">Back to Feed</button>
+        </div>
+      </div>`;
+  } else if(type === 'art') {
+    title.textContent = '✓ Signed Up';
+    subtitle.textContent = '2 new requests • 12 hours banked';
+    content.innerHTML = `
+      <div class="request-card" style="background:linear-gradient(135deg,var(--clay),var(--terracotta));border-left-color:var(--warm-white)">
+        <h5 style="color:var(--warm-white)">🎨 Art class enrollment complete!</h5>
+        <p class="meta" style="color:var(--cream);opacity:0.9">Wednesdays 3-4pm starting next week</p>
+        <p style="color:var(--warm-white);margin-top:1rem;font-size:0.9rem">✓ Maria will contact you with details<br>✓ Added to recurring schedule<br>✓ Share materials list with you soon</p>
+        <div class="actions" style="margin-top:1rem">
+          <button class="btn-view" onclick="location.reload()" style="background:var(--warm-white);color:var(--clay)">Back to Feed</button>
+        </div>
+      </div>`;
+  } else if(type === 'washer') {
+    title.textContent = '✓ Request Sent';
+    subtitle.textContent = '2 new requests • 12 hours banked';
+    content.innerHTML = `
+      <div class="request-card" style="background:linear-gradient(135deg,var(--sage),var(--deep-green));border-left-color:var(--warm-white)">
+        <h5 style="color:var(--warm-white)">🛠️ Pressure washer requested!</h5>
+        <p class="meta" style="color:var(--cream);opacity:0.9">Sarah will confirm pickup time</p>
+        <p style="color:var(--warm-white);margin-top:1rem;font-size:0.9rem">✓ Request sent to Sarah<br>✓ You'll get a notification when she responds<br>✓ Pickup available this weekend</p>
+        <div class="actions" style="margin-top:1rem">
+          <button class="btn-view" onclick="location.reload()" style="background:var(--warm-white);color:var(--sage)">Back to Feed</button>
+        </div>
+      </div>`;
+  }
+  content.scrollTop = 0;
+}
+
+function viewDetails(type) {
+  const content = document.getElementById('phone-content');
+  const title = document.getElementById('phone-title');
+  
+  if(type === 'fishing') {
+    title.textContent = 'Request Details';
+    content.innerHTML = `
+      <div class="request-card">
+        <h5>🎣 Fishing trip details</h5>
+        <p style="margin:1rem 0;line-height:1.6"><strong>When:</strong> Saturday 8am-2pm<br>
+        <strong>Where:</strong> Lake Murphy (30 min drive)<br>
+        <strong>Who:</strong> Dave + his daughter Emma (age 7)<br>
+        <strong>Ages:</strong> 5-10 years old welcome<br>
+        <strong>What to bring:</strong> Lunch, sunscreen, water bottle<br>
+        <strong>Fishing gear:</strong> Dave will provide everything</p>
+        <p style="font-size:0.9rem;opacity:0.8;font-style:italic">"I have extra rods and tackle. Kids will learn basics and we'll catch & release. It's going to be a beautiful day!"</p>
+        <div class="actions" style="margin-top:1.5rem">
+          <button class="btn-accept" onclick="acceptRequest('fishing')">Accept (4 hrs)</button>
+          <button class="btn-view" onclick="location.reload()" style="background:transparent;border:2px solid var(--clay);color:var(--clay)">Back</button>
+        </div>
+      </div>`;
+  } else if(type === 'art') {
+    title.textContent = 'Class Details';
+    content.innerHTML = `
+      <div class="request-card">
+        <h5>🎨 Art & crafts class</h5>
+        <p style="margin:1rem 0;line-height:1.6"><strong>When:</strong> Wednesdays 3-4pm (ongoing)<br>
+        <strong>Where:</strong> Maria's home studio<br>
+        <strong>Ages:</strong> 5-9 years old<br>
+        <strong>Max students:</strong> 6 kids<br>
+        <strong>Cost:</strong> Free! (time credit: 1 hr/week)<br>
+        <strong>Materials:</strong> All provided</p>
+        <p style="font-size:0.9rem;opacity:0.8;font-style:italic">"I'm an art teacher and love sharing creativity with neighborhood kids. We'll do painting, drawing, clay, and mixed media projects."</p>
+        <div class="actions" style="margin-top:1.5rem">
+          <button class="btn-accept" onclick="acceptRequest('art')">Sign Up</button>
+          <button class="btn-view" onclick="location.reload()" style="background:transparent;border:2px solid var(--clay);color:var(--clay)">Back</button>
+        </div>
+      </div>`;
+  } else if(type === 'washer') {
+    title.textContent = 'Item Details';
+    content.innerHTML = `
+      <div class="request-card">
+        <h5>🛠️ Pressure washer available</h5>
+        <p style="margin:1rem 0;line-height:1.6"><strong>Item:</strong> Gas-powered pressure washer (3000 PSI)<br>
+        <strong>Available:</strong> This weekend<br>
+        <strong>Pickup:</strong> Sarah's house (2 blocks away)<br>
+        <strong>Return:</strong> Flexible, just let her know<br>
+        <strong>Instructions:</strong> Included + Sarah will demo</p>
+        <p style="font-size:0.9rem;opacity:0.8;font-style:italic">"Happy to share! Great for decks, driveways, siding. I used it last weekend so it's ready to go. Just bring it back whenever."</p>
+        <div class="actions" style="margin-top:1.5rem">
+          <button class="btn-accept" onclick="acceptRequest('washer')">Request Item</button>
+          <button class="btn-view" onclick="location.reload()" style="background:transparent;border:2px solid var(--clay);color:var(--clay)">Back</button>
+        </div>
+      </div>`;
+  }
+  content.scrollTop = 0;
+}
+
+// Tablet Messaging Interactivity
+function sendMessage() {
+  const input = document.getElementById('message-input');
+  const container = document.getElementById('messages-container');
+  const messageText = input.value.trim();
+  
+  if(!messageText) return;
+  
+  const time = new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'});
+  
+  // Add user's message
+  const userMsg = document.createElement('div');
+  userMsg.className = 'message sent';
+  userMsg.innerHTML = `
+    <div class="message-sender">You</div>
+    <div class="message-bubble">
+      <div class="message-text">${messageText}</div>
+      <div class="message-time">${time}</div>
+    </div>`;
+  container.appendChild(userMsg);
+  input.value = '';
+  container.scrollTop = container.scrollHeight;
+  
+  // Auto-reply from Sarah after 2 seconds
+  setTimeout(() => {
+    const replies = [
+      "Sounds perfect! I'll add it to my calendar.",
+      "Great! Looking forward to it. Let me know if anything changes.",
+      "That works for me! See you then 😊",
+      "Perfect timing! I was just thinking about that.",
+      "Absolutely! I'll make sure to bring everything we need."
+    ];
+    const reply = replies[Math.floor(Math.random() * replies.length)];
+    
+    const sarahMsg = document.createElement('div');
+    sarahMsg.className = 'message received';
+    sarahMsg.innerHTML = `
+      <div class="message-sender">Sarah</div>
+      <div class="message-bubble">
+        <div class="message-text">${reply}</div>
+        <div class="message-time">${new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'})}</div>
+      </div>`;
+    container.appendChild(sarahMsg);
+    container.scrollTop = container.scrollHeight;
+  }, 2000);
+}
+
+// Allow Enter key to send message
+document.addEventListener('DOMContentLoaded', () => {
+  const messageInput = document.getElementById('message-input');
+  if(messageInput) {
+    messageInput.addEventListener('keypress', (e) => {
+      if(e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>
