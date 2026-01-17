@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Village Network - Build Your Tribe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--clay:#C95D3D;--terracotta:#E87A5D;--cream:#FFF8F0;--sage:#7A9B76;--charcoal:#2B2B2B;--warm-white:#FFFEF9;--deep-green:#4A6B47;--burnt-orange:#D97449}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
+
+/* Brand Header */
+.brand-header{position:fixed;top:0;left:0;right:0;z-index:999;background:linear-gradient(135deg,var(--clay) 0%,var(--terracotta) 100%);padding:0.75rem 2rem;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+.brand-name{font-family:'Fraunces',serif;font-size:1.75rem;font-weight:900;color:var(--warm-white);letter-spacing:-0.02em;font-style:italic;text-shadow:2px 2px 0 rgba(0,0,0,0.1)}
+
+/* Floating Nav */
+.nav-floating{position:fixed;top:50%;right:2rem;transform:translateY(-50%);z-index:1000;background:var(--warm-white);padding:1rem;border-radius:30px;box-shadow:0 10px 40px rgba(0,0,0,0.15);border:2px solid var(--clay);opacity:0;transition:opacity 0.3s ease}
+.nav-floating.visible{opacity:1}
+.nav-floating nav{display:flex;flex-direction:column;gap:0.75rem}
+.nav-dot{width:12px;height:12px;background:var(--cream);border:2px solid var(--clay);border-radius:50%;cursor:pointer;transition:all 0.3s ease;position:relative}
+.nav-dot:hover,.nav-dot.active{background:var(--clay);transform:scale(1.3)}
+.nav-dot::after{content:attr(data-label);position:absolute;right:30px;top:50%;transform:translateY(-50%);background:var(--charcoal);color:var(--warm-white);padding:0.5rem 1rem;border-radius:8px;font-size:0.85rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.3s ease;font-weight:500}
+.nav-dot:hover::after{opacity:1}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 2rem;background:linear-gradient(135deg,var(--cream) 0%,#FFE8D6 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(201,93,61,0.1) 0%,transparent 70%);border-radius:50%;animation:float 20s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-50px,-50px) scale(1.1)}}
+.hero-content{max-width:800px;text-align:center;position:relative;z-index:1;animation:fadeIn 1s ease-out}
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.kicker{font-size:1rem;color:var(--clay);font-weight:500;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem}
+h1{font-size:clamp(2.5rem,8vw,5rem);color:var(--charcoal);margin-bottom:1.5rem;font-style:italic}
+.hero p{font-size:clamp(1.1rem,2.5vw,1.4rem);color:var(--charcoal);margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto}
+.cta-form{display:flex;gap:0.75rem;max-width:500px;margin:0 auto 1rem}
+input[type="email"]{flex:1;padding:1rem 1.5rem;border:2px solid var(--clay);border-radius:50px;font-size:1rem;font-family:'DM Sans',sans-serif;background:var(--warm-white);transition:all 0.3s ease}
+input[type="email"]:focus{outline:none;border-color:var(--terracotta);box-shadow:0 0 0 4px rgba(232,122,93,0.1)}
+button{padding:1rem 2.5rem;background:var(--clay);color:var(--warm-white);border:none;border-radius:50px;font-size:1rem;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all 0.3s ease;white-space:nowrap}
+button:hover{background:var(--terracotta);transform:translateY(-2px);box-shadow:0 8px 20px rgba(201,93,61,0.3)}
+.trust-badge{font-size:0.9rem;color:var(--sage);font-weight:500}
+
+/* Platform Section - Dark Magazine */
+.problem{padding:6rem 2rem;background:var(--charcoal);color:var(--cream);position:relative;overflow:hidden}
+.problem::before{content:'NOT JUST MESSAGING';position:absolute;top:3rem;left:-2rem;font-size:8rem;font-family:'Fraunces',serif;font-weight:900;color:rgba(255,255,255,0.03);transform:rotate(-5deg);line-height:1}
+.container{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.problem h2{font-size:clamp(2.5rem,6vw,4.5rem);margin-bottom:4rem;font-style:italic;color:var(--warm-white);text-align:left;max-width:800px}
+.platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem}
+.explainer-card{background:rgba(255,255,255,0.05);padding:2.5rem;border-radius:20px;border:2px solid rgba(255,255,255,0.1);transition:all 0.3s ease}
+.explainer-card:hover{transform:translateY(-5px);border-color:var(--terracotta)}
+.explainer-card.highlight{background:linear-gradient(135deg,var(--clay) 0%,var(--terracotta) 100%);border-color:var(--warm-white);grid-column:1/-1}
+.explainer-card h3{font-size:1.75rem;margin-bottom:1rem;color:var(--warm-white)}
+.explainer-card p{color:var(--cream);opacity:0.9;font-size:1.1rem}
+.why-network{background:rgba(255,255,255,0.08);padding:3rem;border-radius:30px;border-left:6px solid var(--terracotta)}
+.why-network h3{font-size:2.5rem;margin-bottom:2.5rem;color:var(--warm-white);font-style:italic}
+.network-benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.benefit{background:rgba(255,255,255,0.05);padding:1.75rem;border-radius:15px;border-top:3px solid var(--sage)}
+.benefit strong{color:var(--terracotta);display:block;margin-bottom:0.75rem;font-size:1.15rem}
+
+/* Example - Window Frame */
+.example-scenario{padding:6rem 2rem;background:var(--warm-white);position:relative}
+.example-scenario::before{content:'01';position:absolute;top:2rem;right:2rem;font-size:12rem;font-family:'Space Mono',monospace;font-weight:700;color:rgba(201,93,61,0.05);line-height:1}
+.scenario-header{text-align:left;margin-bottom:4rem;border-left:8px solid var(--clay);padding-left:2rem}
+.scenario-header h2{font-size:clamp(2.5rem,6vw,4rem);font-style:italic;color:var(--clay);margin-bottom:0.5rem}
+.scenario-intro{font-size:1.3rem;color:var(--charcoal);opacity:0.7;font-family:'Space Mono',monospace}
+.scenario-window{background:var(--charcoal);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.3);margin-bottom:3rem}
+.window-header{background:#1A1A1A;padding:1rem 1.5rem;display:flex;align-items:center;gap:0.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+.window-dot{width:12px;height:12px;border-radius:50%}
+.window-dot:nth-child(1){background:#FF5F56}
+.window-dot:nth-child(2){background:#FFBD2E}
+.window-dot:nth-child(3){background:#27C93F}
+.scenario-story{padding:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.scenario-card{background:rgba(255,255,255,0.05);padding:1.75rem;border-radius:12px;border-left:4px solid var(--terracotta)}
+.scenario-card.highlight{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);border-left-color:var(--warm-white)}
+.scenario-time{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--terracotta);margin-bottom:0.75rem;font-family:'Space Mono',monospace}
+.scenario-card.highlight .scenario-time{color:var(--cream)}
+.scenario-card h3{font-size:1.4rem;margin-bottom:0.75rem;color:var(--warm-white)}
+.scenario-card p{color:var(--cream);line-height:1.7}
+.vs-whatsapp{max-width:700px;margin:0 auto;background:var(--cream);padding:2.5rem;border-radius:20px;border:3px dashed var(--clay);position:relative}
+.vs-whatsapp::before{content:'VS.';position:absolute;top:-1.5rem;left:2rem;background:var(--cream);padding:0 1rem;font-size:1.5rem;font-weight:900;color:var(--clay);font-family:'Fraunces',serif}
+.vs-whatsapp h3{font-size:1.75rem;margin-bottom:1.5rem;color:var(--clay);font-style:italic}
+.vs-whatsapp ul{list-style:none}
+.vs-whatsapp li{padding:0.75rem 0;font-size:1.05rem;border-bottom:1px solid rgba(201,93,61,0.2)}
+.vs-whatsapp li:last-child{border-bottom:none}
+
+/* Tribe Building - Sidebar Layout */
+.tribe-building{padding:6rem 2rem;background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);color:var(--warm-white);position:relative}
+.tribe-building::after{content:'BUILD YOUR TRIBE';position:absolute;bottom:2rem;right:-5rem;font-size:10rem;font-family:'Fraunces',serif;font-weight:900;color:rgba(255,255,255,0.03);transform:rotate(90deg);line-height:1;transform-origin:center}
+.tribe-layout{display:grid;grid-template-columns:350px 1fr;gap:3rem;align-items:start}
+.tribe-sidebar{position:sticky;top:6rem;background:rgba(255,255,255,0.1);padding:2.5rem;border-radius:20px;border:2px solid rgba(255,255,255,0.2)}
+.tribe-sidebar h2{font-size:3rem;font-style:italic;margin-bottom:1rem;line-height:1.1}
+.tribe-sidebar p{font-size:1.1rem;opacity:0.9}
+.tribe-content{display:flex;flex-direction:column;gap:2.5rem}
+.mechanic-card{background:var(--warm-white);color:var(--charcoal);padding:2.5rem;border-radius:20px;border-top:6px solid var(--clay);position:relative}
+.mechanic-number{position:absolute;top:-1.5rem;left:2rem;width:3rem;height:3rem;background:var(--clay);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;font-family:'Fraunces',serif}
+.mechanic-card h3{font-size:1.75rem;margin-bottom:1rem;color:var(--clay)}
+.mechanic-card p{font-size:1.1rem;line-height:1.7;margin-bottom:1.5rem}
+.example{background:var(--cream);padding:1.5rem;border-radius:12px;border-left:4px solid var(--terracotta);font-size:1rem}
+.example strong{color:var(--clay);display:block;margin-bottom:0.5rem}
+.tribal-knowledge{background:var(--cream);padding:2rem;border-radius:12px}
+.tribal-knowledge h4{font-size:1.3rem;margin-bottom:1.5rem;color:var(--clay);font-family:'Fraunces',serif;text-align:center}
+.knowledge-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.knowledge-item{background:var(--warm-white);padding:1.25rem;border-radius:10px;border-top:3px solid var(--sage)}
+.knowledge-item strong{color:var(--clay);display:block;margin-bottom:0.5rem}
+.trust-building{background:var(--warm-white);color:var(--charcoal);padding:2.5rem;border-radius:20px;border-top:6px solid var(--terracotta)}
+.trust-building h3{font-size:1.75rem;margin-bottom:2rem;color:var(--clay);text-align:center;font-style:italic}
+.trust-mechanisms{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.trust-item{background:var(--cream);padding:1.5rem;border-radius:12px;text-align:center}
+.trust-icon{font-size:2.5rem;margin-bottom:1rem}
+.trust-item strong{color:var(--clay);display:block;margin-bottom:0.5rem;font-size:1.1rem}
+
+/* Exchange - Magazine Grid */
+.solution{padding:6rem 2rem;background:var(--cream);position:relative}
+.solution::before{content:'FIELD OF DREAMS';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-3deg);font-size:clamp(3rem,15vw,12rem);font-family:'Fraunces',serif;font-weight:900;color:rgba(201,93,61,0.03);line-height:1;z-index:0}
+.solution .container{position:relative;z-index:1}
+.solution h2{font-size:clamp(2.5rem,6vw,4.5rem);text-align:center;margin-bottom:1.5rem;font-style:italic;color:var(--clay)}
+.solution .tagline{font-size:clamp(1.2rem,3vw,1.6rem);text-align:center;margin-bottom:4rem;max-width:700px;margin-left:auto;margin-right:auto;font-style:italic;color:var(--charcoal);opacity:0.8}
+.exchange-categories{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:3rem}
+.category{background:var(--warm-white);padding:2rem;border-radius:20px;border-top:5px solid var(--sage);transition:all 0.3s ease}
+.category:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(0,0,0,0.15)}
+.category:nth-child(1){border-top-color:var(--clay)}
+.category:nth-child(2){border-top-color:var(--sage)}
+.category:nth-child(3){border-top-color:var(--terracotta)}
+.category:nth-child(4){border-top-color:var(--burnt-orange)}
+.category:nth-child(5){border-top-color:var(--deep-green)}
+.category:nth-child(6){border-top-color:var(--clay)}
+.category h3{font-size:1.5rem;margin-bottom:1rem;color:var(--charcoal)}
+.category ul{list-style:none;padding:0}
+.category li{padding:0.5rem 0;padding-left:1.5rem;position:relative;color:var(--charcoal);opacity:0.8;font-size:0.95rem}
+.category li::before{content:'→';position:absolute;left:0;color:var(--clay);font-weight:700}
+.exchange-note{background:linear-gradient(135deg,var(--charcoal) 0%,#1A1A1A 100%);color:var(--cream);padding:3rem;border-radius:30px;border:4px solid var(--clay);max-width:900px;margin:0 auto;position:relative}
+.exchange-note::before{content:'⚾';position:absolute;top:-2rem;right:2rem;font-size:4rem}
+.exchange-note p{font-size:1.3rem;line-height:1.7;margin:0;font-style:italic}
+.exchange-note strong{color:var(--terracotta);font-weight:700}
+
+/* How It Works - Timeline */
+.how-it-works{padding:6rem 2rem;background:var(--warm-white);position:relative}
+.how-it-works h2{font-size:clamp(2.5rem,6vw,4rem);text-align:center;margin-bottom:4rem;font-style:italic;color:var(--clay)}
+.steps-container{max-width:800px;margin:0 auto 5rem;position:relative}
+.steps-container::before{content:'';position:absolute;left:2rem;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--clay),var(--sage))}
+.step{display:flex;gap:2rem;margin-bottom:3rem;position:relative}
+.step-number{flex-shrink:0;width:60px;height:60px;background:var(--clay);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;font-family:'Fraunces',serif;box-shadow:0 8px 20px rgba(201,93,61,0.3);z-index:1}
+.step-content{flex:1;background:var(--cream);padding:2rem;border-radius:15px;border-left:4px solid var(--sage)}
+.step-content h3{font-size:1.5rem;margin-bottom:0.5rem;color:var(--clay)}
+.use-cases{background:var(--charcoal);color:var(--cream);padding:4rem;border-radius:30px}
+.use-cases h3{font-size:2.5rem;text-align:center;margin-bottom:3rem;color:var(--warm-white);font-style:italic}
+.use-case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.use-case{background:rgba(255,255,255,0.05);padding:1.5rem;border-radius:12px;border-left:3px solid var(--terracotta)}
+.use-case strong{color:var(--terracotta);display:block;margin-bottom:0.5rem;font-size:1.05rem}
+
+/* Final CTA - Full Bleed */
+.final-cta{padding:8rem 2rem;background:linear-gradient(135deg,var(--clay) 0%,var(--terracotta) 100%);color:var(--warm-white);text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.1) 1px,transparent 1px);background-size:50px 50px;animation:drift 30s linear infinite}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(50px,50px)}}
+.final-cta-content{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.final-cta h2{font-size:clamp(2.5rem,6vw,5rem);margin-bottom:2rem;font-style:italic;color:var(--warm-white)}
+.final-cta p{font-size:clamp(1.1rem,2.5vw,1.4rem);margin-bottom:3rem;line-height:1.7}
+.final-cta .cta-form{max-width:550px;margin:0 auto}
+.final-cta input[type="email"]{border-color:var(--warm-white);background:rgba(255,255,255,0.95)}
+.final-cta button{background:var(--charcoal);color:var(--warm-white)}
+.final-cta button:hover{background:var(--deep-green);box-shadow:0 8px 30px rgba(0,0,0,0.4)}
+.success-message{display:none;padding:1rem;background:rgba(255,255,255,0.2);border:2px solid var(--warm-white);border-radius:12px;margin-top:1rem;font-weight:500}
+.success-message.show{display:block}
+
+@media (max-width:1024px){
+.nav-floating{display:none}
+.tribe-layout{grid-template-columns:1fr}
+.tribe-sidebar{position:static}
+.platform-grid,.network-benefits,.knowledge-grid,.trust-mechanisms,.use-case-grid{grid-template-columns:1fr}
+.exchange-categories{grid-template-columns:repeat(2,1fr)}
+.steps-container::before{display:none}
+}
+@media (max-width:768px){
+.brand-header{padding:0.75rem 1rem}
+.brand-name{font-size:1.35rem}
+.cta-form{flex-direction:column}
+button{width:100%}
+.exchange-categories{grid-template-columns:1fr}
+.scenario-story{grid-template-columns:1fr}
+.step{gap:1rem}
+.step-number{width:50px;height:50px;font-size:1.25rem}
+.mechanic-card,.trust-building,.use-cases{padding:1.5rem}
+.tribal-knowledge{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+  <div class="brand-name">VILLAGE NETWORK</div>
+</div>
+
+<nav class="nav-floating" id="floating-nav">
+  <div class="nav-dot" data-label="Home" data-section="hero"></div>
+  <div class="nav-dot" data-label="Platform" data-section="problem"></div>
+  <div class="nav-dot" data-label="Example" data-section="example-scenario"></div>
+  <div class="nav-dot" data-label="Build Tribe" data-section="tribe-building"></div>
+  <div class="nav-dot" data-label="Exchange" data-section="solution"></div>
+  <div class="nav-dot" data-label="How It Works" data-section="how-it-works"></div>
+  <div class="nav-dot" data-label="Join" data-section="final-cta"></div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="kicker">Peer-to-peer family care</div>
+    <h1>Let your village come to you</h1>
+    <p>Your neighbor's going fishing Saturday. Your two boys need something to do. Your cousin could tag along to supervise. <strong>What if coordinating this took 30 seconds instead of 30 messages?</strong></p>
+    <form class="cta-form" id="hero-form">
+      <input type="email" placeholder="your@email.com" required aria-label="Email address">
+      <button type="submit">Join Waitlist</button>
+    </form>
+    <div class="trust-badge">🔒 No spam, just community updates</div>
+  </div>
+</section>
+
+<section class="problem" id="problem">
+  <div class="container">
+    <h2>This is an app. But not like other apps.</h2>
+    <div class="platform-grid">
+      <div class="explainer-card">
+        <h3>Most apps connect you to strangers</h3>
+        <p>TaskRabbit. Rover. Care.com. You're trusting algorithms and star ratings with your kids and your home.</p>
+      </div>
+      <div class="explainer-card">
+        <h3>WhatsApp connects people you know</h3>
+        <p>But it's just messaging. No memory of who helped whom. No way to discover who has what skills. Every request starts from scratch.</p>
+      </div>
+      <div class="explainer-card highlight">
+        <h3>Village Network is different</h3>
+        <p>An app that helps you build a <strong>tribe</strong> - starting with people you trust, expanding through real relationships, organizing your collective resources and skills.</p>
+      </div>
+    </div>
+    
+    <div class="why-network">
+      <h3>Why a network instead of a group?</h3>
+      <div class="network-benefits">
+        <div class="benefit">
+          <strong>Your friend's friend becomes available:</strong> You trust Sarah. Sarah vouches for her cousin Mike. Mike teaches guitar. Now your kid has a music teacher you can trust.
+        </div>
+        <div class="benefit">
+          <strong>Skills and stuff are discoverable:</strong> Who in your extended circle has a pressure washer? Who knows plumbing? The network knows. Group chats forget.
+        </div>
+        <div class="benefit">
+          <strong>Reciprocity scales:</strong> You help Dave's kids today. Next month Dave's brother helps you move furniture. The network tracks the web of mutual aid.
+        </div>
+        <div class="benefit">
+          <strong>Relationships form organically:</strong> Moe and Curly teach neighborhood kids baseball fundamentals. Larry shows up with his son. Six months later they're cofounding a business together.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="example-scenario" id="example-scenario">
+  <div class="container">
+    <div class="scenario-header">
+      <h2>Here's how it works</h2>
+      <p class="scenario-intro">Real scenario from our beta testers:</p>
+    </div>
+    <div class="scenario-window">
+      <div class="window-header">
+        <div class="window-dot"></div>
+        <div class="window-dot"></div>
+        <div class="window-dot"></div>
+      </div>
+      <div class="scenario-story">
+        <div class="scenario-card">
+          <div class="scenario-time">Thursday, 3pm</div>
+          <h3>The situation</h3>
+          <p>Marcus has two energetic boys (ages 6 & 8) who need something to do Saturday. His neighbor Dave posted he's taking his son fishing at the lake.</p>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-time">30 seconds later</div>
+          <h3>The ask</h3>
+          <p>Marcus sends: "Room for two more kids? My cousin Sarah can come supervise if that helps. Happy to return the favor next weekend."</p>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-time">2 minutes later</div>
+          <h3>The yes</h3>
+          <p>Dave accepts. The app automatically tracks: Marcus gets 4 hours of childcare, Dave banks 4 hours for later. Sarah gets added to the trusted circle.</p>
+        </div>
+        <div class="scenario-card highlight">
+          <div class="scenario-time">Saturday</div>
+          <h3>The outcome</h3>
+          <p><strong>Kids:</strong> Adventure with friends, learn to fish<br>
+          <strong>Marcus:</strong> 4 quiet hours to finish the deck<br>
+          <strong>Dave:</strong> Extra hands, builds community<br>
+          <strong>Sarah:</strong> Joins the network, meets neighbors</p>
+        </div>
+      </div>
+    </div>
+    <div class="vs-whatsapp">
+      <h3>Compare to WhatsApp:</h3>
+      <ul>
+        <li>❌ 14 messages across 2 group chats</li>
+        <li>❌ "Did you see my message?" follow-ups</li>
+        <li>❌ No record of who owes whom</li>
+        <li>❌ Cousin Sarah gets lost in thread</li>
+        <li>❌ Next time, start from scratch</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="tribe-building" id="tribe-building">
+  <div class="container">
+    <div class="tribe-layout">
+      <div class="tribe-sidebar">
+        <h2>How you build your tribe</h2>
+        <p>Starting with trust, growing through vouching, organizing collective knowledge</p>
+      </div>
+      
+      <div class="tribe-content">
+        <div class="mechanic-card">
+          <div class="mechanic-number">1</div>
+          <h3>Start with your inner circle</h3>
+          <p>Invite 3-5 people you already trust - neighbors, friends, family. They're your founding members. Each person you invite can see and connect with each other.</p>
+          <div class="example">
+            <strong>Example:</strong> You invite Sarah (neighbor), Mike (brother), and Lisa (friend from work). They can now see each other's profiles and what they're offering.
+          </div>
+        </div>
+
+        <div class="mechanic-card">
+          <div class="mechanic-number">2</div>
+          <h3>Each member vouches for others</h3>
+          <p>When Sarah wants to add her cousin Tom, she vouches for him. You see: "Sarah vouches for Tom" with context about how they know each other. You can accept, decline, or meet Tom first.</p>
+          <div class="example">
+            <strong>Example:</strong> "Sarah (your neighbor, trusted for 8 months) vouches for Tom (her cousin, teacher, has 2 kids). Tom offers: guitar lessons, camping gear, weekend hiking trips."
+          </div>
+        </div>
+
+        <div class="mechanic-card">
+          <div class="mechanic-number">3</div>
+          <h3>The network becomes a web</h3>
+          <p>Over time, you have: direct connections (people you invited), extended connections (vouched by your direct connections), and your tribe's collective knowledge - who has what, who knows what, who's good at what.</p>
+          <div class="tribal-knowledge">
+            <h4>Your tribe's collective resources:</h4>
+            <div class="knowledge-grid">
+              <div class="knowledge-item">
+                <strong>Skills:</strong> Guitar (Tom), Plumbing (Sarah's dad), Tutoring (Lisa), Coding (Mike), Spanish (Maria)
+              </div>
+              <div class="knowledge-item">
+                <strong>Stuff:</strong> Pressure washer (Dave), Camping gear (Tom), Power tools (Sarah's dad), Projector (Lisa)
+              </div>
+              <div class="knowledge-item">
+                <strong>Time:</strong> Tuesday afternoons (Sarah), Weekends (Tom), After 6pm (Lisa), Flexible (You)
+              </div>
+              <div class="knowledge-item">
+                <strong>Interests:</strong> Baseball (Moe, Curly, Larry), Hiking (Tom, Maria), Board games (Sarah, Dave)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-building">
+          <h3>How trust actually builds</h3>
+          <div class="trust-mechanisms">
+            <div class="trust-item">
+              <div class="trust-icon">🤝</div>
+              <strong>Show up:</strong> You said you'd watch Dave's kids Tuesday 2-5pm. You show up. Your reliability score increases.
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🎁</div>
+              <strong>Give first:</strong> New members start by offering before asking. Build social capital through contribution.
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🔄</div>
+              <strong>Reciprocate:</strong> The network tracks who's given what. Imbalance is visible but not enforced - some people give more, that's fine.
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">👥</div>
+              <strong>Vouch carefully:</strong> Your reputation is tied to who you bring in. People who vouch for flakes lose standing.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="solution" id="solution">
+  <div class="container">
+    <h2>What people actually exchange</h2>
+    <p class="tagline">Way more than babysitting. This is your village's collective capacity.</p>
+    
+    <div class="exchange-categories">
+      <div class="category">
+        <h3>🕐 Time & Care</h3>
+        <ul>
+          <li>Childcare swaps (after-school, weekends, sick days)</li>
+          <li>Elder care check-ins</li>
+          <li>Pet sitting & dog walking</li>
+          <li>House sitting during travel</li>
+          <li>Emergency pickups</li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>🛠️ Skills & Labor</h3>
+        <ul>
+          <li>Home repairs (plumbing, electrical, painting)</li>
+          <li>Tech help (computer repair, website building)</li>
+          <li>Professional services (design, tax prep, legal advice)</li>
+          <li>Yard work, snow removal, moving help</li>
+          <li>Meal prep & cooking for others</li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>📚 Teaching & Learning</h3>
+        <ul>
+          <li>Music lessons (guitar, piano, drums)</li>
+          <li>Tutoring (math, languages, test prep)</li>
+          <li>Sports coaching (baseball, soccer, swimming)</li>
+          <li>Arts & crafts workshops</li>
+          <li>Language exchange</li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>🏡 Stuff & Space</h3>
+        <ul>
+          <li>Tools (lawn mower, power drill, ladder)</li>
+          <li>Party supplies, folding chairs, coolers</li>
+          <li>Camping gear, sports equipment</li>
+          <li>Baby/kid gear (cribs, car seats, toys)</li>
+          <li>Event space for gatherings</li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>🚗 Transportation</h3>
+        <ul>
+          <li>School & activity carpools</li>
+          <li>Airport runs</li>
+          <li>Grocery shopping for those without cars</li>
+          <li>Moving truck access</li>
+          <li>Vehicle jump starts & minor fixes</li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>🎯 Experiences</h3>
+        <ul>
+          <li>Group field trips (museums, hikes, beach days)</li>
+          <li>Hobby clubs (board games, book club, craft nights)</li>
+          <li>Cooking circles & potlucks</li>
+          <li>Workout buddies & sports leagues</li>
+          <li>Learning pods & study groups</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exchange-note">
+      <p><strong>The magic:</strong> When Moe and Curly post "Teaching baseball Saturday mornings," it's not just a service - it's where Larry shows up with his son, relationships form, trust builds, and six months later they're cofounding something together. The network doesn't just coordinate transactions, it creates the conditions for community. If you build it, they will come.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <h2>How the network grows</h2>
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Start with who you trust</h3>
+          <p>Invite 3-5 friends, neighbors, or family. Each person brings their trusted circle. The network expands through vouching, not algorithms.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Give before you receive</h3>
+          <p>Offer what you can: childcare, tools, skills, rides. Every contribution builds your time bank and strengthens the web. New members start by giving.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>The network matches you</h3>
+          <p>Need something? The system finds the best fit from your trusted circle based on availability, proximity, and reciprocity balance. Accept, decline, or counter-offer.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="use-cases">
+      <h3>What people share</h3>
+      <div class="use-case-grid">
+        <div class="use-case">
+          <strong>Childcare pods:</strong> Rotating supervision for playdates, homework help, after-school coverage
+        </div>
+        <div class="use-case">
+          <strong>Learning circles:</strong> Guitar lessons, coding clubs, language exchange, nature walks
+        </div>
+        <div class="use-case">
+          <strong>Equipment library:</strong> Power tools, camping gear, party supplies, sports equipment
+        </div>
+        <div class="use-case">
+          <strong>Ride shares:</strong> School pickups, field trips, weekend activities, airport runs
+        </div>
+        <div class="use-case">
+          <strong>Meal trains:</strong> Batch cooking swaps, recipe sharing, dinner co-ops
+        </div>
+        <div class="use-case">
+          <strong>Skill swaps:</strong> Plumbing for graphic design, tutoring for yard work, haircuts for tax help
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="final-cta">
+  <div class="final-cta-content">
+    <h2>Your tribe is out there</h2>
+    <p>The neighbors who'd help with your kids. The friend-of-a-friend who teaches guitar. The future cofounder you'll meet teaching baseball in the park. They're already in your orbit - you just need a way to organize.</p>
+    <form class="cta-form" id="footer-form">
+      <input type="email" placeholder="your@email.com" required aria-label="Email address">
+      <button type="submit">Build my village →</button>
+    </form>
+    <div class="success-message" id="success-msg">
+      ✓ You're on the list! We'll notify you when we launch in your area.
+    </div>
+  </div>
+</section>
+
+<script>
+const storage={get:k=>{try{return JSON.parse(localStorage.getItem(k))}catch{return null}},set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}}};
+
+const handleSignup=e=>{
+  e.preventDefault();
+  const email=e.target.querySelector('input[type="email"]').value;
+  let signups=storage.get('village_signups')||[];
+  if(!signups.includes(email)){signups.push(email);storage.set('village_signups',signups)}
+  const successMsg=document.getElementById('success-msg');
+  successMsg.classList.add('show');
+  e.target.reset();
+  setTimeout(()=>successMsg.classList.remove('show'),5000);
+  console.log('Signups:',signups);
+};
+
+document.getElementById('hero-form').addEventListener('submit',handleSignup);
+document.getElementById('footer-form').addEventListener('submit',handleSignup);
+
+// Floating nav
+const sections=document.querySelectorAll('section[id]');
+const navDots=document.querySelectorAll('.nav-dot');
+const floatingNav=document.getElementById('floating-nav');
+
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>300)floatingNav.classList.add('visible');
+  else floatingNav.classList.remove('visible');
+  
+  let current='';
+  sections.forEach(section=>{
+    const sectionTop=section.offsetTop;
+    const sectionHeight=section.clientHeight;
+    if(window.scrollY>=(sectionTop-300))current=section.getAttribute('id');
+  });
+  
+  navDots.forEach(dot=>{
+    dot.classList.remove('active');
+    if(dot.getAttribute('data-section')===current)dot.classList.add('active');
+  });
+});
+
+navDots.forEach(dot=>{
+  dot.addEventListener('click',()=>{
+    const section=dot.getAttribute('data-section');
+    document.getElementById(section).scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
