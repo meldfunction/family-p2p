@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Village Network - Build Your Tribe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--clay:#C95D3D;--terracotta:#E87A5D;--cream:#FFF8F0;--sage:#7A9B76;--charcoal:#2B2B2B;--warm-white:#FFFEF9;--deep-green:#4A6B47}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
+
+/* Brand Header */
+.brand-header{position:fixed;top:0;left:0;right:0;z-index:999;background:linear-gradient(135deg,var(--clay) 0%,var(--terracotta) 100%);padding:1rem 2rem;box-shadow:0 4px 20px rgba(0,0,0,0.2);display:flex;align-items:center;gap:1rem}
+.logo-svg{width:40px;height:40px}
+.brand-name{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:var(--warm-white);letter-spacing:-0.02em;font-style:italic;text-shadow:2px 2px 0 rgba(0,0,0,0.15)}
+
+/* Floating Nav */
+.nav-floating{position:fixed;top:50%;right:2rem;transform:translateY(-50%);z-index:1000;background:var(--warm-white);padding:1.5rem 1rem;border-radius:40px;box-shadow:0 10px 40px rgba(0,0,0,0.2);border:3px solid var(--clay)}
+.nav-floating nav{display:flex;flex-direction:column;gap:1rem}
+.nav-dot{width:14px;height:14px;background:var(--cream);border:2px solid var(--clay);border-radius:50%;cursor:pointer;transition:all 0.3s ease;position:relative}
+.nav-dot:hover,.nav-dot.active{background:var(--clay);transform:scale(1.4)}
+.nav-dot::after{content:attr(data-label);position:absolute;right:35px;top:50%;transform:translateY(-50%);background:var(--charcoal);color:var(--warm-white);padding:0.6rem 1.2rem;border-radius:10px;font-size:0.9rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.3s ease;font-weight:600}
+.nav-dot:hover::after{opacity:1}
+
+/* Section Divider */
+.divider{height:4px;background:linear-gradient(90deg,transparent,var(--clay) 25%,var(--sage) 50%,var(--terracotta) 75%,transparent);margin:4rem 0;opacity:0.5}
+.divider-dots{text-align:center;padding:3rem 0;font-size:2rem;color:var(--clay);opacity:0.3;letter-spacing:2rem}
+
+/* Container */
+.container{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem 2rem 4rem;background:linear-gradient(135deg,var(--cream) 0%,#FFE8D6 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(201,93,61,0.12) 0%,transparent 70%);border-radius:50%;animation:float 20s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-50px,-50px) scale(1.1)}}
+.hero-content{max-width:800px;text-align:center;position:relative;z-index:1}
+.kicker{font-size:1.1rem;color:var(--clay);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.5rem}
+h1{font-size:clamp(2.8rem,9vw,6rem);color:var(--charcoal);margin-bottom:1rem;font-style:italic}
+.tagline-hero{font-size:clamp(1.3rem,3vw,1.8rem);color:var(--clay);font-weight:600;margin-bottom:2rem;font-style:italic;text-decoration:underline;text-decoration-color:var(--terracotta);text-decoration-thickness:3px;text-underline-offset:6px}
+.hero p{font-size:clamp(1.2rem,2.8vw,1.5rem);color:var(--charcoal);margin-bottom:3rem;max-width:650px;margin-left:auto;margin-right:auto;line-height:1.8}
+.hero p strong{color:var(--clay);text-decoration:underline;text-decoration-color:var(--terracotta);text-decoration-thickness:3px;text-underline-offset:4px}
+.cta-form{display:flex;gap:1rem;max-width:550px;margin:0 auto 1.5rem}
+input[type="email"]{flex:1;padding:1.2rem 1.8rem;border:3px solid var(--clay);border-radius:50px;font-size:1.1rem;font-family:'DM Sans',sans-serif;background:var(--warm-white);transition:all 0.3s ease}
+input[type="email"]:focus{outline:none;border-color:var(--terracotta);box-shadow:0 0 0 4px rgba(232,122,93,0.15)}
+button{padding:1.2rem 3rem;background:var(--clay);color:var(--warm-white);border:none;border-radius:50px;font-size:1.1rem;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all 0.3s ease;white-space:nowrap}
+button:hover{background:var(--terracotta);transform:translateY(-3px);box-shadow:0 10px 25px rgba(201,93,61,0.35)}
+.trust-badge{font-size:1rem;color:var(--sage);font-weight:600;display:flex;align-items:center;justify-content:center;gap:0.5rem}
+
+/* Platform */
+.platform{padding:8rem 2rem;background:var(--charcoal);color:var(--cream)}
+.platform h2{font-size:clamp(2.8rem,7vw,5rem);margin-bottom:5rem;font-style:italic;color:var(--warm-white);text-align:center}
+.platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-bottom:5rem}
+.explainer-card{background:rgba(255,255,255,0.06);padding:3rem;border-radius:25px;border:2px solid rgba(255,255,255,0.12);transition:all 0.3s ease}
+.explainer-card:hover{transform:translateY(-6px);border-color:var(--terracotta)}
+.explainer-card.highlight{background:linear-gradient(135deg,var(--clay) 0%,var(--terracotta) 100%);border-color:var(--warm-white);grid-column:1/-1;text-align:center}
+.explainer-card h3{font-size:2rem;margin-bottom:1.2rem;color:var(--warm-white)}
+.explainer-card p{color:var(--cream);opacity:0.92;font-size:1.15rem;line-height:1.7}
+.why-network{background:rgba(255,255,255,0.09);padding:3.5rem;border-radius:30px;border-left:8px solid var(--terracotta)}
+.why-network h3{font-size:2.8rem;margin-bottom:3rem;color:var(--warm-white);font-style:italic;text-align:center}
+.network-benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem}
+.benefit{background:rgba(255,255,255,0.06);padding:2rem;border-radius:18px;border-top:4px solid var(--sage);text-align:center}
+.benefit strong{color:var(--terracotta);display:block;margin-bottom:1rem;font-size:1.2rem}
+
+/* Trust Section */
+.trust-section{padding:8rem 2rem;background:var(--warm-white)}
+.trust-section h2{font-size:clamp(2.8rem,7vw,4.5rem);text-align:center;margin-bottom:2rem;font-style:italic;color:var(--clay)}
+.trust-section .tagline{font-size:1.3rem;text-align:center;margin-bottom:5rem;opacity:0.8;font-style:italic}
+.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem}
+.trust-item{background:var(--cream);padding:2.5rem;border-radius:25px;border-left:6px solid var(--sage);text-align:center}
+.trust-icon{font-size:3rem;margin-bottom:1rem}
+.trust-item h3{font-size:1.6rem;color:var(--clay);margin-bottom:1rem}
+.trust-item p{font-size:1.05rem;line-height:1.7}
+
+/* App Mockup */
+.app-mockup{padding:8rem 2rem;background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);color:var(--warm-white)}
+.app-mockup h2{font-size:clamp(2.8rem,7vw,4.5rem);text-align:center;margin-bottom:2rem;font-style:italic}
+.app-mockup .tagline{font-size:1.4rem;text-align:center;margin-bottom:5rem;opacity:0.9}
+.mockup-container{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.mockup-text h3{font-size:2.5rem;margin-bottom:2rem;font-style:italic}
+.mockup-text ul{list-style:none;padding:0}
+.mockup-text li{padding:1rem 0;padding-left:2rem;position:relative;font-size:1.15rem;border-bottom:1px solid rgba(255,255,255,0.2)}
+.mockup-text li::before{content:'✓';position:absolute;left:0;color:var(--terracotta);font-weight:900;font-size:1.3rem}
+.phone-frame{background:var(--charcoal);border-radius:40px;padding:1.5rem;box-shadow:0 30px 80px rgba(0,0,0,0.4);border:8px solid #1a1a1a}
+.phone-screen{background:var(--warm-white);border-radius:30px;overflow:hidden;height:600px}
+.phone-header{background:linear-gradient(135deg,var(--clay),var(--terracotta));padding:1.5rem;color:var(--warm-white)}
+.phone-header h4{font-size:1.3rem;margin-bottom:0.5rem}
+.phone-header p{font-size:0.9rem;opacity:0.9}
+.phone-content{padding:1.5rem}
+.request-card{background:var(--cream);padding:1.5rem;border-radius:15px;margin-bottom:1.5rem;border-left:4px solid var(--clay)}
+.request-card h5{color:var(--clay);font-size:1.1rem;margin-bottom:0.5rem}
+.request-card .meta{font-size:0.85rem;color:var(--charcoal);opacity:0.7;margin-bottom:1rem}
+.request-card .actions{display:flex;gap:0.75rem}
+.request-card button{padding:0.6rem 1.5rem;font-size:0.9rem;border-radius:25px}
+.btn-accept{background:var(--sage);color:var(--warm-white)}
+.btn-view{background:transparent;border:2px solid var(--clay);color:var(--clay)}
+
+/* Example */
+.example{padding:8rem 2rem;background:var(--cream)}
+.scenario-header{text-align:center;margin-bottom:5rem}
+.scenario-header h2{font-size:clamp(2.8rem,7vw,4.5rem);font-style:italic;color:var(--clay);margin-bottom:1rem}
+.scenario-intro{font-size:1.4rem;color:var(--charcoal);opacity:0.75;font-family:'Space Mono',monospace}
+.scenario-window{background:var(--charcoal);border-radius:25px;overflow:hidden;box-shadow:0 25px 70px rgba(0,0,0,0.35);margin-bottom:4rem}
+.window-header{background:#1A1A1A;padding:1.2rem 1.8rem;display:flex;align-items:center;gap:0.6rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+.window-dot{width:14px;height:14px;border-radius:50%}
+.window-dot:nth-child(1){background:#FF5F56}
+.window-dot:nth-child(2){background:#FFBD2E}
+.window-dot:nth-child(3){background:#27C93F}
+.scenario-story{padding:2.5rem;display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.scenario-card{background:rgba(255,255,255,0.06);padding:2rem;border-radius:15px;border-left:5px solid var(--terracotta)}
+.scenario-card.highlight{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);border-left-color:var(--warm-white);grid-column:1/-1;text-align:center}
+.scenario-time{font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--terracotta);margin-bottom:1rem;font-family:'Space Mono',monospace}
+.scenario-card.highlight .scenario-time{color:var(--cream)}
+.scenario-card h3{font-size:1.6rem;margin-bottom:1rem;color:var(--warm-white)}
+.scenario-card p{color:var(--cream);line-height:1.8;font-size:1.05rem}
+.vs-whatsapp{max-width:750px;margin:0 auto;background:var(--warm-white);padding:3rem;border-radius:25px;border:4px dashed var(--clay);position:relative}
+.vs-whatsapp::before{content:'VS.';position:absolute;top:-2rem;left:2.5rem;background:var(--warm-white);padding:0 1.5rem;font-size:1.8rem;font-weight:900;color:var(--clay);font-family:'Fraunces',serif}
+.vs-whatsapp h3{font-size:2rem;margin-bottom:2rem;color:var(--clay);font-style:italic}
+.vs-whatsapp ul{list-style:none}
+.vs-whatsapp li{padding:1rem 0;font-size:1.1rem;border-bottom:1px solid rgba(201,93,61,0.25)}
+.vs-whatsapp li:last-child{border-bottom:none}
+
+/* Exchange Accordion */
+.exchange{padding:8rem 2rem;background:var(--charcoal);color:var(--cream)}
+.exchange h2{font-size:clamp(2.8rem,7vw,4.5rem);text-align:center;margin-bottom:2rem;font-style:italic;color:var(--warm-white)}
+.exchange .tagline{font-size:1.4rem;text-align:center;margin-bottom:5rem;opacity:0.9}
+.accordion{max-width:900px;margin:0 auto 4rem}
+.accordion-item{background:rgba(255,255,255,0.06);margin-bottom:1.5rem;border-radius:20px;overflow:hidden;border:2px solid rgba(255,255,255,0.1)}
+.accordion-header{padding:2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s ease}
+.accordion-header:hover{background:rgba(255,255,255,0.08)}
+.accordion-header h3{font-size:1.8rem;color:var(--warm-white)}
+.accordion-icon{font-size:1.5rem;transition:transform 0.3s ease}
+.accordion-item.active .accordion-icon{transform:rotate(180deg)}
+.accordion-content{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.accordion-item.active .accordion-content{max-height:500px}
+.accordion-body{padding:0 2rem 2rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.exchange-item{background:rgba(255,255,255,0.05);padding:1.2rem;border-radius:12px;border-left:3px solid var(--terracotta)}
+.baseball-note{background:linear-gradient(135deg,var(--clay) 0%,var(--terracotta) 100%);color:var(--warm-white);padding:3rem;border-radius:30px;max-width:900px;margin:0 auto;position:relative;text-align:center}
+.baseball-note::before{content:'⚾';position:absolute;top:-2rem;right:2rem;font-size:4rem}
+.baseball-note p{font-size:1.3rem;line-height:1.7;margin:0;font-style:italic}
+.baseball-note strong{text-decoration:underline;text-decoration-color:var(--warm-white);text-decoration-thickness:2px;text-underline-offset:4px}
+
+/* Communication Section */
+.communication{padding:8rem 2rem;background:var(--warm-white)}
+.communication h2{font-size:clamp(2.8rem,7vw,4.5rem);text-align:center;margin-bottom:2rem;font-style:italic;color:var(--clay)}
+.communication .tagline{font-size:1.3rem;text-align:center;margin-bottom:5rem;opacity:0.8;font-style:italic}
+.tablet-frame{background:var(--charcoal);border-radius:30px;padding:1.2rem;box-shadow:0 25px 70px rgba(0,0,0,0.3);border:6px solid #1a1a1a;max-width:700px;margin:0 auto}
+.tablet-screen{background:var(--warm-white);border-radius:20px;overflow:hidden;height:500px;display:flex;flex-direction:column}
+.tablet-header{background:linear-gradient(135deg,var(--sage),var(--deep-green));padding:1.2rem 1.5rem;color:var(--warm-white);display:flex;align-items:center;justify-content:space-between}
+.tablet-header h4{font-size:1.2rem}
+.tablet-header .status{font-size:0.85rem;opacity:0.9}
+.messages-container{flex:1;padding:1.5rem;overflow-y:auto;background:var(--cream)}
+.message{margin-bottom:1.2rem;display:flex;flex-direction:column}
+.message.sent{align-items:flex-end}
+.message.received{align-items:flex-start}
+.message-bubble{max-width:70%;padding:1rem 1.2rem;border-radius:18px;position:relative}
+.message.sent .message-bubble{background:var(--clay);color:var(--warm-white);border-bottom-right-radius:4px}
+.message.received .message-bubble{background:var(--warm-white);color:var(--charcoal);border:2px solid rgba(201,93,61,0.2);border-bottom-left-radius:4px}
+.message-sender{font-size:0.75rem;font-weight:700;margin-bottom:0.3rem;opacity:0.8}
+.message.sent .message-sender{color:var(--clay)}
+.message.received .message-sender{color:var(--sage)}
+.message-text{font-size:0.95rem;line-height:1.5}
+.message-time{font-size:0.7rem;opacity:0.6;margin-top:0.3rem}
+.tablet-input{padding:1rem 1.5rem;border-top:2px solid rgba(201,93,61,0.2);display:flex;gap:0.75rem;align-items:center;background:var(--warm-white)}
+.tablet-input input{flex:1;padding:0.7rem 1rem;border:2px solid rgba(201,93,61,0.3);border-radius:20px;font-size:0.9rem;background:var(--cream)}
+.tablet-input button{padding:0.7rem 1.5rem;font-size:0.85rem;border-radius:20px}
+
+/* Testimonials Carousel */
+.testimonials{padding:8rem 2rem;background:var(--warm-white)}
+.testimonials h2{font-size:clamp(2.8rem,7vw,4.5rem);text-align:center;margin-bottom:5rem;font-style:italic;color:var(--clay)}
+.carousel-container{max-width:800px;margin:0 auto;position:relative;min-height:350px}
+.carousel-track{position:relative;width:100%;height:100%}
+.testimonial-card{position:absolute;top:0;left:0;width:100%;padding:3rem;background:var(--cream);border-radius:25px;border-left:6px solid var(--sage);opacity:0;transform:translateX(20px);transition:opacity 0.6s ease,transform 0.6s ease;pointer-events:none}
+.testimonial-card.active{opacity:1;transform:translateX(0);pointer-events:auto}
+.testimonial-text{font-size:1.3rem;line-height:1.8;margin-bottom:2rem;font-style:italic;color:var(--charcoal)}
+.testimonial-author{font-weight:700;color:var(--clay);font-size:1.1rem}
+.testimonial-meta{opacity:0.7;font-size:0.95rem}
+.carousel-nav{display:flex;justify-content:center;gap:1rem;margin-top:2rem}
+.carousel-dot{width:12px;height:12px;border-radius:50%;background:var(--cream);border:2px solid var(--clay);cursor:pointer;transition:all 0.3s ease}
+.carousel-dot.active{background:var(--clay);transform:scale(1.3)}
+
+/* About Section */
+.about{padding:8rem 2rem;background:var(--cream)}
+.about h2{font-size:clamp(2.8rem,7vw,5rem);text-align:center;margin-bottom:3rem;font-style:italic;color:var(--clay)}
+.about-content{max-width:900px;margin:0 auto;font-size:1.2rem;line-height:1.9;color:var(--charcoal)}
+.about-content p{margin-bottom:2rem}
+.about-content strong{color:var(--clay);font-weight:700}
+.about-content em{color:var(--sage);font-style:italic;border-bottom:2px solid var(--sage);padding-bottom:2px}
+.mission-statement{background:linear-gradient(135deg,var(--clay) 0%,var(--terracotta) 100%);color:var(--warm-white);padding:3rem;border-radius:30px;margin:3rem 0;text-align:center;font-size:1.5rem;font-style:italic;line-height:1.8}
+
+/* Future Vision */
+.future{padding:8rem 2rem;background:linear-gradient(135deg,var(--deep-green) 0%,var(--sage) 100%);color:var(--warm-white)}
+.future h2{font-size:clamp(2.8rem,7vw,4.5rem);text-align:center;margin-bottom:2rem;font-style:italic}
+.future .tagline{font-size:1.3rem;text-align:center;margin-bottom:5rem;opacity:0.9}
+.future-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem}
+.future-product{background:rgba(255,255,255,0.1);padding:2.5rem;border-radius:25px;border-top:5px solid var(--terracotta);text-align:center}
+.future-product h3{font-size:1.8rem;margin-bottom:1rem;color:var(--warm-white)}
+.future-product p{opacity:0.9;line-height:1.7;font-size:1.05rem}
+.future-product .status{margin-top:1rem;font-size:0.9rem;opacity:0.7;font-style:italic}
+
+/* Final CTA */
+.final-cta{padding:8rem 2rem;background:linear-gradient(135deg,var(--clay) 0%,var(--terracotta) 100%);color:var(--warm-white);text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.1) 1px,transparent 1px);background-size:50px 50px;animation:drift 30s linear infinite}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(50px,50px)}}
+.final-cta-content{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.final-cta h2{font-size:clamp(2.8rem,7vw,5rem);margin-bottom:2rem;font-style:italic}
+.final-cta p{font-size:1.3rem;margin-bottom:3rem;line-height:1.7}
+.final-cta button{background:var(--charcoal)}
+.final-cta button:hover{background:var(--deep-green)}
+.success-message{display:none;padding:1rem;background:rgba(255,255,255,0.2);border:2px solid var(--warm-white);border-radius:12px;margin-top:1rem;font-weight:500}
+.success-message.show{display:block}
+
+/* Responsive */
+@media (max-width:1100px){
+.nav-floating{right:1rem}
+.mockup-container,.future-grid{grid-template-columns:1fr}
+.phone-frame{max-width:400px;margin:0 auto}
+.tablet-frame{max-width:600px}
+}
+@media (max-width:768px){
+.nav-floating{display:none}
+.brand-name{font-size:1.4rem}
+.logo-svg{width:32px;height:32px}
+.cta-form{flex-direction:column}
+button{width:100%}
+.platform-grid,.network-benefits,.trust-grid,.scenario-story,.accordion-body{grid-template-columns:1fr}
+.phone-screen{height:500px}
+.scenario-card.highlight{grid-column:1}
+.carousel-container{min-height:400px}
+.testimonial-card{padding:2rem}
+.testimonial-text{font-size:1.1rem}
+.tagline-hero{font-size:1.2rem;text-decoration-thickness:2px;text-underline-offset:4px}
+.tablet-frame{max-width:100%}
+.tablet-screen{height:450px}
+.message-bubble{max-width:85%;font-size:0.9rem}
+}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+  <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="30" r="8" fill="#FFFEF9"/>
+    <circle cx="30" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
+    <circle cx="70" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
+    <circle cx="50" cy="80" r="5" fill="#FFFEF9" opacity="0.6"/>
+    <circle cx="20" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
+    <circle cx="80" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
+    <line x1="50" y1="38" x2="30" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
+    <line x1="50" y1="38" x2="70" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
+    <line x1="30" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
+    <line x1="70" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
+    <line x1="30" y1="66" x2="20" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
+    <line x1="70" y1="66" x2="80" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
+  </svg>
+  <div class="brand-name">VILLAGE NETWORK</div>
+</div>
+
+<nav class="nav-floating">
+  <div class="nav-dot" data-label="Home" data-section="hero"></div>
+  <div class="nav-dot" data-label="Platform" data-section="platform"></div>
+  <div class="nav-dot" data-label="Trust" data-section="trust-section"></div>
+  <div class="nav-dot" data-label="The App" data-section="app-mockup"></div>
+  <div class="nav-dot" data-label="Example" data-section="example"></div>
+  <div class="nav-dot" data-label="Exchange" data-section="exchange"></div>
+  <div class="nav-dot" data-label="Messages" data-section="communication"></div>
+  <div class="nav-dot" data-label="Stories" data-section="testimonials"></div>
+  <div class="nav-dot" data-label="About" data-section="about"></div>
+  <div class="nav-dot" data-label="Join" data-section="final-cta"></div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="kicker">Peer-to-peer care network</div>
+    <h1>Let your village come to you</h1>
+    <!-- Tagline options:
+         - A trusted network for families who refuse to do it alone
+         - Community infrastructure for modern families
+         - Peer-to-peer care for the village you're building
+         - Your trusted care network, built by you
+         - The village you need, organized
+    -->
+    <p class="tagline-hero">A trusted network for families who refuse to do it alone</p>
+    <p>Your neighbor's going fishing Saturday. You need someone to watch the kids. Your cousin could tag along to help supervise. <strong>What if coordinating this took 30 seconds instead of 30 messages?</strong></p>
+    <form class="cta-form" id="hero-form">
+      <input type="email" placeholder="your@email.com" required>
+      <button type="submit">Join Waitlist</button>
+    </form>
+    <div class="trust-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      Free forever • No strangers • Your data stays yours
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="platform" id="platform">
+  <div class="container">
+    <h2>This is an app. But not like other apps.</h2>
+    <div class="platform-grid">
+      <div class="explainer-card">
+        <h3>Most apps connect you to strangers</h3>
+        <p>TaskRabbit. Rover. Care.com. You're trusting algorithms and star ratings with your kids and your home.</p>
+      </div>
+      <div class="explainer-card">
+        <h3>WhatsApp connects people you know</h3>
+        <p>But it's just messaging. No memory of who helped whom. No way to discover who has what skills. Every request starts from scratch.</p>
+      </div>
+      <div class="explainer-card highlight">
+        <h3>Village Network is different</h3>
+        <p>An app that helps you build a <strong>tribe</strong> - starting with people you trust, expanding through real relationships, organizing your collective resources and skills.</p>
+      </div>
+    </div>
+    <div class="why-network">
+      <h3>Why a network instead of a group?</h3>
+      <div class="network-benefits">
+        <div class="benefit">
+          <strong>Your friend's friend becomes available</strong>
+          <p>You trust Sarah. Sarah vouches for her cousin Mike. Mike teaches guitar. Now your kid has a music teacher you can trust.</p>
+        </div>
+        <div class="benefit">
+          <strong>Skills and stuff are discoverable</strong>
+          <p>Who in your extended circle has a pressure washer? Who can help with homework? Who knows how to fix a bike? The network knows. Group chats forget.</p>
+        </div>
+        <div class="benefit">
+          <strong>Reciprocity scales</strong>
+          <p>You help Dave's kids today. Next month Dave's sister helps you move furniture. Your neighbor teaches your daughter piano, you help them with their website.</p>
+        </div>
+        <div class="benefit">
+          <strong>Relationships form organically</strong>
+          <p>Moe and Curly teach neighborhood kids baseball. Larry shows up with his daughter. They discover shared interests beyond sports. Six months later they're collaborating on a project together.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-dots">• • •</div>
+
+<section class="trust-section" id="trust-section">
+  <div class="container">
+    <h2>Is this safe for my family?</h2>
+    <p class="tagline">Trust is everything. Here's how we protect it.</p>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">🛡️</div>
+        <h3>Invitation-only networks</h3>
+        <p>Nobody can find you or your loved ones unless you invite them or someone you trust vouches for them. You control exactly who sees your family's information.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔍</div>
+        <h3>Transparent reputation</h3>
+        <p>See exactly how someone joined your network: who vouched for them, how long they've been active, their participation history. No hidden algorithms, no surprises.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🤝</div>
+        <h3>Accountability through vouching</h3>
+        <p>When you vouch for someone, your reputation is tied to theirs. This creates a natural incentive to only bring in people you genuinely trust.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <h3>No monetization, ever</h3>
+        <p>We'll never sell your data, show you ads, or insert strangers into your network. Free forever. Your community, your rules.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="app-mockup" id="app-mockup">
+  <div class="container">
+    <h2>What the app looks like</h2>
+    <p class="tagline">Simple, trustworthy, built for real relationships</p>
+    <div class="mockup-container">
+      <div class="mockup-text">
+        <h3>Your feed shows what's happening:</h3>
+        <ul>
+          <li>Requests from your trusted network</li>
+          <li>One-tap accept or view details</li>
+          <li>Automatic time tracking & reciprocity balance</li>
+          <li>Add trusted connections through vouching</li>
+          <li>Discover skills & resources in your circle</li>
+          <li>No algorithms, no strangers, no chaos</li>
+        </ul>
+      </div>
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="phone-header">
+            <h4>Your Network</h4>
+            <p>3 new requests • 12 hours banked</p>
+          </div>
+          <div class="phone-content">
+            <div class="request-card">
+              <h5>🎣 Dave needs help with fishing trip</h5>
+              <p class="meta">Saturday 8am-2pm • 3 kids welcome • Lake Murphy</p>
+              <div class="actions">
+                <button class="btn-accept">Accept (4 hrs)</button>
+                <button class="btn-view">View Details</button>
+              </div>
+            </div>
+            <div class="request-card">
+              <h5>🎨 Maria teaching: Art & crafts</h5>
+              <p class="meta">Wednesdays 3-4pm • Ages 5-9 • Her studio</p>
+              <div class="actions">
+                <button class="btn-accept">Sign Up</button>
+                <button class="btn-view">Details</button>
+              </div>
+            </div>
+            <div class="request-card">
+              <h5>🛠️ Sarah offering: Pressure washer</h5>
+              <p class="meta">Available this weekend • Pick up anytime</p>
+              <div class="actions">
+                <button class="btn-accept">Request</button>
+                <button class="btn-view">Message</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-dots">• • •</div>
+
+<section class="example" id="example">
+  <div class="container">
+    <div class="scenario-header">
+      <h2>Here's how it works</h2>
+      <p class="scenario-intro">Real scenario from our beta testers:</p>
+    </div>
+    <div class="scenario-window">
+      <div class="window-header">
+        <div class="window-dot"></div>
+        <div class="window-dot"></div>
+        <div class="window-dot"></div>
+      </div>
+      <div class="scenario-story">
+        <div class="scenario-card">
+          <div class="scenario-time">Thursday, 3pm</div>
+          <h3>The situation</h3>
+          <p>Marcus, a single dad, has two kids (Mia, 8, and Leo, 6) who need something to do Saturday. His neighbor Dave posted he's taking his daughter fishing at the lake.</p>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-time">30 seconds later</div>
+          <h3>The ask</h3>
+          <p>Marcus sends: "Room for two more kids? My cousin Sarah can come supervise if that helps. Happy to return the favor next weekend."</p>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-time">2 minutes later</div>
+          <h3>The yes</h3>
+          <p>Dave accepts. The app automatically tracks: Marcus gets 4 hours of childcare, Dave banks 4 hours for later. Sarah gets added to the trusted circle.</p>
+        </div>
+        <div class="scenario-card highlight">
+          <div class="scenario-time">Saturday</div>
+          <h3>The outcome</h3>
+          <p><strong>Kids:</strong> Adventure with friends, learn to fish<br>
+          <strong>Marcus:</strong> 4 quiet hours to finish the deck<br>
+          <strong>Dave:</strong> Extra hands, builds community<br>
+          <strong>Sarah:</strong> Joins the network, meets neighbors<br>
+          <strong>Everyone:</strong> Wins without spending a dollar</p>
+        </div>
+      </div>
+    </div>
+    <div class="vs-whatsapp">
+      <h3>Compare to WhatsApp:</h3>
+      <ul>
+        <li>❌ 14 messages across 2 group chats</li>
+        <li>❌ "Did you see my message?" follow-ups</li>
+        <li>❌ No record of who owes whom</li>
+        <li>❌ Cousin Sarah gets lost in thread</li>
+        <li>❌ Next time, start from scratch</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="exchange" id="exchange">
+  <div class="container">
+    <h2>What people actually exchange</h2>
+    <p class="tagline">Way more than babysitting. This is your village's collective capacity.</p>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>🕐 Time & Care</h3>
+          <span class="accordion-icon">▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="exchange-item">Childcare swaps (after-school, weekends, sick days)</div>
+            <div class="exchange-item">Elder care check-ins</div>
+            <div class="exchange-item">Pet sitting & dog walking</div>
+            <div class="exchange-item">House sitting during travel</div>
+            <div class="exchange-item">Emergency pickups</div>
+            <div class="exchange-item">Meal trains for new parents</div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>🛠️ Skills & Labor</h3>
+          <span class="accordion-icon">▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="exchange-item">Home repairs (plumbing, electrical, painting)</div>
+            <div class="exchange-item">Tech help (computer repair, website building)</div>
+            <div class="exchange-item">Professional services (design, tax prep)</div>
+            <div class="exchange-item">Yard work & snow removal</div>
+            <div class="exchange-item">Moving help</div>
+            <div class="exchange-item">Cooking & meal prep</div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>📚 Teaching & Learning</h3>
+          <span class="accordion-icon">▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="exchange-item">Music lessons (guitar, piano, drums, violin)</div>
+            <div class="exchange-item">Tutoring (math, languages, science, test prep)</div>
+            <div class="exchange-item">Sports coaching (soccer, baseball, dance, swimming)</div>
+            <div class="exchange-item">Arts & crafts workshops (painting, sewing, pottery)</div>
+            <div class="exchange-item">Language exchange</div>
+            <div class="exchange-item">Coding & robotics for kids</div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>🏡 Stuff & Space</h3>
+          <span class="accordion-icon">▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <div class="exchange-item">Tools (lawn mower, power drill, ladder)</div>
+            <div class="exchange-item">Party supplies, folding chairs, coolers</div>
+            <div class="exchange-item">Camping gear & sports equipment</div>
+            <div class="exchange-item">Baby/kid gear (cribs, car seats, toys)</div>
+            <div class="exchange-item">Event space for gatherings</div>
+            <div class="exchange-item">Kitchen appliances</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="baseball-note">
+      <p><strong>The magic:</strong> When neighbors post "Teaching soccer Saturday mornings" or "Art club in my garage" or "Coding for kids after school," it's not just a service - it's where parents show up, kids make friends, relationships form, trust builds, and communities emerge. The network doesn't just coordinate transactions, it creates the conditions for serendipity. If you build it, they will come.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider-dots">• • •</div>
+
+<section class="communication" id="communication">
+  <div class="container">
+    <h2>Simple, clear communication</h2>
+    <p class="tagline">No group chat chaos. Direct messages within your trusted network.</p>
+    
+    <div class="tablet-frame">
+      <div class="tablet-screen">
+        <div class="tablet-header">
+          <h4>Conversation with Sarah</h4>
+          <span class="status">• Active now</span>
+        </div>
+        <div class="messages-container">
+          <div class="message received">
+            <div class="message-sender">Sarah</div>
+            <div class="message-bubble">
+              <div class="message-text">Hey! Saw your request for soccer practice rides. I can pick up Emma on Tuesdays and Thursdays if you want?</div>
+              <div class="message-time">2:15 PM</div>
+            </div>
+          </div>
+          <div class="message sent">
+            <div class="message-sender">You</div>
+            <div class="message-bubble">
+              <div class="message-text">That would be amazing! She practices 4-5:30pm at Lincoln Field. I can return the favor with art class pickups on Wednesdays?</div>
+              <div class="message-time">2:17 PM</div>
+            </div>
+          </div>
+          <div class="message received">
+            <div class="message-sender">Sarah</div>
+            <div class="message-bubble">
+              <div class="message-text">Perfect! My son takes art at the community center, right? That would help so much. Want to add this to our recurring schedule?</div>
+              <div class="message-time">2:18 PM</div>
+            </div>
+          </div>
+          <div class="message sent">
+            <div class="message-sender">You</div>
+            <div class="message-bubble">
+              <div class="message-text">Yes, let's make it recurring. Also - do you have a folding table I could borrow for Emma's birthday party next Saturday?</div>
+              <div class="message-time">2:20 PM</div>
+            </div>
+          </div>
+          <div class="message received">
+            <div class="message-sender">Sarah</div>
+            <div class="message-bubble">
+              <div class="message-text">Absolutely! I have two actually. I can drop them off Friday evening. How many kids are coming?</div>
+              <div class="message-time">2:21 PM</div>
+            </div>
+          </div>
+        </div>
+        <div class="tablet-input">
+          <input type="text" placeholder="Type a message..." disabled>
+          <button class="btn-accept">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <h2>What beta testers are saying</h2>
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <div class="testimonial-card active">
+          <p class="testimonial-text">"As a single parent, I was drowning. Village Network connected me with other parents nearby. We trade off childcare, share meals, and my daughter has a whole extended 'family' now. I finally have backup when I need it."</p>
+          <div class="testimonial-author">Jennifer L.</div>
+          <div class="testimonial-meta">Single parent, Austin</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"I was coordinating childcare through 4 different WhatsApp groups. Now it's one app. My stress level has dropped significantly. Plus my kids are actually making friends in the neighborhood instead of just screens."</p>
+          <div class="testimonial-author">Sarah M.</div>
+          <div class="testimonial-meta">Parent of 3, Seattle</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The vouching system is genius. I met my neighbor's cousin who's a carpenter. He helped me build a deck, I helped him with marketing for his business. Now we grab beers every week. This isn't just an app, it's community building."</p>
+          <div class="testimonial-author">Marcus T.</div>
+          <div class="testimonial-meta">Small business owner, Portland</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"My wife and I both work full-time and were paying a fortune for after-school care. Through Village Network we found three other families in the same boat. Now we rotate who picks up the kids. Saved us $1200/month and the kids love it."</p>
+          <div class="testimonial-author">David K.</div>
+          <div class="testimonial-meta">Working parent, Denver</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"I'm raising my grandkids and felt isolated. Village Network connected me with other grandparents doing the same thing, plus younger parents who appreciate our wisdom. Now we have playdates, potlucks, and actual community. It's beautiful."</p>
+          <div class="testimonial-author">Gloria R.</div>
+          <div class="testimonial-meta">Grandmother raising 2 grandchildren, Phoenix</div>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <span class="carousel-dot active" data-index="0"></span>
+        <span class="carousel-dot" data-index="1"></span>
+        <span class="carousel-dot" data-index="2"></span>
+        <span class="carousel-dot" data-index="3"></span>
+        <span class="carousel-dot" data-index="4"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="about" id="about">
+  <div class="container">
+    <h2>Why we're building this</h2>
+    <div class="about-content">
+      <p><strong>The myth of "doing it all alone" is killing us.</strong> Whether you're a single parent juggling everything, two parents trying to manage work and family, living with aging parents, or raising kids with your chosen family - the expectation that we should handle it all ourselves is unsustainable. Childcare, elder care, home maintenance, education, emotional support - these were never meant to be solo missions.</p>
+      
+      <p>We started Village Network because we watched people burn out in isolation. One single parent had a breakdown coordinating three kids' activities across seven WhatsApp groups with no backup. A couple paid strangers from TaskRabbit $80/hour to fix things their neighbor could have done in 20 minutes. A grandmother caring for her grandchildren had no way to connect with other grandparents nearby doing the same thing.</p>
+      
+      <div class="mission-statement">
+        "It takes a village" - not a nuclear family, not a gig economy app, not doing it alone. We're building the infrastructure to bring villages back.
+      </div>
+      
+      <p><em>Technology should bring us together, not replace human connection with transactions.</em> That's why Village Network will always be free, will never show ads, will never sell your data, and will never insert strangers into your trusted circle.</p>
+      
+      <p>We believe in <strong>abundance over scarcity</strong> - your neighbor has the tools you need, you have the skills they need, and together you have more capacity than any of you do alone. We believe in <strong>reciprocity over currency</strong> - relationships strengthen when we keep track of mutual aid, not when we pretend every exchange must be perfectly balanced. We believe in <strong>trust through vouching</strong> - your friend's judgment is worth more than a stranger's 5-star rating.</p>
+      
+      <p>This isn't just an app. It's a bet that given the right tools, people will choose community over isolation, cooperation over competition, and relationships over transactions. <strong>No matter what your family looks like.</strong></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider-dots">• • •</div>
+
+<section class="future" id="future">
+  <div class="container">
+    <h2>What we're building next</h2>
+    <p class="tagline">Village Network is just the beginning. Here's our vision for rebuilding community infrastructure.</p>
+    <div class="future-grid">
+      <div class="future-product">
+        <h3>🏥 CareCircles</h3>
+        <p>Coordinate eldercare and medical support through your trusted network. Schedule visits, share updates, organize meal trains, manage medications - all with people you actually know.</p>
+        <p class="status">In development</p>
+      </div>
+      <div class="future-product">
+        <h3>🎓 Learning Pods</h3>
+        <p>Form micro-schools and skill-sharing circles. Parents rotate teaching subjects they're good at. Kids learn together in small groups. Education becomes collaborative instead of transactional.</p>
+        <p class="status">Beta 2026</p>
+      </div>
+      <div class="future-product">
+        <h3>🏘️ Resource Libraries</h3>
+        <p>Community tool-sharing networks. Why should every house on your street own a pressure washer that gets used twice a year? Discover and borrow resources across your extended network.</p>
+        <p class="status">Planning phase</p>
+      </div>
+      <div class="future-product">
+        <h3>🚨 Neighbor Response</h3>
+        <p>Emergency coordination for your trusted network. Natural disasters, power outages, health emergencies - know who's okay, who needs help, and who can provide it. Community resilience, not just individual preparedness.</p>
+        <p class="status">Research phase</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="final-cta" id="final-cta">
+  <div class="final-cta-content">
+    <h2>Your tribe is out there</h2>
+    <p>The neighbors who'd help with your kids. The friend-of-a-friend who teaches guitar. The future cofounder you'll meet teaching baseball in the park. They're already in your orbit - you just need a way to organize.</p>
+    <form class="cta-form" id="footer-form">
+      <input type="email" placeholder="your@email.com" required>
+      <button type="submit">Build my village →</button>
+    </form>
+    <div class="success-message" id="success-msg">
+      ✓ You're on the list! We'll notify you when we launch in your area.
+    </div>
+  </div>
+</section>
+
+<script>
+// Storage
+const storage={get:k=>{try{return JSON.parse(localStorage.getItem(k))}catch{return null}},set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}}};
+
+// Signup
+const handleSignup=e=>{e.preventDefault();const email=e.target.querySelector('input[type="email"]').value;let signups=storage.get('village_signups')||[];if(!signups.includes(email)){signups.push(email);storage.set('village_signups',signups)}document.getElementById('success-msg').classList.add('show');e.target.reset();setTimeout(()=>document.getElementById('success-msg').classList.remove('show'),5000)};
+document.getElementById('hero-form').addEventListener('submit',handleSignup);
+document.getElementById('footer-form').addEventListener('submit',handleSignup);
+
+// Navigation
+const navDots=document.querySelectorAll('.nav-dot');
+const sections=document.querySelectorAll('section[id]');
+navDots.forEach(dot=>{dot.addEventListener('click',()=>{document.getElementById(dot.getAttribute('data-section')).scrollIntoView({behavior:'smooth'})})});
+window.addEventListener('scroll',()=>{let current='';sections.forEach(section=>{const sectionTop=section.offsetTop;if(window.scrollY>=(sectionTop-400))current=section.getAttribute('id')});navDots.forEach(dot=>{dot.classList.remove('active');if(dot.getAttribute('data-section')===current)dot.classList.add('active')})});
+
+// Accordion
+document.querySelectorAll('.accordion-header').forEach(header=>{header.addEventListener('click',()=>{const item=header.parentElement;const wasActive=item.classList.contains('active');document.querySelectorAll('.accordion-item').forEach(i=>i.classList.remove('active'));if(!wasActive)item.classList.add('active')})});
+
+// Carousel
+let currentSlide=0;
+const testimonials=document.querySelectorAll('.testimonial-card');
+const carouselDots=document.querySelectorAll('.carousel-dot');
+const showSlide=n=>{
+  testimonials.forEach(t=>t.classList.remove('active'));
+  carouselDots.forEach(d=>d.classList.remove('active'));
+  currentSlide=(n+testimonials.length)%testimonials.length;
+  testimonials[currentSlide].classList.add('active');
+  carouselDots[currentSlide].classList.add('active');
+};
+carouselDots.forEach(dot=>{
+  dot.addEventListener('click',()=>{
+    showSlide(parseInt(dot.dataset.index));
+  });
+});
+setInterval(()=>showSlide(currentSlide+1),6000);
+</script>
+</body>
+</html>
