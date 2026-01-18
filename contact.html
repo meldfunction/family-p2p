@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Kith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#7A9B76;--deep-green:#5A7A56;--clay:#C95D3D;--terracotta:#E87A5D;--warm-white:#FFFEF9;--cream:#FFF8F0;--charcoal:#2B2B2B}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
+.site-header{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.logo-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--warm-white)}
+.logo-svg{width:40px;height:40px}
+.brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;letter-spacing:1px}
+.nav-links{display:flex;gap:1rem}
+.nav-link{color:var(--warm-white);text-decoration:none;font-weight:500;padding:0.5rem 1.5rem;border-radius:25px;transition:all 0.3s ease;background:rgba(255,255,255,0.1)}
+.nav-link:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.nav-link.active{background:var(--warm-white);color:var(--sage)}
+.hero{padding:8rem 2rem 6rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
+.hero h1{font-size:clamp(3rem,7vw,5rem);color:var(--clay);margin-bottom:2rem;font-style:italic}
+.hero p{font-size:1.4rem;max-width:800px;margin:0 auto;opacity:0.9}
+.content{padding:6rem 2rem}
+.content .container{max-width:700px;margin:0 auto;text-align:center}
+.content h2{font-size:2.5rem;color:var(--clay);margin:3rem 0 1.5rem;font-style:italic}
+.content p{font-size:1.2rem;line-height:1.9;margin-bottom:1.5rem}
+.contact-box{background:var(--cream);padding:3rem;border-radius:25px;margin:3rem 0;text-align:left}
+.contact-box h3{font-size:1.8rem;color:var(--clay);margin-bottom:1.5rem}
+.contact-box p{font-size:1.1rem;margin-bottom:2rem}
+.contact-box a{color:var(--clay);font-weight:700;text-decoration:underline}
+@media (max-width:768px){.header-content{flex-direction:column;gap:1rem}.nav-links{flex-wrap:wrap;justify-content:center}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-content">
+    <a href="index.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="30" r="8" fill="#FFFEF9"/>
+        <circle cx="30" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
+        <circle cx="70" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
+        <circle cx="50" cy="80" r="5" fill="#FFFEF9" opacity="0.6"/>
+        <circle cx="20" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
+        <circle cx="80" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
+        <line x1="50" y1="38" x2="30" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
+        <line x1="50" y1="38" x2="70" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
+        <line x1="30" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
+        <line x1="70" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
+        <line x1="30" y1="66" x2="20" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
+        <line x1="70" y1="66" x2="80" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
+      </svg>
+      <span class="brand-name">THE VILLAGE</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="why.html" class="nav-link">Why</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </div>
+  </div>
+</header>
+<section class="hero">
+  <h1>Get in Touch</h1>
+  <p>Questions? Feedback? Want to partner with us?</p>
+</section>
+<section class="content">
+  <div class="container">
+    <div class="contact-box">
+      <h3>General Inquiries</h3>
+      <p>For questions about Kith, the waitlist, or how it works:</p>
+      <p><strong>Email:</strong> <a href="mailto:hello@kith.app">hello@kith.app</a></p>
+    </div>
+    <div class="contact-box">
+      <h3>Beta Program</h3>
+      <p>Want early access? Join the waitlist first, then email us with your location and use case:</p>
+      <p><strong>Email:</strong> <a href="mailto:beta@kith.app">beta@kith.app</a></p>
+    </div>
+    <div class="contact-box">
+      <h3>Partnerships</h3>
+      <p>Organizations, childcare networks, or community groups interested in partnering:</p>
+      <p><strong>Email:</strong> <a href="mailto:partners@kith.app">partners@kith.app</a></p>
+    </div>
+    <div class="contact-box">
+      <h3>Press & Media</h3>
+      <p>Journalists and media inquiries:</p>
+      <p><strong>Email:</strong> <a href="mailto:press@kith.app">press@kith.app</a></p>
+    </div>
+    <div class="contact-box">
+      <h3>Support</h3>
+      <p>Technical issues or account questions (for beta users):</p>
+      <p><strong>Email:</strong> <a href="mailto:support@kith.app">support@kith.app</a></p>
+    </div>
+    <p style="margin-top:3rem;font-size:1.1rem;opacity:0.8">We aim to respond within 48 hours. During beta, responses may take longer as we're a small team.</p>
+  </div>
+</section>
+</body>
+</html>
