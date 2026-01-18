@@ -3,359 +3,278 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why Kith | Our Philosophy</title>
+<title>Why Kith Exists | Our Philosophy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{
---sage:#7A9B76;
---deep-green:#5A7A56;
---clay:#C95D3D;
---terracotta:#E87A5D;
---warm-white:#FFFEF9;
---cream:#FFF8F0;
---charcoal:#2B2B2B;
-}
+:root{--sage:#7A9B76;--deep-green:#5A7A56;--clay:#C95D3D;--terracotta:#E87A5D;--warm-white:#FFFEF9;--cream:#FFF8F0;--charcoal:#2B2B2B}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-font-family:'DM Sans',sans-serif;
-background:var(--warm-white);
-color:var(--charcoal);
-line-height:1.6;
-}
+body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6}
 h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
-.site-header{
-background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);
-padding:1.5rem 2rem;
-position:sticky;
-top:0;
-z-index:100;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-.header-content{
-max-width:1200px;
-margin:0 auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-.logo-link{
-display:flex;
-align-items:center;
-gap:1rem;
-text-decoration:none;
-color:var(--warm-white);
-}
+
+.site-header{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.logo-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--warm-white)}
 .logo-svg{width:40px;height:40px}
-.brand-name{
-font-family:'Fraunces',serif;
-font-weight:700;
-font-size:1.5rem;
-letter-spacing:1px;
-}
-.nav-links{display:flex;gap:1rem}
-.nav-link{
-color:var(--warm-white);
-text-decoration:none;
-font-weight:500;
-padding:0.5rem 1.5rem;
-border-radius:25px;
-transition:all 0.3s ease;
-background:rgba(255,255,255,0.1);
-}
+.brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;letter-spacing:1px}
+.nav-links{display:flex;gap:1rem;flex-wrap:wrap}
+.nav-link{color:var(--warm-white);text-decoration:none;font-weight:500;padding:0.5rem 1.5rem;border-radius:25px;transition:all 0.3s ease;background:rgba(255,255,255,0.1)}
 .nav-link:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
 .nav-link.active{background:var(--warm-white);color:var(--sage)}
+
 .hero{padding:8rem 2rem 6rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
 .hero h1{font-size:clamp(3rem,7vw,5rem);color:var(--clay);margin-bottom:2rem;font-style:italic}
-.hero p{font-size:1.4rem;max-width:700px;margin:0 auto;opacity:0.9}
+.hero p{font-size:1.4rem;max-width:800px;margin:0 auto;opacity:0.9;line-height:1.7}
+
 .content{padding:6rem 2rem}
-.content .container{max-width:800px;margin:0 auto}
-.content h2{font-size:2.5rem;color:var(--clay);margin:3rem 0 1.5rem;font-style:italic}
-.content p{font-size:1.15rem;line-height:1.9;margin-bottom:1.5rem}
-.content strong{color:var(--clay)}
-.mission-box{background:linear-gradient(135deg,var(--sage),var(--deep-green));color:var(--warm-white);padding:3rem;border-radius:25px;margin:3rem 0}
-.mission-box h3{font-size:2rem;margin-bottom:1.5rem;color:var(--warm-white)}
-.mission-box p{font-size:1.2rem;line-height:1.8;margin-bottom:1rem;opacity:1}
-.mission-box strong{color:var(--warm-white)!important;font-weight:700}
-.mission-box a{color:var(--warm-white);font-weight:700;text-decoration:underline}
-.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin:3rem 0}
-.value-card{background:var(--cream);padding:2rem;border-radius:20px;border-left:5px solid var(--sage)}
+.container{max-width:900px;margin:0 auto}
+.content h2{font-size:2.5rem;color:var(--clay);margin:4rem 0 1.5rem;font-style:italic}
+.content h3{font-size:1.8rem;color:var(--clay);margin:2rem 0 1rem}
+.content p{font-size:1.1rem;line-height:1.8;margin-bottom:1.5rem}
+.content strong{color:var(--clay);font-weight:700}
+.content a{color:var(--clay);font-weight:700;text-decoration:underline}
+.content a:hover{color:var(--terracotta)}
+
+.highlight-box{background:var(--cream);padding:3rem;border-radius:25px;margin:3rem 0;border-left:8px solid var(--sage)}
+.highlight-box h3{font-size:2rem;color:var(--clay);margin-bottom:1.5rem}
+.highlight-box p{font-size:1.15rem;line-height:1.8;margin-bottom:1rem}
+
+.dark-box{background:linear-gradient(135deg,var(--charcoal),#1a1a1a);color:var(--warm-white);padding:4rem 3rem;border-radius:25px;margin:3rem 0}
+.dark-box h3{font-size:2rem;color:var(--warm-white);margin-bottom:1.5rem}
+.dark-box p{font-size:1.15rem;line-height:1.8;margin-bottom:1rem;opacity:0.95}
+.dark-box strong{color:var(--warm-white);font-weight:700}
+
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:3rem 0}
+.value-card{background:var(--cream);padding:2.5rem;border-radius:20px;border-left:5px solid var(--sage);transition:all 0.3s ease}
+.value-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
 .value-card h3{font-size:1.5rem;color:var(--clay);margin-bottom:1rem}
-.value-card p{font-size:1.05rem;line-height:1.7;margin:0;color:var(--charcoal)}
-.team{background:var(--charcoal);color:var(--warm-white);padding:4rem 2.5rem;border-radius:25px;margin:3rem 0}
-.team h3{font-size:2rem;margin-bottom:2rem;text-align:center}
-.team p{font-size:1.1rem;line-height:1.8;text-align:center;max-width:700px;margin:0 auto;opacity:0.95}
-.cta{padding:6rem 2rem;background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);text-align:center}
-.cta h2{font-size:3rem;margin-bottom:1.5rem}
-.cta p{font-size:1.3rem;margin-bottom:2rem;opacity:0.95}
-.cta-button{display:inline-block;padding:1.2rem 3rem;background:var(--warm-white);color:var(--clay);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease}
-.cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
-.cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
-.blog-accordion{margin:3rem 0}
-.blog-post{background:var(--cream);border-radius:15px;margin-bottom:1.5rem;border-left:5px solid var(--sage);overflow:hidden}
-.blog-title{padding:1.5rem 2rem;font-size:1.4rem;font-weight:700;color:var(--clay);cursor:pointer;list-style:none;transition:all 0.3s ease}
-.blog-title:hover{background:rgba(122,155,118,0.1)}
-.blog-title::-webkit-details-marker{display:none}
-.blog-content{padding:0 2rem 2rem 2rem;font-size:1.05rem;line-height:1.8;color:var(--charcoal)}
-.blog-date{font-size:0.9rem;color:var(--charcoal);opacity:0.6;margin-bottom:1rem;font-style:italic}
-.blog-content p{margin-bottom:1.2rem;color:var(--charcoal)}
-.blog-content strong{color:var(--charcoal);font-weight:700}
-.blog-content a{color:var(--clay);font-weight:700;text-decoration:underline}
-.blog-content em{font-style:italic;color:var(--charcoal)}
+.value-card p{font-size:1.05rem;line-height:1.7;margin:0}
+
+.lifecycle-section{background:linear-gradient(135deg,var(--sage),var(--deep-green);padding:6rem 2rem;margin:4rem 0;color:var(--warm-white)}
+.lifecycle-section h2{font-size:2.5rem;text-align:center;margin-bottom:3rem;font-style:italic;color:var(--warm-white)}
+.lifecycle-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+.lifecycle-stage{background:rgba(255,255,255,0.15);padding:2.5rem;border-radius:20px;backdrop-filter:blur(10px)}
+.lifecycle-stage h4{font-size:1.5rem;margin-bottom:1rem;color:var(--warm-white)}
+.lifecycle-stage p{font-size:1.05rem;line-height:1.7;opacity:0.95}
+
+.team-section{background:var(--cream);padding:6rem 2rem;margin:4rem 0}
+.team-section h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:3rem;font-style:italic}
+.team-section p{font-size:1.1rem;line-height:1.8;max-width:800px;margin:0 auto 2rem;text-align:center}
+
+.cta-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);text-align:center}
+.cta-section h2{font-size:2.8rem;margin-bottom:1.5rem;color:var(--warm-white)}
+.cta-section p{font-size:1.2rem;margin-bottom:2rem;opacity:0.95}
+.cta-button{display:inline-block;padding:1.2rem 3rem;background:var(--warm-white);color:var(--clay);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(0,0,0,0.2)}
+.cta-button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+
 @media (max-width:768px){
-.header-content{flex-direction:column;gap:1rem}
-.nav-links{flex-wrap:wrap;justify-content:center}
-.values-grid{grid-template-columns:1fr}
+.header-content{flex-direction:column}
+.values-grid,.lifecycle-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
+
 <header class="site-header">
   <div class="header-content">
     <a href="index.html" class="logo-link">
       <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="30" r="8" fill="#FFFEF9"/>
-        <circle cx="30" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
-        <circle cx="70" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
-        <circle cx="50" cy="80" r="5" fill="#FFFEF9" opacity="0.6"/>
-        <circle cx="20" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
-        <circle cx="80" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
-        <line x1="50" y1="38" x2="30" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
-        <line x1="50" y1="38" x2="70" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
-        <line x1="30" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
-        <line x1="70" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
-        <line x1="30" y1="66" x2="20" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
-        <line x1="70" y1="66" x2="80" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
+        <circle cx="20" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="80" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="35" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="65" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="45" r="5" fill="#FFFEF9"/>
       </svg>
       <span class="brand-name">KITH</span>
+      <span style="font-size:0.7rem;opacity:0.7;margin-left:0.3rem;font-weight:400">by The Village</span>
     </a>
     <div class="nav-links">
       <a href="index.html" class="nav-link">Home</a>
       <a href="why.html" class="nav-link active">Why</a>
+      <a href="how.html" class="nav-link">How It Works</a>
       <a href="faq.html" class="nav-link">FAQ</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </div>
 </header>
+
 <section class="hero">
-  <h1>About The Village</h1>
-  <p>We're the team building Kith—the app that helps you coordinate childcare with 10-15 trusted people, the way humans have always raised children</p>
+  <h1>Why Kith Exists</h1>
+  <p>The nuclear family experiment failed. Let's rebuild what actually works.</p>
 </section>
+
 <section class="content">
   <div class="container">
-    <p style="font-size:1.3rem;font-weight:600;color:var(--clay)">We started building Kith because we were exhausted.</p>
-    <p>Not from our kids—from the constant mental load of coordinating care. The guilt of asking the same neighbor again. The WhatsApp group chaos. The impossible choice between "call in sick to work" or "bring your kid to the presentation."</p>
+    
+    <h2>The Childcare Crisis</h2>
+    <p>We started building Kith because we were exhausted. Not from our kids—from the constant mental load of coordinating care. The guilt of asking the same neighbor again. The WhatsApp group chaos. The impossible choice between "call in sick to work" or "bring your kid to the presentation."</p>
+    
     <p><strong>The problem isn't that people don't want to help each other.</strong> It's that we're trying to run a complex logistics operation using tools designed for casual chatting.</p>
-    <div class="mission-box">
-      <h3>Why "Kith"?</h3>
-      <p><strong>Humans can maintain about 150 meaningful relationships</strong> (<a href="https://en.wikipedia.org/wiki/Dunbar's_number" style="color:var(--warm-white);text-decoration:underline" target="_blank">Dunbar's number</a>). But research on our closest relationships shows we devote two-thirds of our social time to just 15 people: an inner core of about 5 people, plus 10 more in our close circle.</p>
-      <p><strong>For 99% of human history, children were raised by 8-14 active caregivers daily.</strong> <a href="https://www.npr.org/sections/goatsandsoda/2023/12/01/1216043849/bringing-up-a-baby-can-be-a-tough-and-lonely-job-heres-a-solution-alloparents" style="color:var(--warm-white);text-decoration:underline" target="_blank">Hunter-gatherer societies</a> show caregiver-to-child ratios exceeding 5:1. Multiple adults—grandparents, aunts, uncles, neighbors, older siblings—all pitched in. This wasn't charity; it was how survival worked.</p>
-      <p style="margin-top:1.5rem"><strong>Kith helps you build that 10-15 person support network</strong> and coordinate with them effectively—without the cognitive load of remembering who owes what, who's good at what, and who to ask for help.</p>
+    
+    <div class="highlight-box">
+      <h3>The Math Doesn't Work</h3>
+      <p>A human child requires an estimated <a href="https://worldofpaleoanthropology.org/2025/03/20/at-the-dawn-of-parenting-an-evolutionary-tale-of-love-and-survival/" target="_blank">10-13 million calories to grow to independence</a>. That workload is literally too great for 1-2 people.</p>
+      <p><strong>For 99% of human history, children were raised by 8-14 active caregivers daily.</strong> Multiple adults—grandparents, aunts, uncles, neighbors, older siblings—all pitched in. This wasn't charity. It was survival.</p>
+      <p style="margin-top:1.5rem"><strong>Then came nuclear families.</strong> A historical blip. Just decades old depending on where you live. We scattered the village, moved for jobs, isolated ourselves. And now 1-2 people are expected to do what 8-14 used to share.</p>
     </div>
     
-    <h2>What the research taught us</h2>
-    <p style="font-size:1.2rem">For 99% of human history, children were raised by 8-14 active caregivers daily. Multiple adults—grandparents, aunts, uncles, neighbors, older siblings—all pitched in. This wasn't charity; it was survival. A human child requires an estimated <a href="https://worldofpaleoanthropology.org/2025/03/20/at-the-dawn-of-parenting-an-evolutionary-tale-of-love-and-survival/" style="color:var(--clay);font-weight:700;text-decoration:underline" target="_blank">10-13 million calories to grow to independence</a>. That workload is literally too great for 1-2 people.</p>
+    <p style="font-size:1.2rem;font-weight:600">The exhaustion modern parents feel isn't personal failure. It's a rational response to being asked to do something humans were never designed to do alone.</p>
     
-    <p style="font-size:1.2rem">Then came nuclear families. A historical blip. Just decades or centuries old depending on where you live. We scattered the village, moved for jobs, isolated ourselves. And now 1-2 people are expected to do what 8-14 used to share. (<a href="https://aeon.co/ideas/there-is-a-better-way-to-parent-than-the-nuclear-family" style="color:var(--clay);font-weight:700;text-decoration:underline" target="_blank">Read more about alloparenting</a>)</p>
+    <h2>Why Current Solutions Fail</h2>
     
-    <p style="font-size:1.2rem"><strong>The exhaustion modern parents feel isn't personal failure. It's a rational response to being asked to do something humans were never designed to do alone.</strong></p>
+    <h3>UrbanSitter: Expensive Strangers</h3>
+    <p>$25-35/hour adds up fast. $140 for one date night. $2,800/month if you need regular help. And you're hiring strangers every time—no community, no relationships, just transactions. Plus they take a 35% platform fee.</p>
+    
+    <h3>Facebook Groups: No Structure</h3>
+    <p>Requests get buried in chat. Nobody tracks who's helped who. Guilt piles up because you asked Sarah three times but she hasn't asked you back. Is she keeping track? Are you imposing? The mental load is worse than doing it alone.</p>
+    
+    <h3>Carefully: Limited Scope</h3>
+    <p>Fixed childcare pods work great—if you have one. But what if your pod can't help this week? What about rides, tutoring, eldercare? And there's no paid backup option when everyone's tapped out.</p>
+    
+    <div class="dark-box">
+      <h3>What Parents Actually Need</h3>
+      <p><strong>Fair exchange system:</strong> Not favors (guilt). Not money (transactional). Just balanced help over time.</p>
+      <p><strong>Automatic tracking:</strong> Nobody keeps mental tallies. App shows who's helped who. Everyone sees the balance.</p>
+      <p><strong>Your trusted people:</strong> Not strangers from the internet. The 8-15 people you already know and trust.</p>
+      <p><strong>Flexibility:</strong> Works for childcare today. School pickups tomorrow. Help with aging parents next year. Your circle grows with you.</p>
+      <p><strong>Backup when needed:</strong> Sometimes everyone's busy. That's when you hire from a vetted provider network. Circle first, professionals when needed.</p>
+    </div>
+    
+    <h2>How Humans Actually Raised Kids</h2>
+    
+    <p>Humans can maintain about 150 meaningful relationships (<a href="https://en.wikipedia.org/wiki/Dunbar's_number" target="_blank">Dunbar's number</a>). But research on our closest relationships shows we devote two-thirds of our social time to just 15 people: an inner core of about 5, plus 10 more in our close circle.</p>
+    
+    <p><strong>That's your kith.</strong> Not kin (family), but kith—an old English word meaning friends and neighbors. Your people. Your community. The ones who show up.</p>
+    
+    <p><a href="https://www.npr.org/sections/goatsandsoda/2023/12/01/1216043849/bringing-up-a-baby-can-be-a-tough-and-lonely-job-heres-a-solution-alloparents" target="_blank">Hunter-gatherer societies</a> show caregiver-to-child ratios exceeding 5:1. Multiple adults caring for each child. This is called alloparenting—community members who aren't the biological parents helping raise children. It's not an innovation. It's how humans evolved to do this.</p>
+    
+    <div class="highlight-box">
+      <h3>Why 8-15 People?</h3>
+      <p>Research shows this is the sweet spot for cooperation:</p>
+      <p><strong>Too few (1-4 people):</strong> Burnout. No backup. System breaks when one person gets sick.</p>
+      <p><strong>Just right (8-15 people):</strong> Enough hands to share the load. Small enough to build real trust. Large enough for backup when someone can't help.</p>
+      <p><strong>Too many (20+ people):</strong> Coordination overhead explodes. Trust dilutes. Becomes transactional marketplace, not community.</p>
+    </div>
+    
+    <h2>Beyond Childcare</h2>
+    
+    <p>Here's what most parenting apps get wrong: <strong>Your circle doesn't disappear when your kids turn 5.</strong></p>
+    
+    <p>Right now you need Saturday babysitting. In 3 years you need carpool to soccer practice. In 5 years you need homework help and tutoring. In 10 years your kids are teenagers who need rides everywhere but don't want you around.</p>
+    
+    <p>And then your parents start aging. Suddenly you're coordinating doctor appointments, grocery runs, and companionship for aging family members.</p>
+    
+    <p style="font-size:1.2rem;font-weight:600;color:var(--clay)">Your circle doesn't age out. It evolves with your life.</p>
+    
+  </div>
+</section>
 
-    <div class="mission-box" style="background:linear-gradient(135deg,var(--clay),var(--terracotta))">
-      <h3>Our Great Hope</h3>
-      <p>We're not interested in the nuclear family debate. That's a distraction.</p>
-      <p><strong>We're cultivating the regenerative family movement</strong>—families that look beyond isolation and rebuild cooperative networks. Community alloparenting as the emerging paradigm. Not instead of parents, but alongside them.</p>
-      <p style="margin-top:1.5rem">Our hope is simple: <strong>What if we could give parents the infrastructure to rebuild what we lost?</strong> Not nostalgia for some idealized past, but practical tools to coordinate the 10-15 people who want to help but don't know how.</p>
+<section class="lifecycle-section">
+  <h2>Circles That Grow With You</h2>
+  <div class="lifecycle-grid">
+    
+    <div class="lifecycle-stage">
+      <h4>Babies & Toddlers</h4>
+      <p>Need: Emergency backup, date nights, someone to hold the baby while you shower.</p>
+      <p>Circle: Sarah watches your infant Tuesday. You cover her Thursday. Everyone survives.</p>
     </div>
     
-    <h2>What we believe</h2>
+    <div class="lifecycle-stage">
+      <h4>Elementary Years</h4>
+      <p>Need: School pickups, after-school care, playdates, enrichment activities.</p>
+      <p>Circle: Three families split carpool. Marcus teaches guitar. Everyone saves time and money.</p>
+    </div>
+    
+    <div class="lifecycle-stage">
+      <h4>Middle & High School</h4>
+      <p>Need: Activity transportation, homework help, less direct care but more logistics.</p>
+      <p>Circle: Your kid needs rides to practice. Sarah's kid needs math tutoring. You coordinate trades.</p>
+    </div>
+    
+    <div class="lifecycle-stage">
+      <h4>Empty Nest & Beyond</h4>
+      <p>Need: Help with aging parents, household projects, meal prep, companionship.</p>
+      <p>Circle: You drive Sarah's parent to appointments. Marcus helps with home repairs. Community persists.</p>
+    </div>
+    
+  </div>
+</section>
+
+<section class="content">
+  <div class="container">
+    
+    <h2>How Fair Exchange Works</h2>
+    
+    <p>Kith uses <strong>time credits</strong> to keep exchanges balanced. Not money (too transactional). Not favors (too much guilt). Just simple hour-for-hour tracking.</p>
+    
+    <div class="highlight-box">
+      <h3>1 Hour = 1 Credit</h3>
+      <p><strong>You watch Sarah's kids for 3 hours?</strong> You earn 3 credits. Sarah now owes the circle 3 hours. She can help you, or help someone else who helps you. The balance flows naturally.</p>
+      <p><strong>Marcus teaches guitar for 1 hour?</strong> He earns 1 credit. Uses it when he needs airport rides. Different help, same credit value.</p>
+      <p><strong>You help with eldercare appointments?</strong> Time tracked. You can use those credits for childcare, meal prep, moving help—whatever your circle coordinates.</p>
+      <p style="margin-top:1.5rem;font-weight:600">The app tracks everything automatically. Nobody keeps mental tallies. No guilt. No awkwardness. Just fair exchanges over time.</p>
+    </div>
+    
+    <h2>What We Believe</h2>
+    
     <div class="values-grid">
+      
       <div class="value-card">
-        <h3>Community over isolation</h3>
-        <p>Humans evolved to raise children in groups. Nuclear families doing it alone is a historical anomaly that's breaking us.</p>
-      </div>
-      <div class="value-card">
-        <h3>Infrastructure over goodwill</h3>
+        <h3>Infrastructure Over Goodwill</h3>
         <p>Reciprocity needs systems, not guilt. Time tracking should be automatic. Asking for help should be frictionless.</p>
       </div>
+      
       <div class="value-card">
-        <h3>Diverse reciprocity, not tit-for-tat</h3>
-        <p>You watched someone's kids? They don't owe you childcare back. Maybe they help with your resume. Maybe they teach your kid guitar. Skills are currency—everyone has something valuable to offer.</p>
+        <h3>Diverse Reciprocity</h3>
+        <p>You watched someone's kids? They don't owe you childcare back. Maybe they help with your resume. Maybe they teach your kid guitar. Skills are currency—everyone has something valuable.</p>
       </div>
+      
       <div class="value-card">
-        <h3>Trust over algorithms</h3>
+        <h3>Trust Over Algorithms</h3>
         <p>Your friend's judgment about their cousin is worth more than a stranger's 5-star rating. Networks grow through vouching, not marketing.</p>
       </div>
+      
       <div class="value-card">
-        <h3>Free coordination, paid options</h3>
-        <p>Time banking should always be free. But parents also need the option to pay network members directly or hire vetted professionals when their circle can't cover it.</p>
+        <h3>Free Coordination, Paid Options</h3>
+        <p>Time banking with your circle should always be free. But you also need the option to hire vetted professionals when your circle can't help.</p>
       </div>
-    </div>
-    <h2>Why "Kith"? Why "The Village"?</h2>
-    <p><strong>"Kith"</strong> is an old English word meaning "friends and neighbors"—people you know who aren't family (kin). Your kith are your people, your community, the ones who show up. It's the perfect word for what we're building: networks of trusted people beyond blood relations who help raise children together.</p>
-    
-    <p>"It takes a village to raise a child" isn't just a nice saying—it's how humans have always done this. Extended family, neighbors, community members all contributing to childcare. But modern life scattered both kin and kith. We moved for jobs. Family lives across the country. We don't know our neighbors' names.</p>
-    
-    <p>We're living in an accelerated timeline with too many people to keep up with. Anthropologist Robin Dunbar estimated we can maintain about 150 meaningful relationships, but we devote most of our time and energy to just 10-15 people. That's your core circle. Your kith.</p>
-    
-    <p><strong>The Village is our company name</strong> because we're building infrastructure to rebuild what we lost. <strong>Kith is our app name</strong> because that's what you're building—your circle of 10-15 trusted people (friends, neighbors, community) who actively help each other raise kids.</p>
-    
-    <p>Not a replacement for real relationships. Digital infrastructure to organize them. To make coordination actually work instead of relying on guilt, memory, and whoever happens to answer their phone.</p>
-    <div class="team">
-      <h3>We're building this because we need it</h3>
-      <p>The Village team are parents, caregivers, and people who've watched friends burn out trying to coordinate care through WhatsApp. We're building Kith—the tool we wish we had when childcare fell through at 7am. When we needed a break but felt too guilty to ask. When we wanted to help but didn't know who needed it.</p>
-      <p style="margin-top:1.5rem"><strong>Kith is infrastructure for the 10-15 people you're already trying to coordinate with.</strong> We handle the logistics so you can focus on the relationships.</p>
-    </div>
-
-    <h2>The Roadmap</h2>
-    <div style="background:var(--cream);padding:3rem;border-radius:25px;margin:3rem 0">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem">
-        <div style="text-align:center">
-          <div style="width:80px;height:80px;background:var(--sage);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;margin:0 auto 1rem">✓</div>
-          <h4 style="font-size:1.3rem;margin-bottom:0.5rem;color:var(--clay)">Alpha (Now)</h4>
-          <p style="font-size:1rem">Core team testing. Building features. Refining user flows based on real family use.</p>
-        </div>
-        <div style="text-align:center">
-          <div style="width:80px;height:80px;background:var(--clay);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;margin:0 auto 1rem">2026</div>
-          <h4 style="font-size:1.3rem;margin-bottom:0.5rem;color:var(--clay)">Private Beta</h4>
-          <p style="font-size:1rem">Invite-only. 100-500 families in select cities. Test at scale. Refine trust & safety.</p>
-        </div>
-        <div style="text-align:center">
-          <div style="width:80px;height:80px;background:var(--charcoal);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;margin:0 auto 1rem">2027</div>
-          <h4 style="font-size:1.3rem;margin-bottom:0.5rem;color:var(--clay)">Public Launch</h4>
-          <p style="font-size:1rem">Open to all. Geographic rollout. Vetted provider network live. Paid services available.</p>
-        </div>
+      
+      <div class="value-card">
+        <h3>Circles Over Isolation</h3>
+        <p>Nuclear families doing it alone is a historical anomaly that's breaking us. Humans evolved to raise children in groups. Let's rebuild that.</p>
       </div>
-    </div>
-
-    <h2 style="margin-top:4rem">Micro-Essays from the Team</h2>
-    <p style="font-size:1.1rem;margin-bottom:1rem">Tiny stories, uncomfortable truths, and the future we're building</p>
-    
-    <div style="background:var(--sage);color:var(--warm-white);padding:2.5rem;border-radius:20px;margin:2rem 0;text-align:center">
-      <h3 style="font-size:1.6rem;margin-bottom:1rem">Get New Essays in Your Inbox</h3>
-      <p style="font-size:1.05rem;margin-bottom:1.5rem;opacity:0.95">One email per month. No spam. Unsubscribe anytime.</p>
-      <form action="#" method="post" style="display:flex;gap:1rem;max-width:500px;margin:0 auto;flex-wrap:wrap;justify-content:center">
-        <input type="email" placeholder="your@email.com" required style="flex:1;min-width:250px;padding:0.9rem 1.2rem;border:none;border-radius:50px;font-size:1rem;color:var(--charcoal)">
-        <button type="submit" style="padding:0.9rem 2rem;background:var(--clay);color:var(--warm-white);border:none;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;transition:all 0.3s ease">Subscribe</button>
-      </form>
+      
+      <div class="value-card">
+        <h3>Privacy by Design</h3>
+        <p>Your exchanges are private. Your data is encrypted. Your circle is yours. We don't sell your information or show you ads.</p>
+      </div>
+      
     </div>
     
-    <p style="font-size:1rem;margin-bottom:2rem;font-style:italic;color:var(--charcoal);opacity:0.7">Have your own story about parenting burnout or community care? Email us at <a href="/cdn-cgi/l/email-protection#b3c0c7dcc1dad6c0f3d8dac7db9dd2c3c3" style="color:var(--clay);font-weight:700;text-decoration:underline"><span class="__cf_email__" data-cfemail="6e1d1a011c070b1d2e05071a06400f1e1e">[email&#160;protected]</span></a></p>
-    
-    <div class="blog-accordion">
-      <details class="blog-post">
-        <summary class="blog-title">The 2AM Text I'll Never Forget</summary>
-        <div class="blog-content">
-          <p class="blog-date">January 2026</p>
-          <p>2:17am. My phone buzzes. It's Sarah, texting our neighborhood group: "Emergency. Husband in ambulance. Kids (3 & 5) asleep upstairs. Anyone awake?"</p>
-          <p>I threw on clothes and drove over. By 2:35am I was sitting in her living room while she followed the ambulance to the ER. Her kids never woke up. I made coffee, answered work emails, and was there when they got up at 6:30am asking where mommy was.</p>
-          <p>Sarah's husband was fine—kidney stone, not heart attack. But here's what haunts me: <strong>What if nobody had been awake?</strong> What if we didn't have that group chat? What if she'd hesitated to ask because it felt like "too much"?</p>
-          <p>For 200,000 years, humans lived in groups where someone was always awake. Always nearby. Always available. <a href="https://worldofpaleoanthropology.org/2025/03/20/at-the-dawn-of-parenting-an-evolutionary-tale-of-love-and-survival/" target="_blank" style="color:var(--clay);font-weight:700">Anthropologists call this "cooperative breeding."</a> We literally evolved expecting help.</p>
-          <p><strong>Modern parenting is the experiment.</strong> Nuclear families isolated in houses, expected to handle every emergency alone. And we're failing—not because parents are weak, but because the setup is insane.</p>
-          <p>Kith is infrastructure for 2AM emergencies. Not just cute playdates. Real crisis response from people who actually show up.</p>
-        </div>
-      </details>
-
-      <details class="blog-post">
-        <summary class="blog-title">My Daughter Asked Why We Don't Have a Village</summary>
-        <div class="blog-content">
-          <p class="blog-date">December 2025</p>
-          <p>"Why don't we live near Grandma?" my 8-year-old asked last week. "In my book, everyone lives together."</p>
-          <p>She's reading <em>Little House on the Prairie</em>. Grandparents, aunts, uncles, neighbors all within walking distance. Communities that raised children together because there was no other option.</p>
-          <p>I tried explaining jobs, rent prices, opportunity. She cut me off: "That sounds lonely."</p>
-          <p>She's right. It <em>is</em> lonely. <a href="https://www.npr.org/sections/goatsandsoda/2023/12/01/1216043849/bringing-up-a-baby-can-be-a-tough-and-lonely-job-heres-a-solution-alloparents" target="_blank" style="color:var(--clay);font-weight:700">Studies of hunter-gatherer societies</a> show children historically had 8-14 active daily caregivers. Not because parents were negligent—because that's how human biology works. Multiple adults providing care, teaching, attention, affection.</p>
-          <p>Now? My daughter has me, her dad, and occasionally grandparents via FaceTime. On a good week, maybe her teacher and a friend's parent. That's it. That's her "village."</p>
-          <p><strong>We can't move everyone back to 1870.</strong> But we can rebuild coordinated care networks with people we trust. Digital infrastructure for the village our kids are wired to expect.</p>
-          <p>Kith won't give my daughter her grandma next door. But it'll help her have 10-15 adults who know her name, show up for her, and model what community actually looks like.</p>
-        </div>
-      </details>
-
-      <details class="blog-post">
-        <summary class="blog-title">The Childcare Co-op That Almost Died</summary>
-        <div class="blog-content">
-          <p class="blog-date">November 2025</p>
-          <p>I interviewed a childcare co-op in Portland last month. 12 families, started three years ago, beautiful vision. Shared babysitting, skill exchanges, potlucks. The dream.</p>
-          <p>They almost disbanded last spring. Why? <strong>Nobody could remember who owed what.</strong></p>
-          <p>"I watched Jamie's kids for 6 hours last month, but did she watch mine? I think so? Or was that Sarah?" One mom kept a spreadsheet. Another used a notebook. A third just… tried to remember. They spent more time arguing about balance than actually helping each other.</p>
-          <p>The breaking point: One member asked for help during a rough week. Got accused of "taking too much." She quit in tears. Two more families left in solidarity. The co-op nearly collapsed.</p>
-          <p>Here's the thing: <a href="https://aeon.co/ideas/there-is-a-better-way-to-parent-than-the-nuclear-family" target="_blank" style="color:var(--clay);font-weight:700">Time banking and mutual aid</a> worked for millennia because communities were small and saw each other daily. Social memory handled the accounting. You can't scale that to modern life where everyone's busy, exhausted, and cognitively overloaded.</p>
-          <p><strong>The vision was right. The infrastructure was missing.</strong></p>
-          <p>Kith is the spreadsheet nobody has to maintain. The accounting that happens automatically. The infrastructure that lets the beautiful vision actually work without burning everyone out.</p>
-          <p>That Portland co-op? They're joining our beta. Still together. Now with tools that match their values.</p>
-        </div>
-      </details>
-
-      <details class="blog-post">
-        <summary class="blog-title">The Grandmother Hypothesis Changed Everything</summary>
-        <div class="blog-content">
-          <p class="blog-date">October 2025</p>
-          <p>Most mammals die shortly after they can't reproduce. Humans? We live decades past menopause. Why?</p>
-          <p><strong>Grandmothers.</strong></p>
-          <p>The "<a href="https://en.wikipedia.org/wiki/Grandmother_hypothesis" target="_blank" style="color:var(--clay);font-weight:700">Grandmother Hypothesis</a>" in evolutionary biology argues that human longevity evolved because grandmothers helped raise grandchildren. Mothers could have more kids, closer together, because grandmothers freed them up. Those genes—for long life, for alloparenting—are <em>still in us</em>.</p>
-          <p>My mother-in-law lives 800 miles away. She visits twice a year. FaceTimes on Sundays. That's it. My kids are biologically wired to expect her nearby, teaching them things, giving me breaks, being part of daily life. Instead, she's a voice on a screen.</p>
-          <p>This isn't her fault or mine. It's economics. Jobs. Housing. Mobility. All the things that scattered the village.</p>
-          <p>But here's what breaks me: <strong>My kids will never know what it's like to have a grandmother who just… shows up.</strong> Who's there when they're sick, when I'm overwhelmed, when we need an extra pair of hands. They're missing out on millions of years of evolutionary heritage because we decided nuclear families in separate houses made economic sense.</p>
-          <p>Kith can't bring back grandmothers. But it can help us rebuild networks of "allograndparents"—older adults in the community who want to be involved with kids, who have time and skills, who miss being needed.</p>
-          <p>The biology is still there. We just need infrastructure to activate it.</p>
-        </div>
-      </details>
-
-      <details class="blog-post">
-        <summary class="blog-title">Your Great-Grandmother's Notebook</summary>
-        <div class="blog-content">
-          <p class="blog-date">September 2025</p>
-          <p>I found my great-grandmother's diary from 1947. Rural Kansas. She logged everything: "Helped Ethel with canning (4 hours). Ethel watched kids while I went to doctor (2 hours). Still owe her 2."</p>
-          <p>She wasn't using an app. She was just… keeping track. Because that's what communities did. You help me, I help you, we remember the balance, we stay roughly even over time.</p>
-          <p><strong>Time banking isn't some hippie invention.</strong> It's what humans did before money became the primary way to transact with strangers. You traded labor with neighbors because you'd see them again next week, next month, next year. Reputation mattered. Reciprocity mattered.</p>
-          <p>What changed? Scale. Mobility. Cognitive load.</p>
-          <p>My great-grandmother had maybe 30 people in her community she traded with regularly. She saw them at church, at the store, at school events. Social memory worked because the network was stable and small.</p>
-          <p>I have 200+ contacts in my phone. I've lived in three cities in ten years. I have 47 unread texts. I cannot hold this in my head.</p>
-          <p><strong>The principle still works. The infrastructure doesn't.</strong></p>
-          <p>Kith isn't inventing time banking. We're adapting your great-grandmother's system for the reality of modern life: distributed networks, high cognitive load, nobody keeping notebooks anymore.</p>
-          <p>Same values. Better infrastructure. That's it.</p>
-        </div>
-      </details>
-
-      <details class="blog-post">
-        <summary class="blog-title">The Reason Burnout Feels Like Failure</summary>
-        <div class="blog-content">
-          <p class="blog-date">August 2025</p>
-          <p>A mother posted in a parenting group last week: "I feel like I'm failing. I can't keep up. Everyone else seems fine."</p>
-          <p>147 replies. Every single one: "Me too." "I'm drowning." "I thought it was just me."</p>
-          <p><strong>Here's why burnout feels like personal failure:</strong> We've been sold the lie that good parents don't need help. That struggling means you're not cut out for this. That asking for support is admitting weakness.</p>
-          <p>But here's the biological reality: <a href="https://newbornmothers.com/blog/alloparenting-the-hunter-gatherer-way-of-caring-for-babies" target="_blank" style="color:var(--clay);font-weight:700">Human children require 10-13 million calories</a> from birth to independence. One or two people cannot generate that energy alone. It's thermodynamically impossible while also working jobs, maintaining homes, and staying mentally stable.</p>
-          <p>Evolutionary biologist Sarah Blaffer Hrdy spent decades documenting this: humans evolved as <em>cooperative breeders</em>. Mothers who tried solo didn't survive. Their children didn't survive. <strong>We exist because our ancestors had help.</strong></p>
-          <p>The exhaustion you feel isn't character weakness. It's your body screaming that you're trying to do something biologically impossible. You're responding <em>rationally</em> to an <em>irrational</em> setup.</p>
-          <p><strong>Kith's entire purpose is to make asking for help structurally normal instead of emotionally fraught.</strong> To build infrastructure where reciprocity is tracked, burnout is prevented, and nobody has to feel guilty for being human.</p>
-          <p>You're not failing. The system is failing you. Let's build a better one.</p>
-        </div>
-      </details>
-
-      <details class="blog-post">
-        <summary class="blog-title">What My Son's Therapist Actually Told Me</summary>
-        <div class="blog-content">
-          <p class="blog-date">July 2025</p>
-          <p>My 10-year-old has been seeing a therapist for anxiety. Last month she asked to meet with me alone. I braced for bad news.</p>
-          <p>"Your son is fine," she said. "He's anxious because <em>you're</em> anxious. And you're anxious because you're trying to do something impossible."</p>
-          <p>She pulled up research. Children in hunter-gatherer societies have <a href="https://www.npr.org/sections/goatsandsoda/2023/12/01/1216043849/bringing-up-a-baby-can-be-a-tough-and-lonely-job-heres-a-solution-alloparents" target="_blank" style="color:var(--clay);font-weight:700">5+ active caregivers minimum</a>. Multiple adults providing security, attention, teaching, affection. Kids aren't stressed because the load is distributed. No single adult is overwhelmed.</p>
-          <p>"Your son sees you stretched thin," she continued. "He worries about you. Kids are wired to expect multiple stable adults. When there's only one or two, and those adults are obviously struggling, children get anxious. They're responding rationally to an unstable situation."</p>
-          <p><strong>My son doesn't need therapy. He needs more adults in his life who aren't his exhausted parents.</strong></p>
-          <p>I cried in her office. Not because my kid was broken—because <em>I wasn't failing him</em>. The setup was failing both of us. His anxiety was a reasonable response to an unreasonable situation.</p>
-          <p>We're building Kith so other parents don't have to have this conversation. So kids grow up with 10-15 adults who know them, show up for them, and model what stable community looks like.</p>
-          <p><strong>Childhood anxiety is rising not because kids are weaker—but because we dismantled the infrastructure they're biologically wired to expect.</strong></p>
-          <p>Let's rebuild it.</p>
-        </div>
-      </details>
+    <div class="dark-box">
+      <h3>Our Mission</h3>
+      <p>We're not trying to optimize nuclear families. We're trying to rebuild the village structures that nuclear families replaced.</p>
+      <p><strong>We're cultivating the regenerative family movement</strong>—families that look beyond isolation and rebuild cooperative networks. Not instead of parents, but alongside them.</p>
+      <p style="margin-top:1.5rem">Our hope is simple: <strong>What if we could give people the infrastructure to rebuild what we lost?</strong> Not nostalgia for some idealized past, but practical tools to coordinate the 8-15 people who want to help but don't know how.</p>
     </div>
     
-    <div style="background:var(--charcoal);color:var(--warm-white);padding:3rem;border-radius:25px;margin:3rem 0;text-align:center">
-      <h3 style="font-size:1.8rem;margin-bottom:1rem">Share Your Story</h3>
-      <p style="font-size:1.1rem;line-height:1.7;max-width:600px;margin:0 auto 1.5rem;opacity:0.95">Have you experienced the isolation of modern parenting? Built informal care networks that work? Watched friends burn out trying to do it alone? We want to hear from you.</p>
-      <p style="font-size:1.2rem;font-weight:700"><a href="/cdn-cgi/l/email-protection#07747368756e6274476c6e736f29667777" style="color:var(--warm-white);text-decoration:underline"><span class="__cf_email__" data-cfemail="d8abacb7aab1bdab98b3b1acb0f6b9a8a8">[email&#160;protected]</span></a></p>
-    </div>
-    
-    <h2>What's next</h2>
-    <p>We're starting with childcare coordination because it's the crisis breaking families right now. But the same infrastructure works for eldercare, resource sharing, skill exchanges, and emergency response.</p>
-    <p><strong>One problem at a time.</strong> Build trust with childcare. Prove the model works. Then expand to other forms of community care.</p>
-    <p>The goal isn't to build another social network. It's to build infrastructure that makes mutual aid actually function in modern 
+  </div>
+</section>
+
+<section class="team-section">
+  <h2>Built by Parents, For Parents</h2>
+  <p>We're a small team based in Richmond, VA and Washington, DC. We've experienced the isolation of modern parenting firsthand. We've asked for too many favors. We've kept mental tallies. We've paid too much for babysitters.</p>
+  <p>We believe there's a better way. And we're building it.</p>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to Rebuild Your Village?</h2>
+  <p>Join the waitlist. Get early access. Help us build what families actually need.</p>
+  <a href="index.html#download" class="cta-button">Join Waitlist →</a>
+</section>
+
+</body>
+</html>

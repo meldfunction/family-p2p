@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kith | Coordinate childcare with your trusted network</title>
+<title>Kith | Coordinate help with your trusted circle</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -13,85 +13,104 @@
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6}
 h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
+
 .site-header{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
-.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .logo-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--warm-white)}
 .logo-svg{width:40px;height:40px}
 .brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;letter-spacing:1px}
-.nav-links{display:flex;gap:1rem}
+.nav-links{display:flex;gap:1rem;flex-wrap:wrap}
 .nav-link{color:var(--warm-white);text-decoration:none;font-weight:500;padding:0.5rem 1.5rem;border-radius:25px;transition:all 0.3s ease;background:rgba(255,255,255,0.1)}
 .nav-link:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
 .nav-link.active{background:var(--warm-white);color:var(--sage)}
-.hero{padding:8rem 2rem 4rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
-.hero .container{max-width:900px;margin:0 auto}
-.kicker{font-size:0.9rem;text-transform:uppercase;letter-spacing:2px;color:var(--clay);margin-bottom:1rem;font-weight:600}
-.hero h1{font-size:clamp(3rem,8vw,5.5rem);color:var(--clay);margin-bottom:1.5rem;font-style:italic;line-height:1.1}
-.tagline{font-size:1.8rem;font-weight:700;color:var(--charcoal);margin-bottom:0}
-.cta-button{display:inline-block;padding:1.2rem 3rem;background:var(--clay);color:var(--warm-white);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(201,93,61,0.3)}
+
+.hero{padding:6rem 2rem 4rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
+.hero h1{font-size:clamp(2.5rem,6vw,4rem);color:var(--clay);margin-bottom:1.5rem;font-style:italic;line-height:1.1}
+.hero-tagline{font-size:1.3rem;line-height:1.7;max-width:900px;margin:0 auto 2.5rem;opacity:0.9}
+.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.5rem;max-width:900px;margin:2.5rem auto;padding:0 1rem}
+.help-item{background:rgba(255,255,255,0.7);padding:1.5rem 1rem;border-radius:15px;text-align:center;transition:all 0.3s ease;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.help-item:hover{transform:translateY(-5px);background:rgba(255,255,255,0.95);box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+.help-icon{font-size:2.5rem;margin-bottom:0.5rem;display:block}
+.help-label{font-size:1rem;font-weight:600;color:var(--charcoal);display:block;text-align:center}
+.hero-note{font-size:1.1rem;margin-top:2rem;color:var(--charcoal);opacity:0.85}
+.cta-button{display:inline-block;margin-top:2rem;padding:1.2rem 3rem;background:var(--clay);color:var(--warm-white);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(201,93,61,0.3)}
 .cta-button:hover{background:var(--terracotta);transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,93,61,0.4)}
 
-/* SUBWAY MAP FLOW */
-.subway-flow{max-width:1000px;margin:4rem auto;padding:0 2rem}
-.flow-station{display:grid;grid-template-columns:80px 1fr;gap:2rem;margin-bottom:3rem;position:relative}
-.flow-station:not(:last-child)::after{content:'';position:absolute;left:40px;top:80px;bottom:-3rem;width:4px;background:linear-gradient(to bottom,var(--sage),var(--deep-green));border-radius:2px}
-.station-marker{width:80px;height:80px;background:var(--clay);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;box-shadow:0 4px 15px rgba(201,93,61,0.3);position:relative;z-index:2}
-.station-content h3{font-size:1.8rem;color:var(--clay);margin-bottom:0.5rem}
-.station-content p{font-size:1.1rem;line-height:1.7;margin-bottom:1.5rem;opacity:0.9}
-.mockup-mini{background:#fff;border:2px solid #ddd;border-radius:15px;padding:1rem;box-shadow:0 4px 15px rgba(0,0,0,0.1);max-width:350px}
-.mockup-header{background:var(--sage);color:var(--warm-white);padding:0.8rem;border-radius:8px 8px 0 0;margin:-1rem -1rem 1rem;font-weight:700;font-size:0.95rem}
-.mockup-body{font-size:0.9rem;line-height:1.5}
-.form-row{margin-bottom:0.8rem}
-.form-label{font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;display:block}
-.form-input{width:100%;padding:0.5rem;border:1px solid #ddd;border-radius:6px;font-size:0.85rem}
-.mini-btn{background:var(--clay);color:var(--warm-white);border:none;padding:0.6rem 1.5rem;border-radius:20px;font-weight:700;font-size:0.85rem;cursor:pointer;width:100%}
-.match-badge{background:#e8f5e9;color:#2e7d32;padding:0.4rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:600;display:inline-block;margin-top:0.5rem}
-.msg-bubble{background:#f5f5f5;padding:0.7rem;border-radius:10px;margin-bottom:0.5rem;font-size:0.85rem}
-.msg-time{font-size:0.7rem;color:#999;margin-top:0.2rem}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:0.8rem}
-.stat-box{background:var(--cream);padding:0.8rem;border-radius:8px;text-align:center}
-.stat-num{font-size:1.5rem;font-weight:700;color:var(--clay)}
-.stat-label{font-size:0.75rem;opacity:0.7}
+.problem-section{padding:6rem 2rem;background:var(--charcoal);color:var(--warm-white);text-align:center}
+.problem-section h2{font-size:clamp(2rem,5vw,3.5rem);color:var(--warm-white);margin-bottom:1.5rem;font-style:italic;line-height:1.2}
+.problem-section p{font-size:1.3rem;line-height:1.8;max-width:900px;margin:0 auto 1.5rem;opacity:0.95}
 
-/* TREE DIAGRAM */
-.tree-diagram{max-width:900px;margin:2rem auto;padding:2rem;background:var(--cream);border-radius:20px}
-.tree-root{display:flex;align-items:center;justify-content:center;margin-bottom:2rem}
-.tree-node{background:#fff;border:3px solid var(--sage);border-radius:15px;padding:1.5rem;text-align:center;min-width:200px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
-.tree-icon{font-size:2.5rem;margin-bottom:0.5rem}
-.tree-arrow{font-size:2rem;color:var(--clay);margin:0 1.5rem;font-weight:700}
-.tree-branches{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;position:relative}
-.tree-branches::before{content:'';position:absolute;top:-2rem;left:50%;width:2px;height:2rem;background:var(--sage)}
-.tree-branch{background:#fff;border:2px solid var(--sage);border-radius:12px;padding:1rem;text-align:center;font-size:0.9rem}
-.tree-branch .tree-icon{font-size:2rem;margin-bottom:0.3rem}
+.two-paths{padding:6rem 2rem;background:var(--warm-white)}
+.two-paths h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:3rem;font-style:italic}
+.paths-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:3rem}
+.path-card{background:var(--cream);padding:3rem;border-radius:25px;border-top:8px solid var(--sage);transition:all 0.3s ease}
+.path-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.path-card.paid{border-top-color:var(--clay)}
+.path-number{display:inline-block;padding:0.5rem 1.5rem;background:var(--sage);color:var(--warm-white);border-radius:20px;font-size:1rem;font-weight:700;margin-bottom:1.5rem}
+.path-card.paid .path-number{background:var(--clay)}
+.path-card h3{font-size:2rem;color:var(--clay);margin-bottom:1rem}
+.path-card p{font-size:1.05rem;line-height:1.7;margin-bottom:1rem}
+.path-card ul{margin:1.5rem 0;padding-left:0;list-style:none}
+.path-card li{padding:0.7rem 0;padding-left:1.5rem;position:relative;font-size:1.05rem}
+.path-card li:before{content:"→";position:absolute;left:0;color:var(--clay);font-weight:700}
+.path-note{font-style:italic;opacity:0.8;margin-top:1.5rem;padding-top:1.5rem;border-top:2px solid rgba(0,0,0,0.1)}
+.coverage-note{text-align:center;margin-top:3rem;font-size:1.3rem;font-weight:600;color:var(--clay)}
 
-/* DOWNLOAD SECTION */
+.how-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--sage),var(--deep-green));color:var(--warm-white)}
+.how-section h2{font-size:2.5rem;text-align:center;margin-bottom:1rem;font-style:italic;color:var(--warm-white)}
+.how-intro{text-align:center;font-size:1.2rem;max-width:800px;margin:0 auto 4rem;opacity:0.95}
+.flow-steps{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem}
+.flow-step{background:rgba(255,255,255,0.15);padding:2rem;border-radius:20px;backdrop-filter:blur(10px);text-align:center}
+.step-num{width:50px;height:50px;background:var(--clay);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 1rem}
+.flow-step h3{font-size:1.4rem;margin-bottom:0.8rem;color:var(--warm-white)}
+.flow-step p{font-size:0.95rem;line-height:1.6;opacity:0.95}
+
+.examples-section{padding:6rem 2rem;background:var(--cream)}
+.examples-section h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:1.5rem;font-style:italic}
+.examples-intro{text-align:center;font-size:1.2rem;max-width:850px;margin:0 auto 3rem;line-height:1.7;opacity:0.9}
+.examples-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.example-card{background:#fff;padding:2rem;border-radius:15px;border-left:5px solid var(--sage);transition:all 0.3s ease}
+.example-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+.example-card .icon{font-size:2.5rem;margin-bottom:1rem}
+.example-card h4{font-size:1.3rem;color:var(--clay);margin-bottom:0.8rem;font-weight:700}
+.example-card p{font-size:1rem;line-height:1.6;color:var(--charcoal)}
+
+.compare-section{padding:6rem 2rem;background:var(--warm-white)}
+.compare-section h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:3rem;font-style:italic}
+.compare-grid{max-width:1000px;margin:0 auto;display:grid;gap:2rem}
+.compare-row{background:var(--cream);padding:2.5rem;border-radius:15px;border-left:5px solid var(--sage);transition:all 0.3s ease}
+.compare-row:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.compare-row h4{font-size:1.5rem;color:var(--clay);margin-bottom:1.5rem;font-weight:700}
+.compare-cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.compare-col h5{font-size:1.1rem;color:var(--charcoal);margin-bottom:0.5rem;font-weight:700;text-transform:uppercase;font-size:0.9rem;letter-spacing:1px}
+.compare-col p{font-size:1rem;line-height:1.6;margin:0}
+
 .download-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);text-align:center}
-.download-section h2{font-size:3rem;margin-bottom:1rem;color:var(--warm-white)}
-.download-section p{font-size:1.3rem;margin-bottom:3rem;opacity:0.95}
-.qr-container{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap}
-.qr-item{text-align:center}
-.qr-code{width:200px;height:200px;background:var(--warm-white);padding:1rem;border-radius:15px;margin-bottom:1rem}
-.qr-label{font-size:1.2rem;font-weight:700}
+.download-section h2{font-size:3rem;margin-bottom:1.5rem;color:var(--warm-white);font-style:italic}
+.download-section p{font-size:1.3rem;margin-bottom:3rem;opacity:0.95;max-width:700px;margin-left:auto;margin-right:auto}
+.download-section .cta-button{background:var(--warm-white);color:var(--clay)}
+.download-section .cta-button:hover{background:var(--cream)}
 
 @media (max-width:768px){
-.header-content{flex-direction:column;gap:1rem}
-.nav-links{flex-wrap:wrap;justify-content:center}
-.flow-station{grid-template-columns:60px 1fr;gap:1rem}
-.flow-station::after{left:30px}
-.station-marker{width:60px;height:60px;font-size:1.5rem}
-.tree-branches{grid-template-columns:1fr}
-.qr-container{gap:2rem}
+.header-content{flex-direction:column}
+.help-grid{grid-template-columns:repeat(2,1fr)}
+.paths-grid,.flow-steps,.examples-grid{grid-template-columns:1fr}
+.compare-cols{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
+
 <header class="site-header">
   <div class="header-content">
     <a href="index.html" class="logo-link">
       <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="35" cy="50" r="18" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
-        <circle cx="65" cy="50" r="18" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
-        <circle cx="50" cy="32" r="18" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
-        <circle cx="50" cy="50" r="6" fill="#FFFEF9"/>
+        <circle cx="20" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="80" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="35" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="65" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="45" r="5" fill="#FFFEF9"/>
       </svg>
       <span class="brand-name">KITH</span>
       <span style="font-size:0.7rem;opacity:0.7;margin-left:0.3rem;font-weight:400">by The Village</span>
@@ -99,6 +118,7 @@ h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
     <div class="nav-links">
       <a href="index.html" class="nav-link active">Home</a>
       <a href="why.html" class="nav-link">Why</a>
+      <a href="how.html" class="nav-link">How It Works</a>
       <a href="faq.html" class="nav-link">FAQ</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
@@ -106,269 +126,255 @@ h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
 </header>
 
 <section class="hero">
-  <div class="container">
-    <div class="kicker">Kith by The Village</div>
-    <h1>When you need a break</h1>
-    <p class="tagline">Don't grab a Snickers. Grab your Kith.</p>
+  <h1>Coordinate help with people you trust.<br>Automatically fair.</h1>
+  <p class="hero-tagline">Your circle of 8-15 people handles childcare, rides, skills, errands, projects—whatever you need. The app tracks exchanges so everyone stays balanced without awkward tallies.</p>
+  
+  <div class="help-grid">
+    <div class="help-item">
+      <div class="help-icon">👶</div>
+      <div class="help-label">Childcare</div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon">🚗</div>
+      <div class="help-label">Rides</div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon">📚</div>
+      <div class="help-label">Skills</div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon">🏠</div>
+      <div class="help-label">Projects</div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon">🍲</div>
+      <div class="help-label">Meals</div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon">➕</div>
+      <div class="help-label">More</div>
+    </div>
   </div>
+  
+  <p class="hero-note">When your circle can't help? Access vetted providers.</p>
+  <a href="#download" class="cta-button">Join Waitlist →</a>
 </section>
 
-<!-- BIG PROBLEM STATEMENT -->
-<section style="padding:4rem 2rem;background:var(--charcoal);color:var(--warm-white);text-align:center">
-  <div style="max-width:1000px;margin:0 auto">
-    <h2 style="font-size:clamp(2.5rem,6vw,4.5rem);color:var(--warm-white);margin-bottom:2rem;line-height:1.2;font-style:italic">Modern parents are trying to do what 8-14 people used to share</h2>
-    <p style="font-size:1.4rem;line-height:1.8;opacity:0.95;max-width:800px;margin:0 auto">For 200,000 years, children were raised by extended family, neighbors, and community. Then we scattered everyone, isolated families in separate houses, and expected 1-2 exhausted people to handle everything.</p>
-    <p style="font-size:1.4rem;line-height:1.8;opacity:0.95;max-width:800px;margin:2rem auto 0;font-weight:700">The burnout you feel isn't personal failure. It's a rational response to an impossible setup.</p>
-  </div>
+<section class="problem-section">
+  <h2>Humans evolved to raise kids in groups of 8-14 adults</h2>
+  <p>Most of us are doing it with 1-2 people. No wonder you're exhausted.</p>
+  <p style="margin-top:2rem">For 200,000 years, communities shared childcare, eldercare, food prep, and daily tasks. Then we isolated into separate houses and expected nuclear families to handle everything alone.</p>
+  <p style="margin-top:1.5rem;font-weight:600;font-size:1.15rem">The burnout you feel isn't personal failure. It's a rational response to an impossible setup.</p>
 </section>
 
-<!-- PHILOSOPHY SECTION -->
-<section style="padding:6rem 2rem;background:linear-gradient(135deg,var(--cream),#FFE8D6)">
-  <div style="max-width:900px;margin:0 auto;text-align:center">
-    <h2 style="font-size:2.5rem;color:var(--clay);margin-bottom:2rem;font-style:italic">Our Philosophy</h2>
-    <p style="font-size:1.2rem;line-height:1.8;margin-bottom:2rem">For 99% of human history, children were raised by 8-14 active caregivers daily. Nuclear families are a historical blip—just decades old. We're cultivating the <strong style="color:var(--clay)">regenerative family movement</strong>: community alloparenting as the emerging paradigm.</p>
-    <p style="font-size:1.2rem;line-height:1.8;margin-bottom:2rem">You can maintain about 150 relationships (Dunbar's number), but you devote most of your time to just 10-15 people. <strong style="color:var(--clay)">That's your kith.</strong> The ones who actually show up.</p>
-    <a href="why.html" style="display:inline-block;padding:1rem 2.5rem;background:var(--clay);color:var(--warm-white);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.1rem;transition:all 0.3s ease">Read our full philosophy →</a>
+<section class="two-paths">
+  <h2>Two Ways to Get Help</h2>
+  <div class="paths-grid">
+    
+    <div class="path-card">
+      <span class="path-number">Option 1</span>
+      <h3>Your Circle</h3>
+      <p><strong>Coordinate with your 8-15 trusted people.</strong> Time credits keep it fair automatically. Covers 80% of your needs.</p>
+      <ul>
+        <li>Fair exchanges (you help, they help)</li>
+        <li>Auto-tracked balance (no mental tallies)</li>
+        <li>Direct coordination (no strangers)</li>
+        <li>Works for any kind of help</li>
+        <li>Free forever</li>
+      </ul>
+      <p class="path-note">Starting with childcare (the most urgent need). Growing based on what YOUR circle coordinates.</p>
+    </div>
+    
+    <div class="path-card paid">
+      <span class="path-number">Option 2</span>
+      <h3>Provider Network</h3>
+      <p><strong>When your circle is tapped out.</strong> Background-checked professionals at fair rates. Covers the 20% your circle can't.</p>
+      <ul>
+        <li>Background-checked caregivers</li>
+        <li>Verified tutors & teachers</li>
+        <li>Licensed transportation help</li>
+        <li>Household service professionals</li>
+        <li>5-15% platform fee (not 35% like UrbanSitter)</li>
+      </ul>
+      <p class="path-note">Sometimes you need help NOW and everyone's busy. That's when you hire from our vetted network.</p>
+    </div>
+    
   </div>
+  <p class="coverage-note">You're always covered. Circle first, providers when needed.</p>
 </section>
 
-<!-- SUPPORT TEXT -->
-<section style="padding:4rem 2rem;background:var(--warm-white)">
-  <div style="max-width:900px;margin:0 auto;text-align:center">
-    <p style="font-size:1.2rem;line-height:1.8;margin-bottom:1.5rem">It's Saturday. You and your partner haven't had a date night in six months. The kids are wonderful—and exhausting. You need four hours. Just four hours to remember you're adults who like each other.</p>
-    <p style="font-size:1.2rem;line-height:1.8;margin-bottom:1.5rem">But who do you ask? Your sister watched them last month. Your neighbor seems busy. The usual group chat feels like too much guilt for "just wanting a break."</p>
-    <p style="font-weight:700;font-size:1.4rem;margin-top:2rem;color:var(--clay)">Kith helps you build and coordinate with those 10-15 people. Post needs, offer skills, track exchanges—without adding to your cognitive load.</p>
-  </div>
-</section>
-
-<!-- USER FLOW - SUBWAY MAP STYLE -->
-<section style="padding:6rem 2rem;background:var(--cream)">
-  <div style="text-align:center;margin-bottom:4rem">
-    <h2 style="font-size:2.5rem;color:var(--clay);margin-bottom:1rem;font-style:italic">How It Works</h2>
-    <p style="font-size:1.2rem;opacity:0.8">Six simple steps to coordinate care without the cognitive overload</p>
-  </div>
-
-  <div class="subway-flow">
-    <!-- STATION 1 -->
-    <div class="flow-station">
-      <div class="station-marker">1</div>
-      <div class="station-content">
-        <h3>Post your need</h3>
-        <p>Quick survey helps you describe what you need without overthinking it</p>
-        <div class="mockup-mini">
-          <div class="mockup-header">New Request</div>
-          <div class="mockup-body">
-            <div class="form-row">
-              <div class="form-label">What do you need?</div>
-              <select class="form-input">
-                <option>Childcare</option>
-                <option selected>Skill teaching</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <div class="form-label">Details</div>
-              <input type="text" class="form-input" value="My daughter (9) wants guitar lessons">
-            </div>
-            <div class="form-row">
-              <div class="form-label">When?</div>
-              <input type="text" class="form-input" value="Weekday afternoons">
-            </div>
-            <button class="mini-btn">Post to Circle →</button>
-          </div>
-        </div>
-      </div>
+<section class="how-section">
+  <h2>How It Works</h2>
+  <p class="how-intro">Same system for any kind of help. Childcare, rides, skills, errands—whatever your circle agrees to coordinate.</p>
+  
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="step-num">1</div>
+      <h3>Build Circle</h3>
+      <p>Invite your 8-15 trusted people. Friends, neighbors, family—anyone you'd already ask for help.</p>
     </div>
-
-    <!-- STATION 2 -->
-    <div class="flow-station">
-      <div class="station-marker">2</div>
-      <div class="station-content">
-        <h3>Smart matching notifies relevant people</h3>
-        <p>Sarah has guitar listed in her skills. She gets notified, others don't get spammed.</p>
-        <div class="mockup-mini">
-          <div class="mockup-header">For You</div>
-          <div class="mockup-body">
-            <div style="background:#fff;padding:1rem;border-radius:8px;border:2px solid var(--sage)">
-              <div style="font-weight:700;margin-bottom:0.5rem">Jamie posted:</div>
-              <div style="margin-bottom:0.5rem">My daughter (9) wants guitar lessons</div>
-              <div class="match-badge">✓ Matches your skill: Guitar</div>
-              <button class="mini-btn" style="margin-top:0.8rem">I Can Help</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    
+    <div class="flow-step">
+      <div class="step-num">2</div>
+      <h3>Post Needs</h3>
+      <p>Need a sitter? A ride? Help moving? Post it. App notifies people with relevant skills.</p>
     </div>
-
-    <!-- STATION 3 -->
-    <div class="flow-station">
-      <div class="station-marker">3</div>
-      <div class="station-content">
-        <h3>Direct coordination</h3>
-        <p>Message directly to work out details. No group chat chaos.</p>
-        <div class="mockup-mini">
-          <div class="mockup-header">Sarah Chen</div>
-          <div class="mockup-body">
-            <div class="msg-bubble" style="background:#e3f2fd">
-              <div>I'd love to teach her! Tuesdays 4pm work?</div>
-              <div class="msg-time">2:15 PM</div>
-            </div>
-            <div class="msg-bubble" style="background:#f5f5f5">
-              <div>Perfect! Can we do it at your place?</div>
-              <div class="msg-time">2:17 PM</div>
-            </div>
-            <div class="msg-bubble" style="background:#e3f2fd">
-              <div>Works great. I'll have my guitar ready.</div>
-              <div class="msg-time">2:18 PM</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
+    <div class="flow-step">
+      <div class="step-num">3</div>
+      <h3>Coordinate</h3>
+      <p>Message directly to work out details. No group chat chaos. Just 1:1 coordination.</p>
     </div>
-
-    <!-- STATION 4 -->
-    <div class="flow-station">
-      <div class="station-marker">4</div>
-      <div class="station-content">
-        <h3>Auto-tracking logs time</h3>
-        <p>System tracks exchanges automatically. No manual bookkeeping.</p>
-        <div class="mockup-mini">
-          <div class="mockup-header">Active Exchanges</div>
-          <div class="mockup-body">
-            <div style="background:#fff;padding:1rem;border-radius:8px">
-              <div style="font-weight:700;margin-bottom:0.5rem">Guitar lessons with Sarah</div>
-              <div style="font-size:0.85rem;opacity:0.7;margin-bottom:0.8rem">Every Tuesday • 4-5pm</div>
-              <div class="stat-grid">
-                <div class="stat-box">
-                  <div class="stat-num">4</div>
-                  <div class="stat-label">sessions done</div>
-                </div>
-                <div class="stat-box">
-                  <div class="stat-num">4 hrs</div>
-                  <div class="stat-label">you owe</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
+    <div class="flow-step">
+      <div class="step-num">4</div>
+      <h3>Complete</h3>
+      <p>Exchange happens. Both people confirm when done. Time gets tracked automatically.</p>
     </div>
-
-    <!-- STATION 5 -->
-    <div class="flow-station">
-      <div class="station-marker">5</div>
-      <div class="station-content">
-        <h3>Return the favor—your way</h3>
-        <p>Reciprocity isn't tit-for-tat. Sarah taught guitar. You help with what YOU'RE good at.</p>
-        <div class="tree-diagram">
-          <div class="tree-root">
-            <div class="tree-node">
-              <div class="tree-icon">🎸</div>
-              <div style="font-weight:700">Sarah gave:</div>
-              <div>4 hours guitar lessons</div>
-            </div>
-            <div class="tree-arrow">→</div>
-            <div class="tree-node">
-              <div style="font-weight:700">You can give:</div>
-              <div style="font-size:0.9rem;opacity:0.8">Any of these (or something else!)</div>
-            </div>
-          </div>
-          <div class="tree-branches">
-            <div class="tree-branch">
-              <div class="tree-icon">💼</div>
-              <div><strong>Resume review</strong></div>
-              <div style="font-size:0.8rem;opacity:0.7">(you're in HR)</div>
-            </div>
-            <div class="tree-branch">
-              <div class="tree-icon">🚗</div>
-              <div><strong>Airport rides</strong></div>
-              <div style="font-size:0.8rem;opacity:0.7">(you work from home)</div>
-            </div>
-            <div class="tree-branch">
-              <div class="tree-icon">🏀</div>
-              <div><strong>Watch her son</strong></div>
-              <div style="font-size:0.8rem;opacity:0.7">(basketball practice)</div>
-            </div>
-          </div>
-        </div>
-        <p style="text-align:center;margin-top:1.5rem;font-style:italic;opacity:0.8">Kith tracks hours, but exchanges don't have to match skills. Your time is valuable to different people in different ways.</p>
-      </div>
+    
+    <div class="flow-step">
+      <div class="step-num">5</div>
+      <h3>Stay Balanced</h3>
+      <p>App shows who's helped who. Everyone sees the balance. No guilt. No awkwardness.</p>
     </div>
-
-    <!-- STATION 6 -->
-    <div class="flow-station">
-      <div class="station-marker">6</div>
-      <div class="station-content">
-        <h3>Network credit flow</h3>
-        <p>Can't help Sarah directly? Help someone who helps her. The circle balances itself.</p>
-        <div class="mockup-mini" style="max-width:500px">
-          <div class="mockup-header">Credit Flow</div>
-          <div class="mockup-body">
-            <div style="display:flex;align-items:center;justify-content:space-around;padding:1.5rem 0">
-              <div style="text-align:center">
-                <div style="width:60px;height:60px;background:var(--terracotta);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 0.5rem">You</div>
-                <div style="font-size:0.8rem">Owe Sarah 4hrs</div>
-              </div>
-              <div style="font-size:1.5rem;color:var(--clay)">→</div>
-              <div style="text-align:center">
-                <div style="width:60px;height:60px;background:var(--sage);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 0.5rem;font-size:0.85rem">Marcus</div>
-                <div style="font-size:0.8rem">Helps Sarah<br>(car repair)</div>
-              </div>
-              <div style="font-size:1.5rem;color:var(--clay)">→</div>
-              <div style="text-align:center">
-                <div style="width:60px;height:60px;background:var(--sage);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 0.5rem;font-size:0.85rem">Sarah</div>
-                <div style="font-size:0.8rem">Credit settled</div>
-              </div>
-            </div>
-            <div style="text-align:center;padding:1rem;background:var(--cream);border-radius:8px;margin-top:1rem">
-              <div style="width:60px;height:60px;background:var(--terracotta);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 0.5rem">You</div>
-              <div style="font-size:0.9rem;font-weight:700">Help Marcus with tax prep</div>
-            </div>
-            <div style="text-align:center;margin-top:1rem;padding:1rem;background:#e8f5e9;border-radius:8px;font-weight:600;color:#2e7d32">✓ Circle complete. No direct reciprocity needed.</div>
-          </div>
-        </div>
-      </div>
+    
+    <div class="flow-step">
+      <div class="step-num">6</div>
+      <h3>Keep Going</h3>
+      <p>As long as you're helping others, you can ask for help. Circle stays active and fair.</p>
     </div>
   </div>
 </section>
 
-<!-- STRONG CTA TRANSITION -->
-<section style="padding:4rem 2rem;background:var(--charcoal);color:var(--warm-white);text-align:center">
-  <div style="max-width:800px;margin:0 auto">
-    <h2 style="font-size:2.8rem;margin-bottom:1.5rem;color:var(--warm-white);font-style:italic">Ready to rebuild your village?</h2>
-    <p style="font-size:1.3rem;line-height:1.8;opacity:0.95;margin-bottom:2rem">Join families in your area who are done trying to do it alone. Early access opens soon.</p>
-    <a href="#download" class="cta-button">Join Waitlist Now →</a>
+<section class="examples-section">
+  <h2>What Your Circle Can Coordinate</h2>
+  <p class="examples-intro">We're starting with childcare (most urgent). But circles coordinate whatever they need. Here's what's already happening:</p>
+  
+  <div class="examples-grid">
+    <div class="example-card">
+      <div class="icon">👶</div>
+      <h4>Saturday Babysitting</h4>
+      <p>Sarah watches your kids 2-6pm. You cover her Tuesday morning. Circle tracks it. Nobody owes anyone.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">🚸</div>
+      <h4>School Pickup Rotation</h4>
+      <p>Three families split the week. Monday you. Tuesday Sarah. Wednesday Marcus. Cuts your drive time by 60%.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">🎸</div>
+      <h4>Guitar Lessons</h4>
+      <p>Sarah teaches your daughter guitar. You teach her son Spanish. Everyone learns. Nobody pays $30/hour.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">✈️</div>
+      <h4>Airport Rides</h4>
+      <p>You need a 6am ride Tuesday. Marcus drops you off. You help him move furniture Saturday. Fair trade.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">🍝</div>
+      <h4>Meal Prep Circle</h4>
+      <p>Five people cook Tuesday. Each makes one dish. Everyone goes home with five meals. One night cooking = week of dinners.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">🏥</div>
+      <h4>Parent Appointments</h4>
+      <p>You drive Sarah's parent to doctor Tuesday. She covers your parent's grocery run Thursday. Eldercare gets easier.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">📦</div>
+      <h4>Moving Help</h4>
+      <p>Marcus needs furniture moved Saturday. You + two others help for 3 hours. When you need help, they show up.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">🔧</div>
+      <h4>Home Repairs</h4>
+      <p>Your sink's broken. Marcus knows plumbing. He fixes it in an hour. You help him with tech setup later.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">➕</div>
+      <h4>Whatever Else</h4>
+      <p>Dog sitting, yard work, tutoring, errands—if your circle agrees, you can coordinate it. App tracks any exchange.</p>
+    </div>
   </div>
 </section>
 
-<!-- DOWNLOAD SECTION - RIGHT AFTER FLOW -->
+<section class="compare-section">
+  <h2>Why Not Just Use...</h2>
+  <div class="compare-grid">
+    
+    <div class="compare-row">
+      <h4>Facebook Groups?</h4>
+      <div class="compare-cols">
+        <div class="compare-col">
+          <h5>Problem:</h5>
+          <p>No tracking. Who owes who? Guilt piles up. Requests get buried in group chat chaos.</p>
+        </div>
+        <div class="compare-col">
+          <h5>Kith:</h5>
+          <p>Auto-tracked balance. Direct 1:1 coordination. Everyone sees who's helped who. No guilt.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="compare-row">
+      <h4>UrbanSitter?</h4>
+      <div class="compare-cols">
+        <div class="compare-col">
+          <h5>Problem:</h5>
+          <p>$25-35/hour adds up fast. Hiring strangers every time. 35% platform fee. No community building.</p>
+        </div>
+        <div class="compare-col">
+          <h5>Kith:</h5>
+          <p>Your people (free). Paid backup only when needed (5-15% fee vs 35%). Community builds over time.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="compare-row">
+      <h4>Carefully?</h4>
+      <div class="compare-cols">
+        <div class="compare-col">
+          <h5>Problem:</h5>
+          <p>Fixed pods. Only childcare. What if your pod can't help? No paid backup option.</p>
+        </div>
+        <div class="compare-col">
+          <h5>Kith:</h5>
+          <p>Flexible circles. Any kind of help, not just childcare. Provider network backup. Grows with you.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="compare-row">
+      <h4>Nextdoor?</h4>
+      <div class="compare-cols">
+        <div class="compare-col">
+          <h5>Problem:</h5>
+          <p>Public posts to strangers. No reciprocity tracking. Privacy concerns.</p>
+        </div>
+        <div class="compare-col">
+          <h5>Kith:</h5>
+          <p>Private circles. Fair tracking built-in. Trusted people only. You control who sees what.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
 <section class="download-section" id="download">
-  <h2>Download Kith</h2>
-  <p>Scan to join the waitlist • Get early access when we launch in your area</p>
-  <div class="qr-container">
-    <div class="qr-item">
-      <div class="qr-code">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="10" width="30" height="30" fill="#2B2B2B"/>
-          <rect x="60" y="10" width="30" height="30" fill="#2B2B2B"/>
-          <rect x="10" y="60" width="30" height="30" fill="#2B2B2B"/>
-          <rect x="45" y="45" width="20" height="20" fill="#2B2B2B"/>
-        </svg>
-      </div>
-      <div class="qr-label">iOS</div>
-    </div>
-    <div class="qr-item">
-      <div class="qr-code">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="10" width="30" height="30" fill="#2B2B2B"/>
-          <rect x="60" y="10" width="30" height="30" fill="#2B2B2B"/>
-          <rect x="10" y="60" width="30" height="30" fill="#2B2B2B"/>
-          <rect x="50" y="50" width="15" height="15" fill="#2B2B2B"/>
-        </svg>
-      </div>
-      <div class="qr-label">Android</div>
-    </div>
-  </div>
-  <p style="margin-top:2rem;font-size:1.1rem">Or email yourself the link: <a href="mailto:?subject=Kith Waitlist&body=Join at kith.app" style="color:var(--warm-white);text-decoration:underline;font-weight:700">kith.app</a></p>
+  <h2>Join the Waitlist</h2>
+  <p>Get early access when we launch in your area. Private beta coming soon.</p>
+  <a href="#download" class="cta-button">Join Waitlist →</a>
+  <p style="margin-top:2rem;font-size:1rem;opacity:0.85">Starting with childcare coordination. Growing with whatever your circle needs.</p>
 </section>
 
 </body>

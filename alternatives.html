@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kith vs Alternatives | Why We're Different</title>
+<title>How Kith Compares | Alternatives</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -13,50 +13,73 @@
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6}
 h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
+
 .site-header{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
-.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .logo-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--warm-white)}
 .logo-svg{width:40px;height:40px}
 .brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;letter-spacing:1px}
-.nav-links{display:flex;gap:1rem}
+.nav-links{display:flex;gap:1rem;flex-wrap:wrap}
 .nav-link{color:var(--warm-white);text-decoration:none;font-weight:500;padding:0.5rem 1.5rem;border-radius:25px;transition:all 0.3s ease;background:rgba(255,255,255,0.1)}
 .nav-link:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
 .nav-link.active{background:var(--warm-white);color:var(--sage)}
+
 .hero{padding:8rem 2rem 6rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
 .hero h1{font-size:clamp(3rem,7vw,5rem);color:var(--clay);margin-bottom:2rem;font-style:italic}
-.hero p{font-size:1.4rem;max-width:800px;margin:0 auto;opacity:0.9}
+.hero p{font-size:1.4rem;max-width:800px;margin:0 auto;opacity:0.9;line-height:1.7}
+
 .content{padding:6rem 2rem}
-.content .container{max-width:1200px;margin:0 auto}
-.content h2{font-size:2.5rem;color:var(--clay);margin:3rem 0 1.5rem;font-style:italic;text-align:center}
-.comparison{margin:4rem 0;background:var(--cream);padding:3rem;border-radius:25px}
-.app-mockup{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin:3rem 0}
-.mockup-screen{background:#fff;border:3px solid #ddd;border-radius:20px;padding:1.5rem;box-shadow:0 10px 40px rgba(0,0,0,0.15);position:relative}
-.mockup-header{background:#f5f5f5;padding:1rem;border-radius:10px 10px 0 0;margin:-1.5rem -1.5rem 1rem;font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:0.5rem}
-.app-icon{width:30px;height:30px;border-radius:8px;background:var(--clay);display:inline-block}
-.mockup-body{font-size:0.95rem;line-height:1.6}
-.message-bubble{background:#e3f2fd;padding:0.8rem;border-radius:15px;margin:0.5rem 0;font-size:0.9rem}
-.issue-callout{background:#fff3cd;border-left:4px solid #ff9800;padding:1rem;margin:1rem 0;border-radius:5px;font-size:0.9rem}
-.issue-callout strong{color:#e65100}
-.comparison-text{margin-top:2rem}
-.comparison-text h3{font-size:1.8rem;color:var(--clay);margin-bottom:1rem}
-.comparison-text p{font-size:1.1rem;line-height:1.8;margin-bottom:1rem}
-.kith-advantage{background:linear-gradient(135deg,var(--sage),var(--deep-green));color:var(--warm-white);padding:2rem;border-radius:15px;margin-top:2rem}
-.kith-advantage h4{font-size:1.3rem;margin-bottom:0.8rem}
-.kith-advantage p{opacity:0.95;font-size:1.05rem}
-@media (max-width:768px){.header-content{flex-direction:column;gap:1rem}.nav-links{flex-wrap:wrap;justify-content:center}.app-mockup{grid-template-columns:1fr}}
+.container{max-width:1100px;margin:0 auto}
+
+.comparison-card{background:#fff;border-radius:25px;padding:3rem;margin-bottom:3rem;box-shadow:0 4px 20px rgba(0,0,0,0.08);border-left:8px solid var(--sage)}
+.comparison-header{display:flex;align-items:center;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
+.competitor-logo{font-size:3rem}
+.competitor-name{font-size:2.5rem;color:var(--clay);font-weight:700}
+
+.comparison-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2rem}
+.comparison-col h4{font-size:1.3rem;color:var(--clay);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--cream)}
+.comparison-col p{font-size:1.05rem;line-height:1.7;margin-bottom:1rem}
+.comparison-col ul{margin:1rem 0 1rem 1.5rem}
+.comparison-col li{margin-bottom:0.5rem;line-height:1.6}
+
+.verdict{background:var(--cream);padding:2rem;border-radius:15px;margin-top:2rem;border-left:4px solid var(--clay)}
+.verdict h4{font-size:1.3rem;color:var(--clay);margin-bottom:0.8rem}
+.verdict p{font-size:1.05rem;line-height:1.7;margin:0}
+
+.summary{background:linear-gradient(135deg,var(--sage),var(--deep-green));color:var(--warm-white);padding:6rem 2rem;margin:4rem 0}
+.summary h2{font-size:2.5rem;text-align:center;margin-bottom:3rem;font-style:italic;color:var(--warm-white)}
+.summary-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+.summary-item{background:rgba(255,255,255,0.15);padding:2.5rem;border-radius:20px;backdrop-filter:blur(10px);text-align:center}
+.summary-icon{font-size:3rem;margin-bottom:1rem}
+.summary-item h4{font-size:1.5rem;margin-bottom:1rem;color:var(--warm-white)}
+.summary-item p{font-size:1.05rem;line-height:1.7;opacity:0.95}
+
+.cta{padding:6rem 2rem;background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);text-align:center}
+.cta h2{font-size:2.8rem;margin-bottom:1.5rem;color:var(--warm-white)}
+.cta p{font-size:1.2rem;margin-bottom:2rem;opacity:0.95}
+.cta-button{display:inline-block;padding:1.2rem 3rem;background:var(--warm-white);color:var(--clay);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease}
+.cta-button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+
+@media (max-width:768px){
+.header-content{flex-direction:column}
+.comparison-grid{grid-template-columns:1fr}
+.comparison-header{flex-direction:column;align-items:flex-start}
+.summary-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
+
 <header class="site-header">
   <div class="header-content">
     <a href="index.html" class="logo-link">
       <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <!-- Interlocking circles representing 10-15 person network -->
-        <circle cx="35" cy="50" r="18" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
-        <circle cx="65" cy="50" r="18" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
-        <circle cx="50" cy="32" r="18" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
-        <!-- Center dot where all circles meet -->
-        <circle cx="50" cy="50" r="6" fill="#FFFEF9"/>
+        <circle cx="20" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="80" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="35" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="65" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="45" r="5" fill="#FFFEF9"/>
       </svg>
       <span class="brand-name">KITH</span>
       <span style="font-size:0.7rem;opacity:0.7;margin-left:0.3rem;font-weight:400">by The Village</span>
@@ -64,6 +87,7 @@ h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
     <div class="nav-links">
       <a href="index.html" class="nav-link">Home</a>
       <a href="why.html" class="nav-link">Why</a>
+      <a href="how.html" class="nav-link">How It Works</a>
       <a href="faq.html" class="nav-link">FAQ</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
@@ -71,561 +95,273 @@ h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
 </header>
 
 <section class="hero">
-  <h1>Why Not Just Use...</h1>
-  <p>What makes Kith different from group chats, babysitting apps, and care marketplaces</p>
+  <h1>How Kith Compares</h1>
+  <p>We respect the other platforms solving parts of this problem. Here's how we're different.</p>
 </section>
 
 <section class="content">
   <div class="container">
     
-    <div class="comparison">
-      <h2>WhatsApp / Group Chats</h2>
-      <div class="app-mockup">
-        <div class="mockup-screen">
-          <div class="mockup-header">
-            <span class="app-icon" style="background:#25D366"></span>
-            Mom Squad 💪
-          </div>
-          <div class="mockup-body">
-            <div class="message-bubble">Anyone free to watch Emma tmrw 3-5pm?</div>
-            <div class="message-bubble">I can! Wait no, I have dentist</div>
-            <div class="message-bubble">Maybe? Let me check</div>
-            <div class="message-bubble">Sorry just seeing this! Still need help?</div>
-            <div style="margin:1rem 0;color:#999;font-size:0.85rem">...2 hours later...</div>
-            <div class="message-bubble">Nvm found someone thx</div>
-            <div class="issue-callout">
-              <strong>❌ Issue:</strong> No tracking of who helped whom. No reciprocity tracking. Requests get buried. Nobody knows who owes what.
-            </div>
-          </div>
-        </div>
-        <div class="comparison-text">
-          <h3>The Problem</h3>
-          <p>Group chats are great for coordination... until they're not. Messages get lost. People feel guilty asking repeatedly. Nobody tracks reciprocity. You end up with the same 2-3 people doing everything while others fade away.</p>
-          <p><strong>The cognitive load is enormous:</strong> Who helped you last? Who have you helped? Are you asking too much? Is it your turn to give? You're tracking all of this in your head while also, you know, parenting.</p>
-          <div class="kith-advantage">
-            <h4>✓ How Kith Solves This</h4>
-            <p><strong>Auto-tracking:</strong> System logs every exchange. You always know your balance.</p>
-            <p><strong>Smart matching:</strong> Requests go to people with relevant skills, not everyone.</p>
-            <p><strong>Reciprocity visibility:</strong> See who's giving/receiving at a glance. Burnout warnings before it's too late.</p>
-            <p><strong>No guilt:</strong> The system handles fairness. You focus on relationships.</p>
-          </div>
+    <div class="comparison-card">
+      <div class="comparison-header">
+        <div class="competitor-logo">👶</div>
+        <div>
+          <div class="competitor-name">UrbanSitter</div>
+          <p style="font-size:1.1rem;opacity:0.8;margin:0">Marketplace for paid childcare</p>
         </div>
       </div>
-    </div>
-
-    <div class="comparison">
-      <h2>Care.com / Babysitting Marketplaces</h2>
-      <div class="app-mockup">
-        <div class="mockup-screen">
-          <div class="mockup-header">
-            <span class="app-icon" style="background:#FF6B6B"></span>
-            Care.com
-          </div>
-          <div class="mockup-body">
-            <div style="background:#f9f9f9;padding:1rem;border-radius:8px;margin:0.5rem 0">
-              <div style="font-weight:700">Sarah M. ⭐️ 4.8</div>
-              <div style="font-size:0.85rem;color:#666">15 reviews • Background checked</div>
-              <div style="margin:0.5rem 0;font-weight:700;color:#2ecc71">$25/hour</div>
-            </div>
-            <div style="background:#f9f9f9;padding:1rem;border-radius:8px;margin:0.5rem 0">
-              <div style="font-weight:700">Jessica L. ⭐️ 4.9</div>
-              <div style="font-size:0.85rem;color:#666">23 reviews • CPR certified</div>
-              <div style="margin:0.5rem 0;font-weight:700;color:#2ecc71">$28/hour</div>
-            </div>
-            <div class="issue-callout">
-              <strong>❌ Issues:</strong> Expensive ($25-35/hr). Strangers in your home. No ongoing relationship. Transactional, not community.
-            </div>
-          </div>
+      
+      <div class="comparison-grid">
+        <div class="comparison-col">
+          <h4>UrbanSitter</h4>
+          <ul>
+            <li>Hire strangers for $25-35/hour</li>
+            <li>35% platform fee (taken from sitter)</li>
+            <li>Transactional (different sitter every time)</li>
+            <li>No community building</li>
+            <li>Childcare only</li>
+            <li>Background checks optional</li>
+          </ul>
         </div>
-        <div class="comparison-text">
-          <h3>The Problem</h3>
-          <p>Marketplaces turn care into a commodity. You're hiring strangers at market rates. It's expensive, impersonal, and doesn't build community. Every time you need help, you're starting from zero: vetting someone new, building trust, hoping they show up.</p>
-          <p><strong>The deeper issue:</strong> This model assumes care should be bought and sold. It monetizes mutual aid. Communities used to share care freely—marketplaces replaced that with transactions.</p>
-          <div class="kith-advantage">
-            <h4>✓ How Kith Solves This</h4>
-            <p><strong>Time banking first:</strong> Coordinate with people you trust for free. Build reciprocal relationships.</p>
-            <p><strong>Paid services optional:</strong> When you need professional care, Kith offers vetted providers at transparent rates (5-15% platform fee vs. 20-30% markup elsewhere).</p>
-            <p><strong>Relationships over transactions:</strong> Your circle knows your kids, your home, your routines. It's not strangers—it's your kith.</p>
-          </div>
+        
+        <div class="comparison-col">
+          <h4>Kith</h4>
+          <ul>
+            <li>Coordinate with your trusted circle (free)</li>
+            <li>5-15% platform fee only when hiring pros</li>
+            <li>Relationships (same people over time)</li>
+            <li>Community builds naturally</li>
+            <li>Works for any kind of help</li>
+            <li>Background checks required for all providers</li>
+          </ul>
         </div>
       </div>
-    </div>
-
-    <div class="comparison">
-      <h2>Facebook Groups / Nextdoor</h2>
-      <div class="app-mockup">
-        <div class="mockup-screen">
-          <div class="mockup-header">
-            <span class="app-icon" style="background:#4267B2"></span>
-            Brooklyn Parents 2026
-          </div>
-          <div class="mockup-body">
-            <div style="background:#f0f2f5;padding:1rem;border-radius:10px;margin:0.5rem 0;font-size:0.9rem">
-              <div style="font-weight:700;margin-bottom:0.3rem">Anyone know a good plumber?</div>
-              <div style="color:#666;font-size:0.85rem">47 comments</div>
-            </div>
-            <div style="background:#f0f2f5;padding:1rem;border-radius:10px;margin:0.5rem 0;font-size:0.9rem">
-              <div style="font-weight:700;margin-bottom:0.3rem">ISO babysitter for Friday night</div>
-              <div style="color:#666;font-size:0.85rem">12 comments</div>
-            </div>
-            <div style="background:#f0f2f5;padding:1rem;border-radius:10px;margin:0.5rem 0;font-size:0.9rem">
-              <div style="font-weight:700;margin-bottom:0.3rem">What's that noise in Park Slope?</div>
-              <div style="color:#666;font-size:0.85rem">89 comments</div>
-            </div>
-            <div class="issue-callout">
-              <strong>❌ Issues:</strong> Everything mixed together. No privacy. Strangers in the comments. No way to track help or build reciprocity.
-            </div>
-          </div>
-        </div>
-        <div class="comparison-text">
-          <h3>The Problem</h3>
-          <p>Facebook Groups are public forums, not care coordination tools. Your childcare request sits next to restaurant recommendations and neighborhood complaints. You're asking strangers for help. There's no system for reciprocity, no trust network, no privacy.</p>
-          <p><strong>The privacy nightmare:</strong> Posting your childcare needs publicly announces when you're not home. Your schedule is visible to hundreds or thousands of people you don't know.</p>
-          <div class="kith-advantage">
-            <h4>✓ How Kith Solves This</h4>
-            <p><strong>Closed networks:</strong> Only your circle sees your requests. You invite people you trust.</p>
-            <p><strong>Purpose-built:</strong> Every feature is designed for care coordination. No noise, no distractions.</p>
-            <p><strong>Privacy by default:</strong> End-to-end encrypted messages. Zero-knowledge architecture. Your schedule stays private.</p>
-            <p><strong>Trust through vouching:</strong> Networks grow through mutual connections, not random strangers.</p>
-          </div>
-        </div>
+      
+      <div class="verdict">
+        <h4>Best For:</h4>
+        <p><strong>UrbanSitter:</strong> You need a stranger tonight and can afford $30/hour.</p>
+        <p><strong>Kith:</strong> You want to build a support system that lasts years and covers more than just childcare.</p>
       </div>
     </div>
-
-    <div style="background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);padding:4rem 3rem;border-radius:25px;margin:4rem 0;text-align:center">
-      <h2 style="font-size:2.5rem;margin-bottom:1.5rem;color:var(--warm-white)">The Real Difference</h2>
-      <p style="font-size:1.3rem;line-height:1.8;max-width:800px;margin:0 auto 2rem;opacity:0.95">Group chats don't track reciprocity. Marketplaces commodify care. Social platforms expose your privacy. <strong>Kith is purpose-built infrastructure for the 10-15 people who actually show up for you.</strong></p>
-      <a href="index.html#download" style="display:inline-block;padding:1.2rem 3rem;background:var(--warm-white);color:var(--clay);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease">Join Waitlist →</a>
-    </div>
-  </div>
-</section>
-</body>
-</html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{
---clay:#C95D3D;
---terracotta:#E87A5D;
---warm-white:#FFFEF9;
---cream:#FFF8F0;
---sage:#7A9B76;
---deep-green:#5A7A56;
---charcoal:#2B2B2B;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-font-family:'DM Sans',sans-serif;
-background:var(--warm-white);
-color:var(--charcoal);
-line-height:1.6;
-}
-h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
-
-/* Header */
-.site-header{
-background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);
-padding:1.5rem 2rem;
-position:sticky;
-top:0;
-z-index:100;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-.header-content{
-max-width:1200px;
-margin:0 auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-.logo-link{
-display:flex;
-align-items:center;
-gap:1rem;
-text-decoration:none;
-color:var(--warm-white);
-}
-.logo-svg{width:40px;height:40px}
-.brand-name{
-font-family:'Fraunces',serif;
-font-weight:700;
-font-size:1.5rem;
-letter-spacing:1px;
-}
-.nav-links{
-display:flex;
-gap:1rem;
-}
-.nav-link{
-color:var(--warm-white);
-text-decoration:none;
-font-weight:500;
-padding:0.5rem 1.5rem;
-border-radius:25px;
-transition:all 0.3s ease;
-background:rgba(255,255,255,0.1);
-}
-.nav-link:hover{
-background:rgba(255,255,255,0.2);
-transform:translateY(-2px);
-}
-.nav-link.active{
-background:var(--warm-white);
-color:var(--sage);
-}
-
-/* Page Hero */
-.page-hero{
-padding:6rem 2rem 4rem;
-text-align:center;
-background:var(--cream);
-}
-.page-hero h1{
-font-size:clamp(2.5rem,6vw,4.5rem);
-color:var(--clay);
-margin-bottom:1.5rem;
-font-style:italic;
-line-height:1.2;
-}
-.page-hero p{
-font-size:1.3rem;
-max-width:700px;
-margin:0 auto;
-opacity:0.8;
-}
-
-/* Tool Comparison Section */
-.comparisons{
-padding:6rem 2rem;
-background:var(--warm-white);
-}
-.comparisons .container{
-max-width:1000px;
-margin:0 auto;
-}
-.comparison-card{
-background:var(--cream);
-border-radius:25px;
-padding:3rem;
-margin-bottom:3rem;
-border-left:6px solid var(--clay);
-}
-.comparison-card h2{
-font-size:2.2rem;
-color:var(--clay);
-margin-bottom:1rem;
-font-style:italic;
-}
-.comparison-card .subtitle{
-font-size:1.1rem;
-font-style:italic;
-opacity:0.7;
-margin-bottom:2rem;
-}
-.comparison-content{
-font-size:1.1rem;
-line-height:1.8;
-}
-.comparison-content p{
-margin-bottom:1.5rem;
-}
-.comparison-content strong{
-color:var(--clay);
-font-weight:700;
-}
-.problem-list{
-background:rgba(201,93,61,0.1);
-border-radius:15px;
-padding:2rem;
-margin:2rem 0;
-}
-.problem-list h3{
-font-size:1.4rem;
-color:var(--clay);
-margin-bottom:1.5rem;
-}
-.problem-list ul{
-list-style:none;
-}
-.problem-list li{
-font-size:1.05rem;
-padding:0.5rem 0;
-padding-left:1.5rem;
-position:relative;
-}
-.problem-list li::before{
-content:'❌';
-position:absolute;
-left:0;
-}
-
-/* Solution Box */
-.solution-box{
-background:linear-gradient(135deg,var(--sage),var(--deep-green));
-color:var(--warm-white);
-border-radius:20px;
-padding:2.5rem;
-margin-top:2rem;
-}
-.solution-box h3{
-font-size:1.6rem;
-margin-bottom:1rem;
-}
-.solution-box p{
-font-size:1.05rem;
-line-height:1.7;
-opacity:0.95;
-}
-.solution-box ul{
-list-style:none;
-margin-top:1rem;
-}
-.solution-box li{
-padding:0.5rem 0;
-padding-left:1.5rem;
-position:relative;
-}
-.solution-box li::before{
-content:'✓';
-position:absolute;
-left:0;
-font-weight:700;
-}
-
-/* Summary Section */
-.summary{
-padding:6rem 2rem;
-background:var(--charcoal);
-color:var(--warm-white);
-}
-.summary .container{
-max-width:800px;
-margin:0 auto;
-text-align:center;
-}
-.summary h2{
-font-size:2.5rem;
-margin-bottom:2rem;
-font-style:italic;
-}
-.summary p{
-font-size:1.2rem;
-line-height:1.8;
-margin-bottom:2rem;
-}
-
-/* CTA Section */
-.cta-section{
-padding:6rem 2rem;
-background:linear-gradient(135deg,var(--clay) 0%,var(--terracotta) 100%);
-color:var(--warm-white);
-text-align:center;
-}
-.cta-section h2{
-font-size:2.5rem;
-margin-bottom:1.5rem;
-}
-.cta-section p{
-font-size:1.2rem;
-margin-bottom:2rem;
-max-width:600px;
-margin-left:auto;
-margin-right:auto;
-}
-.cta-button{
-display:inline-block;
-padding:1.2rem 3rem;
-background:var(--warm-white);
-color:var(--clay);
-text-decoration:none;
-border-radius:50px;
-font-weight:700;
-font-size:1.2rem;
-transition:all 0.3s ease;
-}
-.cta-button:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-
-/* Responsive */
-@media (max-width:768px){
-.header-content{flex-direction:column;gap:1rem}
-.nav-links{flex-direction:column;width:100%}
-.nav-link{text-align:center}
-.comparison-card{padding:2rem}
-}
-</style>
-</head>
-<body>
-
-
-<section class="page-hero">
-  <h1>You've already tried everything else</h1>
-  <p>And it kind of works... until it doesn't</p>
-</section>
-
-<section class="comparisons">
-  <div class="container">
     
     <div class="comparison-card">
-      <h2>WhatsApp / Group Chats</h2>
-      <p class="subtitle">The current default for most families</p>
-      <div class="comparison-content">
-        <p><strong>What it does well:</strong> You're coordinating with people you actually know. It's free. Everyone already has it. Messages are instant. It works for simple, one-off requests.</p>
-        
-        <div class="problem-list">
-          <h3>Where it breaks down:</h3>
+      <div class="comparison-header">
+        <div class="competitor-logo">👨‍👩‍👧</div>
+        <div>
+          <div class="competitor-name">Carefully</div>
+          <p style="font-size:1.1rem;opacity:0.8;margin:0">Childcare pods & coordination</p>
+        </div>
+      </div>
+      
+      <div class="comparison-grid">
+        <div class="comparison-col">
+          <h4>Carefully</h4>
           <ul>
-            <li>No memory of who helped whom last time</li>
-            <li>Messages get buried in chat history</li>
-            <li>Multiple group chats means repeating yourself everywhere</li>
-            <li>"Seen" but no response anxiety</li>
-            <li>No way to track reciprocity or time exchanges</li>
-            <li>Guilt about asking the same people repeatedly</li>
-            <li>Can't discover who has what skills or resources</li>
-            <li>Emergency requests drown in normal chat noise</li>
+            <li>Fixed childcare pods (4-6 families)</li>
+            <li>Childcare only</li>
+            <li>What if your pod can't help?</li>
+            <li>No paid backup option</li>
+            <li>Structured schedules only</li>
+            <li>Limited to who joins your pod</li>
           </ul>
         </div>
         
-        <p><strong>When it fails you:</strong> It's 7am, childcare fell through, you text five group chats simultaneously. Twenty minutes later you're still waiting for responses while panic builds. Or someone always says yes but you have no idea how to pay them back fairly.</p>
-        
-        <div class="solution-box">
-          <h3>How Kith is different:</h3>
+        <div class="comparison-col">
+          <h4>Kith</h4>
           <ul>
-            <li>Same trusted network, but with automatic time tracking</li>
-            <li>Emergency requests go to everyone at once, prioritized</li>
-            <li>System remembers who helped whom and when</li>
-            <li>Built-in reciprocity balance removes guilt from asking</li>
-            <li>Discover skills/resources across your network</li>
+            <li>Flexible circles (8-15 people)</li>
+            <li>Any kind of help (childcare, rides, skills, etc.)</li>
+            <li>Provider network when circle can't help</li>
+            <li>Vetted professionals available</li>
+            <li>Flexible coordination (structured or ad-hoc)</li>
+            <li>Grows beyond childcare as kids age</li>
           </ul>
         </div>
       </div>
+      
+      <div class="verdict">
+        <h4>Best For:</h4>
+        <p><strong>Carefully:</strong> You have 3-5 families ready to commit to a fixed childcare schedule.</p>
+        <p><strong>Kith:</strong> You want flexibility, backup options, and a system that works for more than just childcare.</p>
+      </div>
     </div>
-
+    
     <div class="comparison-card">
-      <h2>Care.com / TaskRabbit / Rover</h2>
-      <p class="subtitle">The gig economy approach to care</p>
-      <div class="comparison-content">
-        <p><strong>What it does well:</strong> You can find someone quickly. Professional background checks. Clear pricing. Available on-demand.</p>
-        
-        <div class="problem-list">
-          <h3>Where it breaks down:</h3>
+      <div class="comparison-header">
+        <div class="competitor-logo">👥</div>
+        <div>
+          <div class="competitor-name">Facebook Groups</div>
+          <p style="font-size:1.1rem;opacity:0.8;margin:0">Neighborhood parent groups</p>
+        </div>
+      </div>
+      
+      <div class="comparison-grid">
+        <div class="comparison-col">
+          <h4>Facebook Groups</h4>
           <ul>
-            <li>You're trusting strangers with your kids or home</li>
-            <li>Expensive ($20-40/hour for childcare)</li>
-            <li>Star ratings from strangers don't mean trust</li>
-            <li>No relationship building—just transactions</li>
-            <li>Providers have no stake in your family's wellbeing</li>
-            <li>Can't rely on the same person consistently</li>
-            <li>Doesn't build community, just dependency on paid services</li>
+            <li>No tracking (who owes who?)</li>
+            <li>Requests get buried in chatter</li>
+            <li>Guilt piles up</li>
+            <li>Public or semi-public posts</li>
+            <li>No structure or accountability</li>
+            <li>Mental tallies required</li>
           </ul>
         </div>
         
-        <p><strong>When it fails you:</strong> You're paying $80 for someone to fix what your neighbor could do in 20 minutes. Or you're leaving your kids with a stranger who got 5 stars but doesn't know your family's rhythms, your kid's quirks, or your values.</p>
-        
-        <div class="solution-box">
-          <h3>How Kith is different:</h3>
+        <div class="comparison-col">
+          <h4>Kith</h4>
           <ul>
-            <li>People you trust through real relationships, not ratings</li>
-            <li>Free—reciprocity instead of currency</li>
-            <li>Care from people who know your kids and your family</li>
-            <li>Builds relationships, not just fills immediate needs</li>
-            <li>Paid backup care option when network can't cover it</li>
+            <li>Auto-tracked balance (no mental math)</li>
+            <li>Direct 1:1 coordination</li>
+            <li>Fair tracking eliminates guilt</li>
+            <li>Private circles only</li>
+            <li>Built-in accountability</li>
+            <li>System handles the tallies</li>
           </ul>
         </div>
       </div>
+      
+      <div class="verdict">
+        <h4>Best For:</h4>
+        <p><strong>Facebook Groups:</strong> Casual, one-off requests with people you barely know.</p>
+        <p><strong>Kith:</strong> Ongoing reciprocal help with people you trust, tracked fairly over time.</p>
+      </div>
     </div>
-
+    
     <div class="comparison-card">
-      <h2>Nextdoor / Facebook Groups</h2>
-      <p class="subtitle">Neighborhood connection platforms</p>
-      <div class="comparison-content">
-        <p><strong>What it does well:</strong> Connects you with people nearby. Good for recommendations, lost pets, local news. Large user base.</p>
-        
-        <div class="problem-list">
-          <h3>Where it breaks down:</h3>
+      <div class="comparison-header">
+        <div class="competitor-logo">🏘️</div>
+        <div>
+          <div class="competitor-name">Nextdoor</div>
+          <p style="font-size:1.1rem;opacity:0.8;margin:0">Neighborhood social network</p>
+        </div>
+      </div>
+      
+      <div class="comparison-grid">
+        <div class="comparison-col">
+          <h4>Nextdoor</h4>
           <ul>
-            <li>Public posts mean strangers see your family needs</li>
-            <li>No trust verification—anyone in your zip code can respond</li>
-            <li>No reciprocity tracking or time banking</li>
-            <li>Signal-to-noise ratio is terrible (local drama, politics, complaints)</li>
-            <li>No coordination tools—just public posts</li>
-            <li>Can't build or manage a trusted network</li>
-            <li>Privacy concerns about who sees what about your family</li>
+            <li>Public posts to neighbors</li>
+            <li>Mostly strangers</li>
+            <li>No reciprocity tracking</li>
+            <li>Privacy concerns</li>
+            <li>Recommendation-based (no vetting)</li>
+            <li>Scattered, unfocused</li>
           </ul>
         </div>
         
-        <p><strong>When it fails you:</strong> You post about needing emergency childcare and get either radio silence or responses from people you don't know and aren't sure you'd trust with your kids. Meanwhile the feed is full of arguments about lawn care and traffic complaints.</p>
-        
-        <div class="solution-box">
-          <h3>How Kith is different:</h3>
+        <div class="comparison-col">
+          <h4>Kith</h4>
           <ul>
-            <li>Invitation-only—no strangers see your requests</li>
-            <li>Vouching system builds trust through real relationships</li>
-            <li>Purpose-built for care coordination, not general neighborhood chat</li>
-            <li>Automatic reciprocity tracking prevents exploitation</li>
-            <li>Your network, your rules, your privacy</li>
+            <li>Private circles only</li>
+            <li>People you choose to trust</li>
+            <li>Automatic reciprocity tracking</li>
+            <li>Privacy-first design</li>
+            <li>Background-checked providers when needed</li>
+            <li>Purpose-built for coordinating help</li>
           </ul>
         </div>
       </div>
+      
+      <div class="verdict">
+        <h4>Best For:</h4>
+        <p><strong>Nextdoor:</strong> Finding recommendations or lost pets in your neighborhood.</p>
+        <p><strong>Kith:</strong> Actually coordinating ongoing help with a trusted group of people.</p>
+      </div>
     </div>
-
+    
     <div class="comparison-card">
-      <h2>Peanut / Other Parent Apps</h2>
-      <p class="subtitle">Social networking for parents</p>
-      <div class="comparison-content">
-        <p><strong>What it does well:</strong> Helps you find other parents. Creates community through shared experience. Good for advice and emotional support.</p>
-        
-        <div class="problem-list">
-          <h3>Where it breaks down:</h3>
+      <div class="comparison-header">
+        <div class="competitor-logo">💼</div>
+        <div>
+          <div class="competitor-name">Care.com</div>
+          <p style="font-size:1.1rem;opacity:0.8;margin:0">Hire caregivers & household help</p>
+        </div>
+      </div>
+      
+      <div class="comparison-grid">
+        <div class="comparison-col">
+          <h4>Care.com</h4>
           <ul>
-            <li>Focus is on making friends, not coordinating care</li>
-            <li>No tools for tracking exchanges or reciprocity</li>
-            <li>Still have to move to WhatsApp for actual coordination</li>
-            <li>Meeting new people is great, but doesn't solve 7am crisis</li>
-            <li>No resource sharing or skill discovery infrastructure</li>
-            <li>Can't manage ongoing care relationships</li>
+            <li>Marketplace for hiring only</li>
+            <li>15-20% platform fee</li>
+            <li>Background checks recommended (not verified)</li>
+            <li>No free coordination option</li>
+            <li>Transactional relationships</li>
+            <li>You handle vetting yourself</li>
           </ul>
         </div>
         
-        <p><strong>When it fails you:</strong> You've made some nice parent friends, but when childcare falls through you're still texting multiple people hoping someone can help. The app helped you connect but didn't give you coordination tools.</p>
-        
-        <div class="solution-box">
-          <h3>How Kith is different:</h3>
+        <div class="comparison-col">
+          <h4>Kith</h4>
           <ul>
-            <li>Built specifically for care coordination, not just connection</li>
-            <li>Time banking and reciprocity tracking built in</li>
-            <li>Emergency requests reach your whole network at once</li>
-            <li>Discover and share resources, not just emotional support</li>
-            <li>Relationships are the foundation, but tools make them functional</li>
+            <li>Free circle coordination + paid backup</li>
+            <li>5-15% platform fee (lower)</li>
+            <li>Background checks required & verified</li>
+            <li>Circle coordination always free</li>
+            <li>Mix of relationships + transactions</li>
+            <li>We handle vetting for you</li>
           </ul>
         </div>
       </div>
+      
+      <div class="verdict">
+        <h4>Best For:</h4>
+        <p><strong>Care.com:</strong> You want to hire someone and handle all vetting yourself.</p>
+        <p><strong>Kith:</strong> You want free coordination with friends PLUS vetted backup when needed.</p>
+      </div>
     </div>
-
+    
   </div>
 </section>
 
 <section class="summary">
-  <div class="container">
-    <h2>The gap Kith fills</h2>
-    <p>Current tools are either <strong>strangers with infrastructure</strong> (Care.com, TaskRabbit) or <strong>people you know without infrastructure</strong> (WhatsApp, Facebook).</p>
-    <p>We give you infrastructure for coordinating with people you actually trust. The best of both worlds: relationships AND tools.</p>
-    <p>Not another platform to replace what you're already doing. Infrastructure to make what you're already trying to do actually work.</p>
+  <h2>What Makes Kith Different</h2>
+  <div class="summary-grid">
+    
+    <div class="summary-item">
+      <div class="summary-icon">🤝</div>
+      <h4>Two-Path System</h4>
+      <p>Free circle coordination (80% of needs) + paid provider network (20% backup). You're always covered.</p>
+    </div>
+    
+    <div class="summary-item">
+      <div class="summary-icon">⚖️</div>
+      <h4>Fair Tracking</h4>
+      <p>Auto-tracked time credits. No guilt. No mental tallies. Everyone sees the balance.</p>
+    </div>
+    
+    <div class="summary-item">
+      <div class="summary-icon">🔄</div>
+      <h4>Any Kind of Help</h4>
+      <p>Not just childcare. Rides, skills, projects, eldercare—whatever your circle coordinates.</p>
+    </div>
+    
+    <div class="summary-item">
+      <div class="summary-icon">📈</div>
+      <h4>Grows With You</h4>
+      <p>Your circle doesn't disappear when kids turn 5. It evolves as your needs change over years.</p>
+    </div>
+    
+    <div class="summary-item">
+      <div class="summary-icon">✅</div>
+      <h4>Vetted Backup</h4>
+      <p>When circle can't help, hire background-checked providers. Lower fees than competitors.</p>
+    </div>
+    
+    <div class="summary-item">
+      <div class="summary-icon">🔒</div>
+      <h4>Privacy First</h4>
+      <p>No ads. No data selling. Zero-knowledge encryption. Your circle stays private.</p>
+    </div>
+    
   </div>
 </section>
 
-<section class="cta-section">
-  <h2>Ready for a better way?</h2>
-  <p>Stop juggling broken tools. Build your trusted network with infrastructure that actually works.</p>
-  <a href="index.html#final-cta" class="cta-button">Join Waitlist →</a>
+<section class="cta">
+  <h2>Ready to Try Kith?</h2>
+  <p>Free circle coordination. Vetted backup when needed. Join the waitlist.</p>
+  <a href="index.html#download" class="cta-button">Join Waitlist →</a>
 </section>
 
 </body>

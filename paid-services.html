@@ -3,330 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paid Services & Provider Network | Kith</title>
+<title>Provider Network | Kith</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{
---clay:#C95D3D;
---terracotta:#E87A5D;
---warm-white:#FFFEF9;
---cream:#FFF8F0;
---sage:#7A9B76;
---deep-green:#5A7A56;
---charcoal:#2B2B2B;
-}
+:root{--sage:#7A9B76;--deep-green:#5A7A56;--clay:#C95D3D;--terracotta:#E87A5D;--warm-white:#FFFEF9;--cream:#FFF8F0;--charcoal:#2B2B2B}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-font-family:'DM Sans',sans-serif;
-background:var(--warm-white);
-color:var(--charcoal);
-line-height:1.6;
-}
+body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6}
 h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
 
-/* Header */
-.site-header{
-background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);
-padding:1.5rem 2rem;
-position:sticky;
-top:0;
-z-index:100;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-.header-content{
-max-width:1200px;
-margin:0 auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-.logo-link{
-display:flex;
-align-items:center;
-gap:1rem;
-text-decoration:none;
-color:var(--warm-white);
-}
+.site-header{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.logo-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--warm-white)}
 .logo-svg{width:40px;height:40px}
-.brand-name{
-font-family:'Fraunces',serif;
-font-weight:700;
-font-size:1.5rem;
-letter-spacing:1px;
-}
-.nav-links{
-display:flex;
-gap:1rem;
-}
-.nav-link{
-color:var(--warm-white);
-text-decoration:none;
-font-weight:500;
-padding:0.5rem 1.5rem;
-border-radius:25px;
-transition:all 0.3s ease;
-background:rgba(255,255,255,0.1);
-}
-.nav-link:hover{
-background:rgba(255,255,255,0.2);
-transform:translateY(-2px);
-}
-.nav-link.active{
-background:var(--warm-white);
-color:var(--sage);
-}
+.brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;letter-spacing:1px}
+.nav-links{display:flex;gap:1rem;flex-wrap:wrap}
+.nav-link{color:var(--warm-white);text-decoration:none;font-weight:500;padding:0.5rem 1.5rem;border-radius:25px;transition:all 0.3s ease;background:rgba(255,255,255,0.1)}
+.nav-link:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.nav-link.active{background:var(--warm-white);color:var(--sage)}
 
-/* Page Hero */
-.page-hero{
-padding:6rem 2rem 4rem;
-text-align:center;
-background:var(--cream);
-}
-.page-hero h1{
-font-size:clamp(2.5rem,6vw,4.5rem);
-color:var(--clay);
-margin-bottom:1.5rem;
-font-style:italic;
-line-height:1.2;
-}
-.page-hero p{
-font-size:1.3rem;
-max-width:700px;
-margin:0 auto;
-opacity:0.8;
-}
+.hero{padding:8rem 2rem 6rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
+.hero h1{font-size:clamp(3rem,7vw,5rem);color:var(--clay);margin-bottom:2rem;font-style:italic}
+.hero p{font-size:1.4rem;max-width:800px;margin:0 auto;opacity:0.9;line-height:1.7}
 
-/* Content Section */
-.content{
-padding:6rem 2rem;
-background:var(--warm-white);
-}
-.content .container{
-max-width:1000px;
-margin:0 auto;
-}
-.content h2{
-font-size:2.5rem;
-color:var(--clay);
-margin-bottom:2rem;
-font-style:italic;
-}
-.content p{
-font-size:1.15rem;
-line-height:1.8;
-margin-bottom:1.5rem;
-}
-.content strong{
-color:var(--clay);
-font-weight:700;
-}
+.content{padding:6rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.content h2{font-size:2.5rem;color:var(--clay);margin:3rem 0 1.5rem;font-style:italic;text-align:center}
+.content p{font-size:1.15rem;line-height:1.8;margin-bottom:1.5rem}
+.content ul{margin:1rem 0 2rem 2rem}
+.content li{margin-bottom:0.8rem;line-height:1.7}
+.content strong{color:var(--clay)}
 
-/* Options Grid */
-.options-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:2.5rem;
-margin:3rem 0;
-}
-.option-card{
-background:var(--cream);
-padding:2.5rem;
-border-radius:25px;
-border-top:6px solid var(--sage);
-}
-.option-card h3{
-font-size:1.8rem;
-color:var(--clay);
-margin-bottom:1rem;
-}
-.option-card .label{
-display:inline-block;
-padding:0.4rem 1rem;
-background:var(--sage);
-color:var(--warm-white);
-border-radius:20px;
-font-size:0.85rem;
-font-weight:700;
-margin-bottom:1.5rem;
-}
-.option-card p{
-font-size:1.05rem;
-line-height:1.7;
-margin-bottom:1rem;
-}
-.option-card ul{
-list-style:none;
-margin-top:1.5rem;
-}
-.option-card li{
-padding:0.5rem 0;
-padding-left:1.5rem;
-position:relative;
-font-size:1.05rem;
-}
-.option-card li::before{
-content:'✓';
-position:absolute;
-left:0;
-color:var(--sage);
-font-weight:700;
-}
+.intro{max-width:800px;margin:0 auto 4rem;text-align:center}
+.intro p{font-size:1.2rem;line-height:1.8;margin-bottom:1.5rem}
 
-/* How it Works */
-.how-it-works{
-background:var(--charcoal);
-color:var(--warm-white);
-padding:4rem 2.5rem;
-border-radius:25px;
-margin:3rem 0;
-}
-.how-it-works h3{
-font-size:2rem;
-margin-bottom:2rem;
-}
-.steps{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:2rem;
-}
-.step{
-text-align:center;
-}
-.step-number{
-display:inline-block;
-width:50px;
-height:50px;
-background:var(--clay);
-color:var(--warm-white);
-border-radius:50%;
-font-size:1.5rem;
-font-weight:700;
-line-height:50px;
-margin-bottom:1rem;
-}
-.step h4{
-font-size:1.2rem;
-margin-bottom:0.5rem;
-}
-.step p{
-font-size:1rem;
-opacity:0.9;
-}
+.categories{margin:4rem 0}
+.category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:3rem 0}
+.category-card{background:var(--cream);padding:3rem;border-radius:25px;border-top:8px solid var(--clay);transition:all 0.3s ease}
+.category-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.category-icon{font-size:3rem;margin-bottom:1rem}
+.category-card h3{font-size:1.8rem;color:var(--clay);margin-bottom:1rem}
+.category-card p{font-size:1.05rem;line-height:1.7;margin-bottom:1.5rem}
+.category-card ul{margin:1.5rem 0;padding-left:0;list-style:none}
+.category-card li{padding:0.5rem 0;padding-left:1.5rem;position:relative;font-size:1rem}
+.category-card li:before{content:"✓";position:absolute;left:0;color:var(--clay);font-weight:700}
 
-/* Provider Network */
-.provider-section{
-background:linear-gradient(135deg,var(--sage),var(--deep-green));
-color:var(--warm-white);
-padding:4rem 2.5rem;
-border-radius:25px;
-margin:3rem 0;
-}
-.provider-section h3{
-font-size:2rem;
-margin-bottom:1.5rem;
-}
-.provider-section p{
-font-size:1.1rem;
-line-height:1.8;
-margin-bottom:1rem;
-}
-.provider-benefits{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:1.5rem;
-margin-top:2rem;
-}
-.provider-benefit{
-background:rgba(255,255,255,0.1);
-padding:1.5rem;
-border-radius:15px;
-}
-.provider-benefit h4{
-font-size:1.2rem;
-margin-bottom:0.5rem;
-}
-.provider-benefit p{
-font-size:1rem;
-opacity:0.95;
-margin:0;
-}
+.how-it-works{background:var(--cream);padding:6rem 2rem;margin:4rem 0}
+.how-it-works h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:3rem;font-style:italic}
+.flow-steps{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem}
+.flow-step{background:#fff;padding:2rem;border-radius:20px;text-align:center;border-top:5px solid var(--sage)}
+.step-number{width:50px;height:50px;background:var(--clay);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 1rem}
+.flow-step h4{font-size:1.3rem;color:var(--clay);margin-bottom:0.8rem}
+.flow-step p{font-size:1rem;line-height:1.6;margin:0}
 
-/* Pricing */
-.pricing{
-background:var(--cream);
-padding:3rem;
-border-radius:25px;
-margin:3rem 0;
-}
-.pricing h3{
-font-size:2rem;
-color:var(--clay);
-margin-bottom:1.5rem;
-}
-.pricing-table{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:2rem;
-}
-.pricing-item{
-padding:1rem 0;
-border-bottom:2px solid rgba(201,93,61,0.2);
-}
-.pricing-item:last-child{
-border-bottom:none;
-}
-.pricing-item strong{
-font-size:1.1rem;
-color:var(--clay);
-}
-.pricing-item p{
-margin:0.5rem 0 0;
-font-size:1rem;
-}
+.pricing{padding:4rem 0}
+.pricing-box{max-width:700px;margin:0 auto;background:var(--cream);padding:3rem;border-radius:25px;border-left:8px solid var(--sage)}
+.pricing-box h3{font-size:2rem;color:var(--clay);margin-bottom:1.5rem}
+.pricing-box p{font-size:1.1rem;line-height:1.8;margin-bottom:1rem}
 
-/* CTA Section */
-.cta-section{
-padding:6rem 2rem;
-background:linear-gradient(135deg,var(--clay) 0%,var(--terracotta) 100%);
-color:var(--warm-white);
-text-align:center;
-}
-.cta-section h2{
-font-size:2.5rem;
-margin-bottom:1.5rem;
-}
-.cta-section p{
-font-size:1.2rem;
-margin-bottom:2rem;
-max-width:600px;
-margin-left:auto;
-margin-right:auto;
-}
-.cta-button{
-display:inline-block;
-padding:1.2rem 3rem;
-background:var(--warm-white);
-color:var(--clay);
-text-decoration:none;
-border-radius:50px;
-font-weight:700;
-font-size:1.2rem;
-transition:all 0.3s ease;
-}
-.cta-button:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
+.comparison{padding:6rem 2rem;background:var(--warm-white)}
+.comparison h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:3rem;font-style:italic}
+.comparison-table{max-width:900px;margin:0 auto;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.comparison-row{display:grid;grid-template-columns:200px 1fr 1fr;gap:2rem;padding:2rem;align-items:start;border-bottom:1px solid var(--cream)}
+.comparison-row:last-child{border-bottom:none}
+.comparison-row:nth-child(even){background:var(--cream)}
+.comparison-label{font-size:1.2rem;font-weight:700;color:var(--clay)}
+.comparison-col{font-size:1.05rem;line-height:1.6}
+.comparison-col strong{display:block;margin-bottom:0.5rem;color:var(--clay)}
 
-/* Responsive */
+.safety{background:linear-gradient(135deg,var(--sage),var(--deep-green));padding:6rem 2rem;color:var(--warm-white);margin:4rem 0}
+.safety h2{font-size:2.5rem;text-align:center;margin-bottom:3rem;font-style:italic;color:var(--warm-white)}
+.safety-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+.safety-item{background:rgba(255,255,255,0.15);padding:2rem;border-radius:20px;backdrop-filter:blur(10px)}
+.safety-item h4{font-size:1.5rem;margin-bottom:1rem;color:var(--warm-white)}
+.safety-item p{font-size:1.05rem;line-height:1.7;opacity:0.95}
+
+.cta{padding:6rem 2rem;background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);text-align:center}
+.cta h2{font-size:2.8rem;margin-bottom:1.5rem;color:var(--warm-white)}
+.cta p{font-size:1.2rem;margin-bottom:2rem;opacity:0.95}
+.cta-button{display:inline-block;padding:1.2rem 3rem;background:var(--warm-white);color:var(--clay);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease}
+.cta-button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+
 @media (max-width:768px){
-.header-content{flex-direction:column;gap:1rem}
-.nav-links{flex-direction:column;width:100%}
-.nav-link{text-align:center}
-.options-grid,.provider-benefits,.steps,.pricing-table{grid-template-columns:1fr}
+.header-content{flex-direction:column}
+.category-grid,.flow-steps,.safety-grid{grid-template-columns:1fr}
+.comparison-row{grid-template-columns:1fr;gap:1rem}
 }
 </style>
 </head>
@@ -336,295 +99,269 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
   <div class="header-content">
     <a href="index.html" class="logo-link">
       <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="30" r="8" fill="#FFFEF9"/>
-        <circle cx="30" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
-        <circle cx="70" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
-        <circle cx="50" cy="80" r="5" fill="#FFFEF9" opacity="0.6"/>
-        <circle cx="20" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
-        <circle cx="80" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
-        <line x1="50" y1="38" x2="30" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
-        <line x1="50" y1="38" x2="70" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
-        <line x1="30" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
-        <line x1="70" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
-        <line x1="30" y1="66" x2="20" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
-        <line x1="70" y1="66" x2="80" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
+        <circle cx="20" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="80" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="35" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="65" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="45" r="5" fill="#FFFEF9"/>
       </svg>
-      <span class="brand-name">VILLAGE NETWORK</span>
+      <span class="brand-name">KITH</span>
+      <span style="font-size:0.7rem;opacity:0.7;margin-left:0.3rem;font-weight:400">by The Village</span>
     </a>
     <div class="nav-links">
       <a href="index.html" class="nav-link">Home</a>
       <a href="why.html" class="nav-link">Why</a>
+      <a href="how.html" class="nav-link">How It Works</a>
       <a href="faq.html" class="nav-link">FAQ</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </div>
 </header>
 
-<section class="page-hero">
-  <h1>When you need paid help</h1>
-  <p>Community first, paid options when your network can't cover it</p>
+<section class="hero">
+  <h1>Provider Network</h1>
+  <p>When your circle can't help, hire from our vetted professionals. Background-checked. Insured. Fair rates.</p>
 </section>
 
-<section style="padding:4rem 2rem;background:var(--cream)">
-  <div style="max-width:1200px;margin:0 auto">
-    <h2 style="text-align:center;font-size:2.5rem;color:var(--clay);margin-bottom:3rem;font-style:italic">How It Works</h2>
+<section class="content">
+  <div class="container">
     
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-bottom:4rem">
-      <!-- Panel 1: Member Payment -->
-      <div style="background:#fff;border:3px solid var(--sage);border-radius:20px;padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
-        <div style="background:var(--sage);color:var(--warm-white);padding:1rem;border-radius:10px;margin:-2rem -2rem 1.5rem;font-weight:700;text-align:center">Pay Network Member</div>
-        <div style="background:#f5f5f5;padding:1.5rem;border-radius:10px;margin-bottom:1rem">
-          <div style="font-weight:700;margin-bottom:0.5rem">Sarah's Profile</div>
-          <div style="font-size:0.9rem;color:#666">Available for evening sitting</div>
-          <div style="margin:1rem 0;padding:1rem;background:#e8f5e9;border-radius:8px">
-            <div style="font-size:0.85rem;color:#2e7d32">✓ Vouched by 3 mutual friends</div>
-            <div style="font-size:0.85rem;color:#2e7d32">✓ 12 completed exchanges</div>
-          </div>
-          <div style="font-weight:700;font-size:1.2rem;color:var(--clay)">$20/hour</div>
-          <div style="font-size:0.85rem;color:#666;font-style:italic">Sarah's rate</div>
-        </div>
-        <div style="text-align:center;padding:1rem;background:#fff3cd;border-radius:8px;font-size:0.9rem">
-          <strong>Platform fee: 5%</strong><br>
-          ($21/hr total)
-        </div>
-      </div>
-
-      <!-- Panel 2: Booking Process -->
-      <div style="background:#fff;border:3px solid var(--sage);border-radius:20px;padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
-        <div style="background:var(--sage);color:var(--warm-white);padding:1rem;border-radius:10px;margin:-2rem -2rem 1.5rem;font-weight:700;text-align:center">Book & Confirm</div>
-        <div style="background:#f5f5f5;padding:1.5rem;border-radius:10px;margin-bottom:1rem">
-          <div style="font-weight:700;margin-bottom:0.8rem">Friday, Jan 24</div>
-          <div style="margin:0.5rem 0;padding:0.8rem;background:#fff;border-radius:6px;border-left:3px solid var(--sage)">
-            <div style="font-size:0.9rem">6:00 PM - 10:00 PM</div>
-            <div style="font-size:0.85rem;color:#666">4 hours</div>
-          </div>
-          <div style="margin-top:1rem;padding:1rem;background:#e3f2fd;border-radius:8px">
-            <div style="font-weight:700;margin-bottom:0.3rem">$84 total</div>
-            <div style="font-size:0.85rem;color:#666">$80 to Sarah + $4 fee</div>
-          </div>
-        </div>
-        <div style="text-align:center">
-          <button style="background:var(--clay);color:var(--warm-white);border:none;padding:0.8rem 2rem;border-radius:50px;font-weight:700;cursor:pointer;width:100%">Request Booking</button>
-        </div>
-      </div>
-
-      <!-- Panel 3: Payment & Tracking -->
-      <div style="background:#fff;border:3px solid var(--sage);border-radius:20px;padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
-        <div style="background:var(--sage);color:var(--warm-white);padding:1rem;border-radius:10px;margin:-2rem -2rem 1.5rem;font-weight:700;text-align:center">Auto-Payment</div>
-        <div style="background:#f5f5f5;padding:1.5rem;border-radius:10px;margin-bottom:1rem">
-          <div style="margin:0.5rem 0;padding:0.8rem;background:#fff;border-radius:6px">
-            <div style="font-size:0.85rem;color:#666">Service starts</div>
-            <div style="font-weight:700">Payment held</div>
-          </div>
-          <div style="margin:0.5rem 0;padding:0.8rem;background:#fff;border-radius:6px">
-            <div style="font-size:0.85rem;color:#666">You confirm completion</div>
-            <div style="font-weight:700">Payment released</div>
-          </div>
-          <div style="margin:1rem 0;padding:1rem;background:#e8f5e9;border-radius:8px;text-align:center">
-            <div style="font-size:0.85rem;color:#2e7d32;font-weight:700">✓ Sarah paid $80</div>
-            <div style="font-size:0.8rem;color:#666;margin-top:0.3rem">Jan 24, 10:15 PM</div>
-          </div>
-        </div>
-        <div style="font-size:0.85rem;color:#666;text-align:center;font-style:italic">Secure payments via Stripe</div>
-      </div>
+    <div class="intro">
+      <p><strong>Your circle handles 80% of your needs.</strong> But sometimes everyone's busy. Sometimes you need specialized skills. Sometimes you need help RIGHT NOW.</p>
+      <p>That's when you hire from our provider network. We've done the vetting so you don't have to.</p>
     </div>
-
-    <!-- Vetted Provider Flow -->
-    <h3 style="text-align:center;font-size:2rem;color:var(--clay);margin:4rem 0 2rem">Or Browse Vetted Providers</h3>
     
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem">
-      <!-- Panel 4: Provider Search -->
-      <div style="background:#fff;border:3px solid var(--clay);border-radius:20px;padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
-        <div style="background:var(--clay);color:var(--warm-white);padding:1rem;border-radius:10px;margin:-2rem -2rem 1.5rem;font-weight:700;text-align:center">Search Providers</div>
-        <div style="background:#f5f5f5;padding:1.5rem;border-radius:10px">
-          <div style="margin:0.8rem 0;padding:1rem;background:#fff;border-radius:8px;border:2px solid #e0e0e0">
-            <div style="display:flex;align-items:center;gap:1rem">
-              <div style="width:50px;height:50px;border-radius:50%;background:var(--terracotta);color:var(--warm-white);display:flex;align-items:center;justify-content:center;font-weight:700">LM</div>
-              <div style="flex:1">
-                <div style="font-weight:700">Lisa Martinez</div>
-                <div style="font-size:0.85rem;color:#666">⭐️ 4.9 • 45 reviews</div>
-              </div>
-            </div>
-            <div style="margin-top:0.8rem;padding:0.8rem;background:#e8f5e9;border-radius:6px">
-              <div style="font-size:0.85rem;color:#2e7d32">✓ Background checked</div>
-              <div style="font-size:0.85rem;color:#2e7d32">✓ CPR certified</div>
-              <div style="font-size:0.85rem;color:#2e7d32">✓ 8 years experience</div>
-            </div>
-            <div style="margin-top:0.8rem;font-weight:700;color:var(--clay)">$28/hour</div>
-          </div>
-        </div>
+    <h2>Who's in the Network</h2>
+    
+    <div class="category-grid">
+      
+      <div class="category-card">
+        <div class="category-icon">👶</div>
+        <h3>Childcare Providers</h3>
+        <p>Background-checked caregivers for when your circle can't cover</p>
+        <ul>
+          <li>CPR & First Aid certified</li>
+          <li>Background checks (state & federal)</li>
+          <li>Reference verified</li>
+          <li>Experience with multiple age groups</li>
+          <li>Liability insurance</li>
+        </ul>
       </div>
-
-      <!-- Panel 5: Provider Booking -->
-      <div style="background:#fff;border:3px solid var(--clay);border-radius:20px;padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
-        <div style="background:var(--clay);color:var(--warm-white);padding:1rem;border-radius:10px;margin:-2rem -2rem 1.5rem;font-weight:700;text-align:center">Book Professional</div>
-        <div style="background:#f5f5f5;padding:1.5rem;border-radius:10px">
-          <div style="font-weight:700;margin-bottom:0.8rem">Saturday, Jan 25</div>
-          <div style="margin:0.5rem 0;padding:0.8rem;background:#fff;border-radius:6px;border-left:3px solid var(--clay)">
-            <div style="font-size:0.9rem">2:00 PM - 6:00 PM</div>
-            <div style="font-size:0.85rem;color:#666">4 hours</div>
-          </div>
-          <div style="margin-top:1rem;padding:1rem;background:#fff3cd;border-radius:8px">
-            <div style="font-weight:700;margin-bottom:0.3rem">$128.80 total</div>
-            <div style="font-size:0.85rem;color:#666">$112 to Lisa + $16.80 fee (15%)</div>
-          </div>
-          <div style="margin-top:1rem;padding:0.8rem;background:#e3f2fd;border-radius:6px;text-align:center;font-size:0.85rem">
-            <strong>Insurance covered</strong><br>
-            Cancellation protection
-          </div>
-        </div>
+      
+      <div class="category-card">
+        <div class="category-icon">📚</div>
+        <h3>Tutors & Teachers</h3>
+        <p>Verified educators for learning support</p>
+        <ul>
+          <li>Credential verification</li>
+          <li>Subject expertise validated</li>
+          <li>Background checks completed</li>
+          <li>Portfolio of past work</li>
+          <li>Specialized skills (music, languages, STEM)</li>
+        </ul>
       </div>
-
-      <!-- Panel 6: Review -->
-      <div style="background:#fff;border:3px solid var(--clay);border-radius:20px;padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
-        <div style="background:var(--clay);color:var(--warm-white);padding:1rem;border-radius:10px;margin:-2rem -2rem 1.5rem;font-weight:700;text-align:center">Leave Review</div>
-        <div style="background:#f5f5f5;padding:1.5rem;border-radius:10px">
-          <div style="margin-bottom:1rem">
-            <div style="font-weight:700;margin-bottom:0.5rem">Rate your experience</div>
-            <div style="font-size:2rem;color:#ffc107">★★★★★</div>
-          </div>
-          <div style="padding:1rem;background:#fff;border-radius:8px;margin-bottom:1rem;font-size:0.9rem;color:#666;font-style:italic">
-            "Lisa was fantastic! Kids loved her, very professional, arrived on time..."
-          </div>
-          <div style="text-align:center;font-size:0.85rem;color:#666">
-            Reviews help other families<br>find great providers
-          </div>
-        </div>
+      
+      <div class="category-card">
+        <div class="category-icon">🚗</div>
+        <h3>Transportation Help</h3>
+        <p>Licensed drivers for rides and errands</p>
+        <ul>
+          <li>Valid driver's license</li>
+          <li>Clean driving record</li>
+          <li>Vehicle inspection passed</li>
+          <li>Commercial insurance</li>
+          <li>Background checks</li>
+        </ul>
       </div>
+      
+      <div class="category-card">
+        <div class="category-icon">🏠</div>
+        <h3>Household Services</h3>
+        <p>Professionals for projects and tasks</p>
+        <ul>
+          <li>Verified credentials/licenses</li>
+          <li>Portfolio of work</li>
+          <li>Background checks</li>
+          <li>Liability insurance</li>
+          <li>Skills: repairs, cleaning, organizing</li>
+        </ul>
+      </div>
+      
     </div>
+    
+  </div>
+</section>
+
+<section class="how-it-works">
+  <h2>How It Works</h2>
+  <div class="flow-steps">
+    
+    <div class="flow-step">
+      <div class="step-number">1</div>
+      <h4>Circle Tapped Out</h4>
+      <p>You post a need. Nobody in your circle can help this time.</p>
+    </div>
+    
+    <div class="flow-step">
+      <div class="step-number">2</div>
+      <h4>Search Providers</h4>
+      <p>Browse vetted professionals in your area. Filter by skills, rates, availability.</p>
+    </div>
+    
+    <div class="flow-step">
+      <div class="step-number">3</div>
+      <h4>Review & Choose</h4>
+      <p>See profiles, reviews, credentials. Pick who you want to hire.</p>
+    </div>
+    
+    <div class="flow-step">
+      <div class="step-number">4</div>
+      <h4>Coordinate Details</h4>
+      <p>Message directly. Work out timing, location, specific needs.</p>
+    </div>
+    
+    <div class="flow-step">
+      <div class="step-number">5</div>
+      <h4>Service Happens</h4>
+      <p>Provider shows up. Does the work. You confirm completion.</p>
+    </div>
+    
+    <div class="flow-step">
+      <div class="step-number">6</div>
+      <h4>Pay & Rate</h4>
+      <p>Pay through app. Provider gets funds. You leave a review.</p>
+    </div>
+    
   </div>
 </section>
 
 <section class="content">
   <div class="container">
-    <h2>The philosophy</h2>
-    <p><strong>Most exchanges happen through time credits—free and reciprocal.</strong> You watch Dave's kids for 4 hours, you earn 4 hours. That's the foundation.</p>
     
-    <p>But we heard you: sometimes your network can't cover it, and you'd gladly pay for reliable help. Maybe everyone in your circle is tapped out. Maybe you need specialized care. Maybe you just want the flexibility of cash.</p>
-    
-    <p><strong>Kith gives you options:</strong></p>
-
-    <div class="options-grid">
-      <div class="option-card">
-        <span class="label">FREE • DEFAULT</span>
-        <h3>Time Banking</h3>
-        <p>The core of Kith. Help someone, earn credit. Need help, spend credit. Fully tracked, automatically balanced, no money changes hands.</p>
-        <ul>
-          <li>Childcare swaps</li>
-          <li>Skill sharing</li>
-          <li>Tool lending</li>
-          <li>Transportation</li>
-          <li>House sitting</li>
-          <li>Meal trains</li>
-        </ul>
-      </div>
-
-      <div class="option-card">
-        <span class="label" style="background:var(--clay)">PAID • OPTIONAL</span>
-        <h3>Direct Member Payment</h3>
-        <p>Pay trusted network members directly for services when time credits aren't enough. They set their rates, you decide if it works for you.</p>
-        <ul>
-          <li>Regular babysitting gigs</li>
-          <li>Specialized tutoring</li>
-          <li>Professional services (design, accounting, etc)</li>
-          <li>Major projects requiring expertise</li>
-        </ul>
-      </div>
-
-      <div class="option-card" style="grid-column:1/-1">
-        <span class="label" style="background:var(--terracotta)">PAID • VETTED PROFESSIONALS</span>
-        <h3>Provider Network</h3>
-        <p>When your personal network can't cover it, hire from our curated network of background-checked professionals. Not strangers from the internet—providers vetted by Kith and trusted by families in your area.</p>
-        <ul>
-          <li>Licensed childcare providers</li>
-          <li>Certified tutors and educators</li>
-          <li>Home repair professionals</li>
-          <li>Medical/eldercare specialists</li>
-          <li>Emergency backup care</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="how-it-works">
-      <h3>How direct member payment works</h3>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h4>Member sets availability</h4>
-          <p>Sarah marks that she's available for paid babysitting: $20/hour, weeknights only</p>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <h4>You book & pay in-app</h4>
-          <p>You request Tuesday night care, pay through the app (card on file or Apple Pay)</p>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h4>Sarah gets paid directly</h4>
-          <p>Kith processes payment, Sarah receives funds (minus small processing fee)</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="provider-section">
-      <h3>Our vetted provider network</h3>
-      <p><strong>Not everyone in your personal network can help with every need.</strong> That's where our provider network comes in—trusted professionals who've been background-checked, reference-verified, and trusted by other families.</p>
-      
-      <div class="provider-benefits">
-        <div class="provider-benefit">
-          <h4>🛡️ Thoroughly vetted</h4>
-          <p>Background checks, license verification, references from real families in the network</p>
-        </div>
-        <div class="provider-benefit">
-          <h4>📍 Local to your area</h4>
-          <p>Providers are based in your community, available when you need them</p>
-        </div>
-        <div class="provider-benefit">
-          <h4>⭐ Rated by network families</h4>
-          <p>See reviews from families in your extended network, not strangers</p>
-        </div>
-        <div class="provider-benefit">
-          <h4>💳 Protected payments</h4>
-          <p>Book and pay securely through the app, with service guarantees</p>
-        </div>
-      </div>
-    </div>
-
     <div class="pricing">
-      <h3>Pricing & fees</h3>
-      <div class="pricing-table">
-        <div class="pricing-item">
-          <strong>Network coordination</strong>
-          <p>Always free. Time banking, messaging, network management—no charge, ever.</p>
-        </div>
-        <div class="pricing-item">
-          <strong>Direct member payments</strong>
-          <p>Members set their own rates. Kith takes 5% processing fee (covers payment processing + platform costs).</p>
-        </div>
-        <div class="pricing-item">
-          <strong>Provider network bookings</strong>
-          <p>Providers set their rates (competitive with local market). Kith takes 15% to cover vetting, insurance, and platform costs.</p>
-        </div>
-        <div class="pricing-item">
-          <strong>Emergency backup care</strong>
-          <p>Premium rates for same-day emergency care from vetted providers. Typically 20-30% higher than standard rates.</p>
-        </div>
+      <div class="pricing-box">
+        <h3>Pricing & Fees</h3>
+        <p><strong>You set your budget.</strong> Post what you're willing to pay. Providers apply if it works for them.</p>
+        <p><strong>Platform fee: 5-15%</strong> added to what you pay (not taken from provider's rate).</p>
+        <p><strong>Example:</strong> You hire a sitter at $20/hour for 4 hours. You pay $80 + $8 platform fee (10%) = $88 total. Sitter gets full $80.</p>
+        <p><strong>Why a fee?</strong> Covers background checks, insurance verification, payment processing, customer support, and maintaining the vetted network.</p>
       </div>
     </div>
-
-    <h2 style="margin-top:4rem">Why this model works</h2>
-    <p><strong>Community is the foundation.</strong> Time banking handles 80% of exchanges. But when you need specialized skills, consistent paid help, or backup when everyone's tapped out—you have options.</p>
     
-    <p>You're not choosing between free community care and expensive strangers. You're building a trusted network where <strong>both</strong> reciprocity and payment are possible, depending on what the situation needs.</p>
-    
-    <p>Free coordination. Paid options when you need them. All within your trusted circle.</p>
   </div>
 </section>
 
-<section class="cta-section">
-  <h2>Ready to build your network?</h2>
-  <p>Start with free coordination. Add paid options when you need them.</p>
-  <a href="index.html#final-cta" class="cta-button">Join Waitlist →</a>
+<section class="comparison">
+  <h2>How We Compare</h2>
+  <div class="comparison-table">
+    
+    <div class="comparison-row">
+      <div class="comparison-label">Platform Fee</div>
+      <div class="comparison-col">
+        <strong>Kith</strong>
+        5-15% added to your payment
+      </div>
+      <div class="comparison-col">
+        <strong>UrbanSitter</strong>
+        35% taken from provider's rate
+      </div>
+    </div>
+    
+    <div class="comparison-row">
+      <div class="comparison-label">Background Checks</div>
+      <div class="comparison-col">
+        <strong>Kith</strong>
+        All providers. State & federal. Renewed annually.
+      </div>
+      <div class="comparison-col">
+        <strong>UrbanSitter</strong>
+        Optional for providers (many skip it)
+      </div>
+    </div>
+    
+    <div class="comparison-row">
+      <div class="comparison-label">Insurance</div>
+      <div class="comparison-col">
+        <strong>Kith</strong>
+        Required. Verified before approval.
+      </div>
+      <div class="comparison-col">
+        <strong>Care.com</strong>
+        Recommended but not verified
+      </div>
+    </div>
+    
+    <div class="comparison-row">
+      <div class="comparison-label">Also Get</div>
+      <div class="comparison-col">
+        <strong>Kith</strong>
+        Free circle coordination. Community. Lifecycle support.
+      </div>
+      <div class="comparison-col">
+        <strong>Others</strong>
+        Just paid marketplace
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="safety">
+  <h2>Safety & Vetting</h2>
+  <div class="safety-grid">
+    
+    <div class="safety-item">
+      <h4>Multi-Layer Background Checks</h4>
+      <p>State criminal records, federal databases, sex offender registry. Renewed annually. Any red flags = immediate removal.</p>
+    </div>
+    
+    <div class="safety-item">
+      <h4>Reference Verification</h4>
+      <p>We call references. We verify past work. We check credentials. No automated rubber-stamping.</p>
+    </div>
+    
+    <div class="safety-item">
+      <h4>Insurance Requirements</h4>
+      <p>All providers carry liability insurance. We verify coverage before approval. Protects you and them.</p>
+    </div>
+    
+    <div class="safety-item">
+      <h4>Ongoing Monitoring</h4>
+      <p>Reviews from families. Complaint tracking. Performance monitoring. Bad actors get removed fast.</p>
+    </div>
+    
+    <div class="safety-item">
+      <h4>Secure Payments</h4>
+      <p>Payment processed through Stripe (PCI-compliant). Money held in escrow until service confirmed. Dispute resolution built-in.</p>
+    </div>
+    
+    <div class="safety-item">
+      <h4>24/7 Support</h4>
+      <p>Issues during service? Contact support anytime. We investigate immediately and take action.</p>
+    </div>
+    
+  </div>
+</section>
+
+<section class="content">
+  <div class="container">
+    
+    <h2 style="text-align:center">Why Both Circle + Providers?</h2>
+    
+    <div class="intro">
+      <p><strong>Most weeks, your circle handles it.</strong> Free exchanges. People you trust. Relationships that grow over time.</p>
+      <p><strong>Tough weeks, you need backup.</strong> Everyone's sick. Work emergency. Last-minute crisis. That's when you hire professionals.</p>
+      <p><strong>The combination is what makes Kith work.</strong> Circle first (80%). Providers when needed (20%). You're always covered.</p>
+    </div>
+    
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to Get Started?</h2>
+  <p>Join the waitlist. Get access to both circle coordination AND vetted providers.</p>
+  <a href="index.html#download" class="cta-button">Join Waitlist →</a>
 </section>
 
 </body>
