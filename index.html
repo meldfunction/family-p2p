@@ -3,601 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kith - Childcare Coordination for Parents</title>
+<title>Kith | Coordinate childcare with your trusted network</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{
---sage:#7A9B76;
---deep-green:#5A7A56;
---clay:#C95D3D;
---terracotta:#E87A5D;
---warm-white:#FFFEF9;
---cream:#FFF8F0;
---charcoal:#2B2B2B;
-}
+:root{--sage:#7A9B76;--deep-green:#5A7A56;--clay:#C95D3D;--terracotta:#E87A5D;--warm-white:#FFFEF9;--cream:#FFF8F0;--charcoal:#2B2B2B}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-font-family:'DM Sans',sans-serif;
-background:var(--warm-white);
-color:var(--charcoal);
-line-height:1.6;
-}
+body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6}
 h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
-
-/* Header */
-.site-header{
-background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);
-padding:1.5rem 2rem;
-position:sticky;
-top:0;
-z-index:100;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-.header-content{
-max-width:1200px;
-margin:0 auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-.logo-link{
-display:flex;
-align-items:center;
-gap:1rem;
-text-decoration:none;
-color:var(--warm-white);
-}
+.site-header{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.logo-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--warm-white)}
 .logo-svg{width:40px;height:40px}
-.brand-name{
-font-family:'Fraunces',serif;
-font-weight:700;
-font-size:1.5rem;
-letter-spacing:1px;
-}
-.nav-links{
-display:flex;
-gap:1rem;
-}
-.nav-link{
-color:var(--warm-white);
-text-decoration:none;
-font-weight:500;
-padding:0.5rem 1.5rem;
-border-radius:25px;
-transition:all 0.3s ease;
-background:rgba(255,255,255,0.1);
-}
-.nav-link:hover{
-background:rgba(255,255,255,0.2);
-transform:translateY(-2px);
-}
-.nav-link.active{
-background:var(--warm-white);
-color:var(--sage);
-}
+.brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;letter-spacing:1px}
+.nav-links{display:flex;gap:1rem}
+.nav-link{color:var(--warm-white);text-decoration:none;font-weight:500;padding:0.5rem 1.5rem;border-radius:25px;transition:all 0.3s ease;background:rgba(255,255,255,0.1)}
+.nav-link:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.nav-link.active{background:var(--warm-white);color:var(--sage)}
+.hero{padding:8rem 2rem 4rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
+.hero .container{max-width:900px;margin:0 auto}
+.kicker{font-size:0.9rem;text-transform:uppercase;letter-spacing:2px;color:var(--clay);margin-bottom:1rem;font-weight:600}
+.hero h1{font-size:clamp(3rem,8vw,5.5rem);color:var(--clay);margin-bottom:1.5rem;font-style:italic;line-height:1.1}
+.tagline{font-size:1.8rem;font-weight:700;color:var(--charcoal);margin-bottom:0}
+.cta-button{display:inline-block;padding:1.2rem 3rem;background:var(--clay);color:var(--warm-white);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(201,93,61,0.3)}
+.cta-button:hover{background:var(--terracotta);transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,93,61,0.4)}
 
-/* Hero */
-.hero{
-min-height:90vh;
-padding:8rem 2rem 6rem;
-background:linear-gradient(135deg,var(--cream) 0%,#FFE8D6 100%);
-text-align:center;
-}
-.hero .container{
-max-width:700px;
-margin:0 auto;
-}
-.kicker{
-font-size:1rem;
-text-transform:uppercase;
-letter-spacing:2px;
-color:var(--sage);
-font-weight:700;
-margin-bottom:1.5rem;
-}
-.hero h1{
-font-size:clamp(3rem,8vw,5.5rem);
-color:var(--clay);
-margin-bottom:1.5rem;
-font-style:italic;
-line-height:1.1;
-}
-.tagline{
-font-size:1.8rem;
-font-weight:700;
-color:var(--charcoal);
-margin-bottom:2rem;
-}
-.hero p{
-font-size:1.2rem;
-line-height:1.8;
-margin-bottom:1.5rem;
-color:var(--charcoal);
-opacity:0.9;
-}
-.cta-button{
-display:inline-block;
-padding:1.2rem 3rem;
-background:var(--clay);
-color:var(--warm-white);
-text-decoration:none;
-border-radius:50px;
-font-weight:700;
-font-size:1.2rem;
-transition:all 0.3s ease;
-margin-top:2rem;
-}
-.cta-button:hover{
-background:var(--terracotta);
-transform:translateY(-3px);
-box-shadow:0 10px 30px rgba(201,93,61,0.3);
-}
+/* SUBWAY MAP FLOW */
+.subway-flow{max-width:1000px;margin:4rem auto;padding:0 2rem}
+.flow-station{display:grid;grid-template-columns:80px 1fr;gap:2rem;margin-bottom:3rem;position:relative}
+.flow-station:not(:last-child)::after{content:'';position:absolute;left:40px;top:80px;bottom:-3rem;width:4px;background:linear-gradient(to bottom,var(--sage),var(--deep-green));border-radius:2px}
+.station-marker{width:80px;height:80px;background:var(--clay);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;box-shadow:0 4px 15px rgba(201,93,61,0.3);position:relative;z-index:2}
+.station-content h3{font-size:1.8rem;color:var(--clay);margin-bottom:0.5rem}
+.station-content p{font-size:1.1rem;line-height:1.7;margin-bottom:1.5rem;opacity:0.9}
+.mockup-mini{background:#fff;border:2px solid #ddd;border-radius:15px;padding:1rem;box-shadow:0 4px 15px rgba(0,0,0,0.1);max-width:350px}
+.mockup-header{background:var(--sage);color:var(--warm-white);padding:0.8rem;border-radius:8px 8px 0 0;margin:-1rem -1rem 1rem;font-weight:700;font-size:0.95rem}
+.mockup-body{font-size:0.9rem;line-height:1.5}
+.form-row{margin-bottom:0.8rem}
+.form-label{font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;display:block}
+.form-input{width:100%;padding:0.5rem;border:1px solid #ddd;border-radius:6px;font-size:0.85rem}
+.mini-btn{background:var(--clay);color:var(--warm-white);border:none;padding:0.6rem 1.5rem;border-radius:20px;font-weight:700;font-size:0.85rem;cursor:pointer;width:100%}
+.match-badge{background:#e8f5e9;color:#2e7d32;padding:0.4rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:600;display:inline-block;margin-top:0.5rem}
+.msg-bubble{background:#f5f5f5;padding:0.7rem;border-radius:10px;margin-bottom:0.5rem;font-size:0.85rem}
+.msg-time{font-size:0.7rem;color:#999;margin-top:0.2rem}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:0.8rem}
+.stat-box{background:var(--cream);padding:0.8rem;border-radius:8px;text-align:center}
+.stat-num{font-size:1.5rem;font-weight:700;color:var(--clay)}
+.stat-label{font-size:0.75rem;opacity:0.7}
 
-/* App Screen */
-.app-screen-section{
-padding:6rem 2rem;
-background:var(--warm-white);
-}
-.app-screen-section h2{
-font-size:3rem;
-text-align:center;
-color:var(--clay);
-margin-bottom:1rem;
-font-style:italic;
-}
-.app-screen-section .intro{
-font-size:1.3rem;
-text-align:center;
-max-width:600px;
-margin:0 auto 4rem;
-opacity:0.8;
-}
-.phone-container{
-max-width:420px;
-margin:0 auto;
-}
-.phone-frame{
-background:var(--charcoal);
-border-radius:45px;
-padding:1.5rem;
-box-shadow:0 40px 100px rgba(0,0,0,0.4);
-}
-.phone-screen{
-background:var(--warm-white);
-border-radius:35px;
-overflow:hidden;
-}
-.status-bar{
-padding:0.8rem 1.5rem;
-display:flex;
-justify-content:space-between;
-font-size:0.75rem;
-font-weight:600;
-}
-.app-header{
-background:linear-gradient(135deg,var(--sage),var(--deep-green));
-color:var(--warm-white);
-padding:2rem 1.5rem;
-text-align:center;
-}
-.app-header h3{
-font-size:1.8rem;
-margin-bottom:0.5rem;
-}
-.app-header p{
-font-size:1rem;
-opacity:0.95;
-}
-.tabs{
-display:flex;
-background:var(--cream);
-border-bottom:2px solid rgba(201,93,61,0.15);
-}
-.tab{
-flex:1;
-padding:1rem;
-text-align:center;
-font-weight:700;
-font-size:0.9rem;
-color:var(--charcoal);
-opacity:0.4;
-cursor:pointer;
-}
-.tab.active{
-opacity:1;
-border-bottom:4px solid var(--clay);
-}
-.feed{
-padding:1.5rem;
-background:var(--cream);
-max-height:550px;
-overflow-y:auto;
-}
-.post{
-background:var(--warm-white);
-padding:1.5rem;
-border-radius:20px;
-margin-bottom:1.5rem;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
-border-left:5px solid var(--sage);
-}
-.post-header{
-display:flex;
-align-items:center;
-gap:1rem;
-margin-bottom:1rem;
-}
-.avatar{
-width:45px;
-height:45px;
-border-radius:50%;
-background:var(--sage);
-color:var(--warm-white);
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:700;
-font-size:1.2rem;
-}
-.post-meta .name{
-font-weight:700;
-font-size:1rem;
-}
-.post-meta .time{
-font-size:0.8rem;
-opacity:0.6;
-}
-.post-content h4{
-font-size:1.1rem;
-color:var(--clay);
-margin-bottom:0.5rem;
-}
-.post-content p{
-font-size:0.95rem;
-line-height:1.6;
-margin-bottom:1rem;
-}
-.post-tags{
-display:flex;
-gap:0.5rem;
-margin-bottom:1rem;
-}
-.badge{
-font-size:0.75rem;
-padding:0.4rem 0.8rem;
-background:rgba(122,155,118,0.15);
-color:var(--sage);
-border-radius:15px;
-font-weight:700;
-}
-.post-actions{
-display:flex;
-gap:0.75rem;
-}
-.btn{
-flex:1;
-padding:0.8rem;
-border:none;
-border-radius:12px;
-font-weight:700;
-font-size:0.9rem;
-cursor:pointer;
-transition:all 0.3s ease;
-}
-.btn-primary{
-background:var(--sage);
-color:var(--warm-white);
-}
-.btn-primary:hover{
-background:var(--deep-green);
-}
-.btn-secondary{
-background:transparent;
-color:var(--clay);
-border:2px solid var(--clay);
-}
+/* TREE DIAGRAM */
+.tree-diagram{max-width:900px;margin:2rem auto;padding:2rem;background:var(--cream);border-radius:20px}
+.tree-root{display:flex;align-items:center;justify-content:center;margin-bottom:2rem}
+.tree-node{background:#fff;border:3px solid var(--sage);border-radius:15px;padding:1.5rem;text-align:center;min-width:200px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.tree-icon{font-size:2.5rem;margin-bottom:0.5rem}
+.tree-arrow{font-size:2rem;color:var(--clay);margin:0 1.5rem;font-weight:700}
+.tree-branches{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;position:relative}
+.tree-branches::before{content:'';position:absolute;top:-2rem;left:50%;width:2px;height:2rem;background:var(--sage)}
+.tree-branch{background:#fff;border:2px solid var(--sage);border-radius:12px;padding:1rem;text-align:center;font-size:0.9rem}
+.tree-branch .tree-icon{font-size:2rem;margin-bottom:0.3rem}
 
-/* Testimonial Live */
-.testimonial-live{
-padding:6rem 2rem;
-background:var(--charcoal);
-}
-.testimonial-live h2{
-font-size:3rem;
-text-align:center;
-color:var(--warm-white);
-margin-bottom:1rem;
-font-style:italic;
-}
-.testimonial-live .intro{
-font-size:1.3rem;
-text-align:center;
-max-width:600px;
-margin:0 auto 4rem;
-color:var(--cream);
-opacity:0.9;
-}
-.testimonial-phone{
-max-width:420px;
-margin:0 auto;
-}
-.testimonial-screen{
-background:var(--warm-white);
-border-radius:35px;
-overflow:hidden;
-}
-.conversation-header{
-background:linear-gradient(135deg,var(--sage),var(--deep-green));
-color:var(--warm-white);
-padding:1.5rem;
-display:flex;
-align-items:center;
-gap:1rem;
-}
-.back-arrow{
-font-size:1.5rem;
-}
-.conversation-header h4{
-font-size:1.2rem;
-}
-.messages{
-padding:1.5rem;
-background:var(--cream);
-min-height:500px;
-}
-.message{
-margin-bottom:1.5rem;
-display:flex;
-}
-.message.received{
-justify-content:flex-start;
-}
-.message.sent{
-justify-content:flex-end;
-}
-.bubble{
-max-width:75%;
-padding:1rem 1.3rem;
-border-radius:20px;
-}
-.message.received .bubble{
-background:var(--warm-white);
-border:2px solid rgba(122,155,118,0.2);
-border-bottom-left-radius:5px;
-}
-.message.sent .bubble{
-background:var(--sage);
-color:var(--warm-white);
-border-bottom-right-radius:5px;
-}
-.bubble .name{
-font-size:0.75rem;
-font-weight:700;
-margin-bottom:0.3rem;
-opacity:0.7;
-}
-.bubble .text{
-font-size:1rem;
-line-height:1.5;
-margin-bottom:0.3rem;
-}
-.bubble .timestamp{
-font-size:0.7rem;
-opacity:0.6;
-}
+/* DOWNLOAD SECTION */
+.download-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);text-align:center}
+.download-section h2{font-size:3rem;margin-bottom:1rem;color:var(--warm-white)}
+.download-section p{font-size:1.3rem;margin-bottom:3rem;opacity:0.95}
+.qr-container{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap}
+.qr-item{text-align:center}
+.qr-code{width:200px;height:200px;background:var(--warm-white);padding:1rem;border-radius:15px;margin-bottom:1rem}
+.qr-label{font-size:1.2rem;font-weight:700}
 
-/* How it Works */
-.how-works{
-padding:6rem 2rem;
-background:var(--warm-white);
-}
-.how-works h2{
-font-size:3rem;
-text-align:center;
-color:var(--clay);
-margin-bottom:3rem;
-font-style:italic;
-}
-.steps-grid{
-max-width:1000px;
-margin:0 auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:3rem;
-}
-.step{
-text-align:center;
-}
-.step-number{
-width:70px;
-height:70px;
-background:var(--sage);
-color:var(--warm-white);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:2rem;
-font-weight:700;
-margin:0 auto 1.5rem;
-}
-.step h3{
-font-size:1.5rem;
-margin-bottom:1rem;
-color:var(--clay);
-}
-.step p{
-font-size:1.05rem;
-line-height:1.7;
-}
-
-/* How it Works - User Flow */
-.how-works{padding:6rem 2rem;background:var(--warm-white)}
-.how-works h2{font-size:3rem;text-align:center;color:var(--clay);margin-bottom:1rem;font-style:italic}
-.how-works .intro{font-size:1.3rem;text-align:center;max-width:800px;margin:0 auto 4rem;opacity:0.8}
-.user-flow{max-width:1200px;margin:0 auto}
-.flow-step{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:5rem;padding:3rem;background:var(--cream);border-radius:25px}
-.flow-step:nth-child(even){grid-template-columns:1fr 1fr}
-.flow-step:nth-child(even) .step-label{order:2}
-.flow-step:nth-child(even) .phone-mini{order:1}
-.flow-step.full-width{grid-template-columns:1fr;text-align:center}
-.step-label{padding:1rem}
-.step-num{width:60px;height:60px;background:var(--sage);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;margin-bottom:1.5rem}
-.step-label h3{font-size:2rem;color:var(--clay);margin-bottom:1rem}
-.step-label p{font-size:1.1rem;line-height:1.7;opacity:0.9}
-.phone-mini{max-width:350px;margin:0 auto}
-.phone-mini-screen{background:var(--charcoal);border-radius:30px;padding:1rem;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
-.mini-header{background:linear-gradient(135deg,var(--sage),var(--deep-green));color:var(--warm-white);padding:1rem;border-radius:20px 20px 0 0;font-weight:700;font-size:1rem}
-.mini-content{background:var(--warm-white);padding:1.5rem;border-radius:0 0 20px 20px;min-height:300px}
-.form-field{margin-bottom:1.5rem}
-.form-field label{display:block;font-weight:700;font-size:0.85rem;margin-bottom:0.5rem;color:var(--charcoal)}
-.form-field select,.form-field input,.form-field textarea{width:100%;padding:0.8rem;border:2px solid rgba(201,93,61,0.2);border-radius:10px;font-size:0.9rem;font-family:'DM Sans',sans-serif}
-.form-field textarea{min-height:80px;resize:vertical}
-.mini-btn{width:100%;padding:1rem;background:var(--sage);color:var(--warm-white);border:none;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;margin-top:1rem}
-.mini-btn-secondary{width:100%;padding:0.8rem;background:transparent;color:var(--clay);border:2px solid var(--clay);border-radius:10px;font-weight:700;font-size:0.9rem;cursor:pointer}
-.notification-card{padding:1.2rem;background:var(--cream);border-radius:15px;margin-bottom:1rem;border-left:4px solid var(--sage)}
-.notification-card.highlight{background:linear-gradient(135deg,rgba(122,155,118,0.15),rgba(90,122,86,0.1));border-left:4px solid var(--clay)}
-.notif-badge{display:inline-block;background:var(--clay);color:var(--warm-white);padding:0.3rem 0.8rem;border-radius:12px;font-size:0.7rem;font-weight:700;margin-bottom:0.8rem}
-.notif-avatar{width:35px;height:35px;border-radius:50%;background:var(--sage);color:var(--warm-white);display:inline-flex;align-items:center;justify-content:center;font-weight:700;margin-right:0.8rem;vertical-align:middle}
-.notif-text{display:inline-block;font-size:0.9rem;line-height:1.5;vertical-align:middle;max-width:calc(100% - 50px)}
-.skill-match{margin-top:0.8rem;font-size:0.8rem;color:var(--sage);font-weight:700}
-.messages-mini{padding:1rem;background:var(--cream)}
-.msg-bubble{margin-bottom:1rem;max-width:80%}
-.msg-bubble.received{text-align:left}
-.msg-bubble.sent{margin-left:auto;text-align:right}
-.msg-bubble .msg-text{display:inline-block;padding:0.8rem 1rem;border-radius:15px;font-size:0.85rem;line-height:1.5}
-.msg-bubble.received .msg-text{background:var(--warm-white);border:2px solid rgba(122,155,118,0.2);border-bottom-left-radius:5px}
-.msg-bubble.sent .msg-text{background:var(--sage);color:var(--warm-white);border-bottom-right-radius:5px}
-.msg-time{font-size:0.65rem;opacity:0.6;margin-top:0.3rem}
-.exchange-card{padding:1.5rem;background:var(--cream);border-radius:15px;border-left:4px solid var(--sage)}
-.exchange-card.active{background:linear-gradient(135deg,rgba(122,155,118,0.1),rgba(90,122,86,0.05))}
-.exchange-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
-.avatar-mini{width:40px;height:40px;border-radius:50%;background:var(--sage);color:var(--warm-white);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem}
-.exchange-meta{font-size:0.8rem;opacity:0.7;margin-top:0.3rem}
-.exchange-stats{display:flex;gap:2rem;margin-bottom:1.5rem;padding:1rem;background:rgba(255,255,255,0.5);border-radius:10px}
-.stat{text-align:center}
-.stat-num{font-size:1.8rem;font-weight:700;color:var(--clay)}
-.stat-label{font-size:0.75rem;opacity:0.7;margin-top:0.3rem}
-.reciprocity-examples{display:flex;align-items:center;justify-content:center;gap:2rem;margin:2rem 0;flex-wrap:wrap}
-.recip-card{background:var(--cream);padding:2rem;border-radius:20px;border-left:5px solid var(--sage);min-width:200px;text-align:left}
-.recip-card.small{padding:1.5rem;min-width:180px}
-.recip-icon{font-size:2.5rem;margin-bottom:1rem}
-.recip-text{font-size:0.95rem;line-height:1.6}
-.recip-arrow{font-size:3rem;color:var(--clay);font-weight:700}
-.recip-options{display:flex;flex-direction:column;gap:1rem}
-.reciprocity-note{max-width:700px;margin:2rem auto 0;font-size:1.1rem;opacity:0.8;font-style:italic}
-.credit-flow{display:flex;align-items:center;justify-content:center;gap:2rem;margin:2rem 0;flex-wrap:wrap}
-.credit-node{text-align:center}
-.credit-node.solo{margin-top:2rem}
-.avatar-large{width:80px;height:80px;border-radius:50%;background:var(--sage);color:var(--warm-white);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.95rem;margin:0 auto 1rem;box-shadow:0 5px 20px rgba(0,0,0,0.1)}
-.credit-arrow{font-size:3rem;color:var(--clay);font-weight:700}
-.credit-note{max-width:600px;margin:2rem auto 0;font-size:1.1rem;opacity:0.8;font-style:italic}
-.onboarding-box{background:var(--charcoal);color:var(--warm-white);padding:3rem;border-radius:25px;margin-top:4rem;max-width:900px;margin-left:auto;margin-right:auto}
-.onboarding-box h3{font-size:2rem;margin-bottom:1.5rem;text-align:center}
-.onboarding-box>p{font-size:1.2rem;text-align:center;margin-bottom:2rem;opacity:0.95}
-.onboarding-features{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
-.onboard-item{background:rgba(255,255,255,0.1);padding:1.5rem;border-radius:15px;font-size:1rem;line-height:1.7}
-.onboard-item strong{display:block;color:var(--warm-white);margin-bottom:0.5rem}
-
-/* Download */
-.download-section{
-padding:6rem 2rem;
-background:linear-gradient(135deg,var(--sage),var(--deep-green));
-color:var(--warm-white);
-text-align:center;
-}
-.download-section h2{
-font-size:3rem;
-margin-bottom:1rem;
-}
-.download-section p{
-font-size:1.3rem;
-margin-bottom:3rem;
-opacity:0.95;
-}
-.qr-container{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:4rem;
-max-width:700px;
-margin:0 auto 3rem;
-}
-.qr-item{
-text-align:center;
-}
-.qr-code{
-width:220px;
-height:220px;
-background:var(--warm-white);
-margin:0 auto 1.5rem;
-padding:1.5rem;
-border-radius:20px;
-box-shadow:0 10px 40px rgba(0,0,0,0.2);
-}
-.qr-code svg{
-width:100%;
-height:100%;
-}
-.qr-item h3{
-font-size:1.5rem;
-margin-bottom:0.5rem;
-}
-.qr-item p{
-font-size:1rem;
-opacity:0.8;
-}
-.store-badge{
-display:inline-block;
-margin-top:1rem;
-padding:0.8rem 1.8rem;
-background:var(--charcoal);
-color:var(--warm-white);
-text-decoration:none;
-border-radius:12px;
-font-weight:700;
-transition:all 0.3s ease;
-}
-.store-badge:hover{
-background:var(--clay);
-transform:translateY(-2px);
-}
-.waitlist-note{
-font-size:1.1rem;
-font-style:italic;
-opacity:0.85;
-margin-top:2rem;
-}
-
-/* Responsive */
 @media (max-width:768px){
 .header-content{flex-direction:column;gap:1rem}
 .nav-links{flex-wrap:wrap;justify-content:center}
-.hero h1{font-size:2.5rem}
-.tagline{font-size:1.3rem}
-.flow-step{grid-template-columns:1fr!important;gap:2rem}
-.flow-step:nth-child(even) .step-label{order:1}
-.flow-step:nth-child(even) .phone-mini{order:2}
-.reciprocity-examples,.credit-flow{flex-direction:column}
-.recip-arrow,.credit-arrow{transform:rotate(90deg)}
-.onboarding-features{grid-template-columns:1fr}
-.qr-container{grid-template-columns:1fr}
+.flow-station{grid-template-columns:60px 1fr;gap:1rem}
+.flow-station::after{left:30px}
+.station-marker{width:60px;height:60px;font-size:1.5rem}
+.tree-branches{grid-template-columns:1fr}
+.qr-container{gap:2rem}
 }
 </style>
 </head>
 <body>
-
 <header class="site-header">
   <div class="header-content">
     <a href="index.html" class="logo-link">
       <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <!-- Interlocking circles representing 10-15 person network -->
         <circle cx="35" cy="50" r="18" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
         <circle cx="65" cy="50" r="18" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
         <circle cx="50" cy="32" r="18" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
-        <!-- Center dot where all circles meet -->
         <circle cx="50" cy="50" r="6" fill="#FFFEF9"/>
       </svg>
       <span class="brand-name">KITH</span>
@@ -606,10 +99,8 @@ margin-top:2rem;
     <div class="nav-links">
       <a href="index.html" class="nav-link active">Home</a>
       <a href="why.html" class="nav-link">Why</a>
-      <a href="how-it-works.html" class="nav-link">How It Works</a>
-      <a href="paid-services.html" class="nav-link">Paid Options</a>
-      <a href="revenue.html" class="nav-link">Revenue</a>
-      <a href="about.html" class="nav-link">About</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </div>
 </header>
@@ -619,187 +110,68 @@ margin-top:2rem;
     <div class="kicker">Kith by The Village</div>
     <h1>When you need a break</h1>
     <p class="tagline">Don't grab a Snickers. Grab your Kith.</p>
-    <p>It's Saturday. You and your partner haven't had a date night in six months. The kids are wonderful—and exhausting. You need four hours. Just four hours to remember you're adults who like each other.</p>
-    <p>But who do you ask? Your sister watched them last month. Your neighbor seems busy. The usual group chat feels like too much guilt for "just wanting a break."</p>
-    <p style="font-weight:600;font-size:1.15rem;margin-top:1.5rem;opacity:0.9">Here's the thing: humans can maintain about 150 meaningful relationships (Dunbar's number). But research shows you need just 10-15 people actively involved to adequately share the load of raising children—the way it worked for most of human history before nuclear families tried to do it alone.</p>
-    <p style="font-weight:700;font-size:1.3rem;margin-top:2rem">Kith helps you build and coordinate with those 10-15 people. Post needs, offer skills, track exchanges—without adding to your cognitive load.</p>
-    <a href="#download" class="cta-button">Join Waitlist →</a>
   </div>
 </section>
 
-<section class="app-screen-section">
-  <h2>Your village, organized</h2>
-  <p class="intro">See who's available, who needs help, all in one place</p>
-  <div class="phone-container">
-    <div class="phone-frame">
-      <div class="phone-screen">
-        <div class="status-bar">
-          <span>9:41</span>
-          <span>📶 📡 🔋</span>
-        </div>
-        <div class="app-header">
-          <h3>Kith</h3>
-          <p>Your trusted network • 12 hours banked</p>
-        </div>
-        <div class="tabs">
-          <div class="tab active">Requests</div>
-          <div class="tab">Circle</div>
-          <div class="tab">Messages</div>
-        </div>
-        <div class="feed">
-          <div class="post">
-            <div class="post-header">
-              <div class="avatar" style="background:var(--sage)">L</div>
-              <div class="post-meta">
-                <div class="name">Lisa Martinez</div>
-                <div class="time">2 hours ago</div>
-              </div>
-            </div>
-            <div class="post-content">
-              <h4>Can watch kids Saturday evening</h4>
-              <p>My daughter (7) would love company! Can take 1-2 kids ages 5-9. Pizza and movies at our place. 5pm-9pm.</p>
-              <div class="post-tags">
-                <span class="badge">Childcare</span>
-                <span class="badge">0.5 miles</span>
-              </div>
-            </div>
-            <div class="post-actions">
-              <button class="btn btn-primary">Send Request</button>
-              <button class="btn btn-secondary">Message</button>
-            </div>
-          </div>
-          <div class="post">
-            <div class="post-header">
-              <div class="avatar" style="background:var(--clay)">M</div>
-              <div class="post-meta">
-                <div class="name">Marcus Chen</div>
-                <div class="time">5 hours ago</div>
-              </div>
-            </div>
-            <div class="post-content">
-              <h4>Need Saturday sitter 6pm-10pm</h4>
-              <p>Date night! Two kids (6 & 8), super easy, will be asleep by 8:30. Can trade for next weekend.</p>
-              <div class="post-tags">
-                <span class="badge">Need Help</span>
-                <span class="badge">1.2 miles</span>
-              </div>
-            </div>
-            <div class="post-actions">
-              <button class="btn btn-primary">I Can Help</button>
-              <button class="btn btn-secondary">Details</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- BIG PROBLEM STATEMENT -->
+<section style="padding:4rem 2rem;background:var(--charcoal);color:var(--warm-white);text-align:center">
+  <div style="max-width:1000px;margin:0 auto">
+    <h2 style="font-size:clamp(2.5rem,6vw,4.5rem);color:var(--warm-white);margin-bottom:2rem;line-height:1.2;font-style:italic">Modern parents are trying to do what 8-14 people used to share</h2>
+    <p style="font-size:1.4rem;line-height:1.8;opacity:0.95;max-width:800px;margin:0 auto">For 200,000 years, children were raised by extended family, neighbors, and community. Then we scattered everyone, isolated families in separate houses, and expected 1-2 exhausted people to handle everything.</p>
+    <p style="font-size:1.4rem;line-height:1.8;opacity:0.95;max-width:800px;margin:2rem auto 0;font-weight:700">The burnout you feel isn't personal failure. It's a rational response to an impossible setup.</p>
   </div>
 </section>
 
-<section class="testimonial-live">
-  <h2>Real exchanges in action</h2>
-  <p class="intro">This is what it looks like when parents coordinate through Kith</p>
-  <div class="testimonial-phone">
-    <div class="phone-frame">
-      <div class="testimonial-screen">
-        <div class="status-bar">
-          <span>9:41</span>
-          <span>📶 📡 🔋</span>
-        </div>
-        <div class="conversation-header">
-          <span class="back-arrow">←</span>
-          <div>
-            <h4>Sarah Johnson</h4>
-            <p style="font-size:0.85rem;opacity:0.9">Active now</p>
-          </div>
-        </div>
-        <div class="messages">
-          <div class="message received">
-            <div class="bubble">
-              <div class="name">Sarah</div>
-              <div class="text">Hey! Saw your request for Saturday night. I can totally watch Emma and Leo! My kids adore yours.</div>
-              <div class="timestamp">2:15 PM</div>
-            </div>
-          </div>
-          <div class="message sent">
-            <div class="bubble">
-              <div class="text">Sarah you're a lifesaver! We haven't had a date in forever. 6-10pm work?</div>
-              <div class="timestamp">2:17 PM</div>
-            </div>
-          </div>
-          <div class="message received">
-            <div class="bubble">
-              <div class="name">Sarah</div>
-              <div class="text">Perfect! Drop them off anytime. I'll feed them dinner and they can do crafts with my daughter. Take your time!</div>
-              <div class="timestamp">2:18 PM</div>
-            </div>
-          </div>
-          <div class="message sent">
-            <div class="bubble">
-              <div class="text">You're amazing. I can return the favor next weekend or anytime you need!</div>
-              <div class="timestamp">2:19 PM</div>
-            </div>
-          </div>
-          <div class="message received">
-            <div class="bubble">
-              <div class="name">Sarah</div>
-              <div class="text">Actually... could you grab my son from soccer Tuesday? That would help so much.</div>
-              <div class="timestamp">2:20 PM</div>
-            </div>
-          </div>
-          <div class="message sent">
-            <div class="bubble">
-              <div class="text">Done. Lincoln Field at 5:30 right? I'll grab him with Emma.</div>
-              <div class="timestamp">2:20 PM</div>
-            </div>
-          </div>
-          <div class="message received">
-            <div class="bubble">
-              <div class="name">Sarah</div>
-              <div class="text">YES! See, this is what villages are for. Have the best date night! 💚</div>
-              <div class="timestamp">2:21 PM</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- PHILOSOPHY SECTION -->
+<section style="padding:6rem 2rem;background:linear-gradient(135deg,var(--cream),#FFE8D6)">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <h2 style="font-size:2.5rem;color:var(--clay);margin-bottom:2rem;font-style:italic">Our Philosophy</h2>
+    <p style="font-size:1.2rem;line-height:1.8;margin-bottom:2rem">For 99% of human history, children were raised by 8-14 active caregivers daily. Nuclear families are a historical blip—just decades old. We're cultivating the <strong style="color:var(--clay)">regenerative family movement</strong>: community alloparenting as the emerging paradigm.</p>
+    <p style="font-size:1.2rem;line-height:1.8;margin-bottom:2rem">You can maintain about 150 relationships (Dunbar's number), but you devote most of your time to just 10-15 people. <strong style="color:var(--clay)">That's your kith.</strong> The ones who actually show up.</p>
+    <a href="why.html" style="display:inline-block;padding:1rem 2.5rem;background:var(--clay);color:var(--warm-white);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.1rem;transition:all 0.3s ease">Read our full philosophy →</a>
   </div>
 </section>
 
-<section class="how-works">
-  <h2>How it works: A real example</h2>
-  <p class="intro">Your daughter wants to learn guitar. Here's how Kith makes it happen—without adding to your mental load.</p>
-  
-  <div class="user-flow">
-    <div class="flow-step">
-      <div class="step-label">
-        <div class="step-num">1</div>
+<!-- SUPPORT TEXT -->
+<section style="padding:4rem 2rem;background:var(--warm-white)">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <p style="font-size:1.2rem;line-height:1.8;margin-bottom:1.5rem">It's Saturday. You and your partner haven't had a date night in six months. The kids are wonderful—and exhausting. You need four hours. Just four hours to remember you're adults who like each other.</p>
+    <p style="font-size:1.2rem;line-height:1.8;margin-bottom:1.5rem">But who do you ask? Your sister watched them last month. Your neighbor seems busy. The usual group chat feels like too much guilt for "just wanting a break."</p>
+    <p style="font-weight:700;font-size:1.4rem;margin-top:2rem;color:var(--clay)">Kith helps you build and coordinate with those 10-15 people. Post needs, offer skills, track exchanges—without adding to your cognitive load.</p>
+  </div>
+</section>
+
+<!-- USER FLOW - SUBWAY MAP STYLE -->
+<section style="padding:6rem 2rem;background:var(--cream)">
+  <div style="text-align:center;margin-bottom:4rem">
+    <h2 style="font-size:2.5rem;color:var(--clay);margin-bottom:1rem;font-style:italic">How It Works</h2>
+    <p style="font-size:1.2rem;opacity:0.8">Six simple steps to coordinate care without the cognitive overload</p>
+  </div>
+
+  <div class="subway-flow">
+    <!-- STATION 1 -->
+    <div class="flow-station">
+      <div class="station-marker">1</div>
+      <div class="station-content">
         <h3>Post your need</h3>
         <p>Quick survey helps you describe what you need without overthinking it</p>
-      </div>
-      <div class="phone-mini">
-        <div class="phone-mini-screen">
-          <div class="mini-header">New Request</div>
-          <div class="mini-content">
-            <div class="form-field">
-              <label>What do you need?</label>
-              <select>
+        <div class="mockup-mini">
+          <div class="mockup-header">New Request</div>
+          <div class="mockup-body">
+            <div class="form-row">
+              <div class="form-label">What do you need?</div>
+              <select class="form-input">
                 <option>Childcare</option>
                 <option selected>Skill teaching</option>
-                <option>Transportation</option>
-                <option>Other help</option>
               </select>
             </div>
-            <div class="form-field">
-              <label>Tell us more</label>
-              <textarea>My daughter (9) wants to learn guitar. Anyone willing to teach basics?</textarea>
+            <div class="form-row">
+              <div class="form-label">Details</div>
+              <input type="text" class="form-input" value="My daughter (9) wants guitar lessons">
             </div>
-            <div class="form-field">
-              <label>When?</label>
-              <input type="text" value="Flexible - weekday afternoons">
-            </div>
-            <div class="form-field">
-              <label>How often?</label>
-              <input type="text" value="Once a week, 1 hour">
+            <div class="form-row">
+              <div class="form-label">When?</div>
+              <input type="text" class="form-input" value="Weekday afternoons">
             </div>
             <button class="mini-btn">Post to Circle →</button>
           </div>
@@ -807,57 +179,45 @@ margin-top:2rem;
       </div>
     </div>
 
-    <div class="flow-step">
-      <div class="step-label">
-        <div class="step-num">2</div>
-        <h3>Your circle sees it</h3>
-        <p>Members with relevant skills get notified. Sarah has guitar skills listed in her profile.</p>
-      </div>
-      <div class="phone-mini">
-        <div class="phone-mini-screen">
-          <div class="mini-header">For You</div>
-          <div class="mini-content">
-            <div class="notification-card highlight">
-              <div class="notif-badge">Match!</div>
-              <div class="notif-avatar">J</div>
-              <div class="notif-text">
-                <strong>Jamie posted:</strong> My daughter (9) wants to learn guitar. Anyone willing to teach basics?
-              </div>
-              <div class="skill-match">✓ Matches your skill: Guitar</div>
-              <button class="mini-btn">I Can Help</button>
-            </div>
-            <div class="notification-card">
-              <div class="notif-avatar">M</div>
-              <div class="notif-text">
-                <strong>Marcus needs:</strong> Saturday sitter 6-10pm
-              </div>
-              <button class="mini-btn-secondary">Details</button>
+    <!-- STATION 2 -->
+    <div class="flow-station">
+      <div class="station-marker">2</div>
+      <div class="station-content">
+        <h3>Smart matching notifies relevant people</h3>
+        <p>Sarah has guitar listed in her skills. She gets notified, others don't get spammed.</p>
+        <div class="mockup-mini">
+          <div class="mockup-header">For You</div>
+          <div class="mockup-body">
+            <div style="background:#fff;padding:1rem;border-radius:8px;border:2px solid var(--sage)">
+              <div style="font-weight:700;margin-bottom:0.5rem">Jamie posted:</div>
+              <div style="margin-bottom:0.5rem">My daughter (9) wants guitar lessons</div>
+              <div class="match-badge">✓ Matches your skill: Guitar</div>
+              <button class="mini-btn" style="margin-top:0.8rem">I Can Help</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="flow-step">
-      <div class="step-label">
-        <div class="step-num">3</div>
+    <!-- STATION 3 -->
+    <div class="flow-station">
+      <div class="station-marker">3</div>
+      <div class="station-content">
         <h3>Direct coordination</h3>
         <p>Message directly to work out details. No group chat chaos.</p>
-      </div>
-      <div class="phone-mini">
-        <div class="phone-mini-screen">
-          <div class="mini-header">← Sarah Chen</div>
-          <div class="mini-content messages-mini">
-            <div class="msg-bubble received">
-              <div class="msg-text">I'd love to teach her! I played in bands for years. Tuesdays at 4pm work?</div>
+        <div class="mockup-mini">
+          <div class="mockup-header">Sarah Chen</div>
+          <div class="mockup-body">
+            <div class="msg-bubble" style="background:#e3f2fd">
+              <div>I'd love to teach her! Tuesdays 4pm work?</div>
               <div class="msg-time">2:15 PM</div>
             </div>
-            <div class="msg-bubble sent">
-              <div class="msg-text">Perfect! Can we do it at your place? I can drop her off.</div>
+            <div class="msg-bubble" style="background:#f5f5f5">
+              <div>Perfect! Can we do it at your place?</div>
               <div class="msg-time">2:17 PM</div>
             </div>
-            <div class="msg-bubble received">
-              <div class="msg-text">Works great. I'll have my old acoustic ready for her.</div>
+            <div class="msg-bubble" style="background:#e3f2fd">
+              <div>Works great. I'll have my guitar ready.</div>
               <div class="msg-time">2:18 PM</div>
             </div>
           </div>
@@ -865,247 +225,150 @@ margin-top:2rem;
       </div>
     </div>
 
-    <div class="flow-step">
-      <div class="step-label">
-        <div class="step-num">4</div>
-        <h3>Track the exchange</h3>
-        <p>System automatically logs time. No manual bookkeeping.</p>
-      </div>
-      <div class="phone-mini">
-        <div class="phone-mini-screen">
-          <div class="mini-header">Active Exchanges</div>
-          <div class="mini-content">
-            <div class="exchange-card active">
-              <div class="exchange-header">
-                <div class="avatar-mini">S</div>
-                <div>
-                  <strong>Guitar lessons with Sarah</strong>
-                  <div class="exchange-meta">Every Tuesday • 4-5pm</div>
-                </div>
-              </div>
-              <div class="exchange-stats">
-                <div class="stat">
+    <!-- STATION 4 -->
+    <div class="flow-station">
+      <div class="station-marker">4</div>
+      <div class="station-content">
+        <h3>Auto-tracking logs time</h3>
+        <p>System tracks exchanges automatically. No manual bookkeeping.</p>
+        <div class="mockup-mini">
+          <div class="mockup-header">Active Exchanges</div>
+          <div class="mockup-body">
+            <div style="background:#fff;padding:1rem;border-radius:8px">
+              <div style="font-weight:700;margin-bottom:0.5rem">Guitar lessons with Sarah</div>
+              <div style="font-size:0.85rem;opacity:0.7;margin-bottom:0.8rem">Every Tuesday • 4-5pm</div>
+              <div class="stat-grid">
+                <div class="stat-box">
                   <div class="stat-num">4</div>
-                  <div class="stat-label">sessions complete</div>
+                  <div class="stat-label">sessions done</div>
                 </div>
-                <div class="stat">
+                <div class="stat-box">
                   <div class="stat-num">4 hrs</div>
-                  <div class="stat-label">you owe Sarah</div>
+                  <div class="stat-label">you owe</div>
                 </div>
               </div>
-              <button class="mini-btn-secondary">Mark Complete</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="flow-step full-width">
-      <div class="step-label">
-        <div class="step-num">5</div>
+    <!-- STATION 5 -->
+    <div class="flow-station">
+      <div class="station-marker">5</div>
+      <div class="station-content">
         <h3>Return the favor—your way</h3>
         <p>Reciprocity isn't tit-for-tat. Sarah taught guitar. You help with what YOU'RE good at.</p>
-      </div>
-      <div class="reciprocity-examples">
-        <div class="recip-card">
-          <div class="recip-icon">🎸</div>
-          <div class="recip-text">
-            <strong>Sarah gave:</strong> 4 hours guitar lessons
+        <div class="tree-diagram">
+          <div class="tree-root">
+            <div class="tree-node">
+              <div class="tree-icon">🎸</div>
+              <div style="font-weight:700">Sarah gave:</div>
+              <div>4 hours guitar lessons</div>
+            </div>
+            <div class="tree-arrow">→</div>
+            <div class="tree-node">
+              <div style="font-weight:700">You can give:</div>
+              <div style="font-size:0.9rem;opacity:0.8">Any of these (or something else!)</div>
+            </div>
+          </div>
+          <div class="tree-branches">
+            <div class="tree-branch">
+              <div class="tree-icon">💼</div>
+              <div><strong>Resume review</strong></div>
+              <div style="font-size:0.8rem;opacity:0.7">(you're in HR)</div>
+            </div>
+            <div class="tree-branch">
+              <div class="tree-icon">🚗</div>
+              <div><strong>Airport rides</strong></div>
+              <div style="font-size:0.8rem;opacity:0.7">(you work from home)</div>
+            </div>
+            <div class="tree-branch">
+              <div class="tree-icon">🏀</div>
+              <div><strong>Watch her son</strong></div>
+              <div style="font-size:0.8rem;opacity:0.7">(basketball practice)</div>
+            </div>
           </div>
         </div>
-        <div class="recip-arrow">→</div>
-        <div class="recip-options">
-          <div class="recip-card small">
-            <div class="recip-icon">💼</div>
-            <div class="recip-text">
-              <strong>You could give:</strong> Resume review (you're in HR)
-            </div>
-          </div>
-          <div class="recip-card small">
-            <div class="recip-icon">🚗</div>
-            <div class="recip-text">
-              <strong>Or:</strong> Airport rides (you work from home)
-            </div>
-          </div>
-          <div class="recip-card small">
-            <div class="recip-icon">🏀</div>
-            <div class="recip-text">
-              <strong>Or:</strong> Watch her son for basketball practice
-            </div>
-          </div>
-        </div>
+        <p style="text-align:center;margin-top:1.5rem;font-style:italic;opacity:0.8">Kith tracks hours, but exchanges don't have to match skills. Your time is valuable to different people in different ways.</p>
       </div>
-      <p class="reciprocity-note">Kith tracks hours, but exchanges don't have to match. Your skills are valuable to different people in different ways.</p>
     </div>
 
-    <div class="flow-step full-width">
-      <div class="step-label">
-        <div class="step-num">6</div>
-        <h3>Credit extends through your circle</h3>
-        <p>Can't help Sarah directly? Someone in your circle can. The network balances itself.</p>
-      </div>
-      <div class="credit-flow">
-        <div class="credit-node">
-          <div class="avatar-large">You</div>
-          <p>Owe Sarah 4 hours</p>
+    <!-- STATION 6 -->
+    <div class="flow-station">
+      <div class="station-marker">6</div>
+      <div class="station-content">
+        <h3>Network credit flow</h3>
+        <p>Can't help Sarah directly? Help someone who helps her. The circle balances itself.</p>
+        <div class="mockup-mini" style="max-width:500px">
+          <div class="mockup-header">Credit Flow</div>
+          <div class="mockup-body">
+            <div style="display:flex;align-items:center;justify-content:space-around;padding:1.5rem 0">
+              <div style="text-align:center">
+                <div style="width:60px;height:60px;background:var(--terracotta);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 0.5rem">You</div>
+                <div style="font-size:0.8rem">Owe Sarah 4hrs</div>
+              </div>
+              <div style="font-size:1.5rem;color:var(--clay)">→</div>
+              <div style="text-align:center">
+                <div style="width:60px;height:60px;background:var(--sage);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 0.5rem;font-size:0.85rem">Marcus</div>
+                <div style="font-size:0.8rem">Helps Sarah<br>(car repair)</div>
+              </div>
+              <div style="font-size:1.5rem;color:var(--clay)">→</div>
+              <div style="text-align:center">
+                <div style="width:60px;height:60px;background:var(--sage);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 0.5rem;font-size:0.85rem">Sarah</div>
+                <div style="font-size:0.8rem">Credit settled</div>
+              </div>
+            </div>
+            <div style="text-align:center;padding:1rem;background:var(--cream);border-radius:8px;margin-top:1rem">
+              <div style="width:60px;height:60px;background:var(--terracotta);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 0.5rem">You</div>
+              <div style="font-size:0.9rem;font-weight:700">Help Marcus with tax prep</div>
+            </div>
+            <div style="text-align:center;margin-top:1rem;padding:1rem;background:#e8f5e9;border-radius:8px;font-weight:600;color:#2e7d32">✓ Circle complete. No direct reciprocity needed.</div>
+          </div>
         </div>
-        <div class="credit-arrow">→</div>
-        <div class="credit-node">
-          <div class="avatar-large">Marcus</div>
-          <p>Helps Sarah with car repair</p>
-        </div>
-        <div class="credit-arrow">→</div>
-        <div class="credit-node">
-          <div class="avatar-large">Sarah</div>
-          <p>Credit settled through network</p>
-        </div>
-      </div>
-      <div class="credit-node solo">
-        <div class="avatar-large">You</div>
-        <p>Help Marcus with tax prep</p>
-      </div>
-      <p class="credit-note">You helped Marcus. Marcus helped Sarah. Circle complete. No direct reciprocity needed.</p>
-    </div>
-  </div>
-
-  <div class="onboarding-box">
-    <h3>How we reduce cognitive load</h3>
-    <p>We know you're exhausted. That's why onboarding is a 5-minute survey—not homework.</p>
-    <div class="onboarding-features">
-      <div class="onboard-item">
-        <strong>Quick skill survey:</strong> We ask what you're good at, what you need, who you trust
-      </div>
-      <div class="onboard-item">
-        <strong>Smart matching:</strong> System suggests connections based on complementary needs
-      </div>
-      <div class="onboard-item">
-        <strong>Auto-tracking:</strong> Time credits update automatically—no mental math
-      </div>
-      <div class="onboard-item">
-        <strong>Gentle reminders:</strong> App nudges you when someone needs your specific skills
       </div>
     </div>
   </div>
 </section>
 
+<!-- STRONG CTA TRANSITION -->
 <section style="padding:4rem 2rem;background:var(--charcoal);color:var(--warm-white);text-align:center">
   <div style="max-width:800px;margin:0 auto">
-    <h2 style="font-size:2.5rem;margin-bottom:1.5rem;font-style:italic">Our Philosophy</h2>
-    <p style="font-size:1.2rem;line-height:1.8;margin-bottom:2rem;opacity:0.95">For 99% of human history, children were raised by 8-14 active caregivers daily. Nuclear families are a historical blip—just decades old. We're cultivating the <strong>regenerative family movement</strong>: community alloparenting as the emerging paradigm.</p>
-    <a href="why.html" style="display:inline-block;padding:1rem 2.5rem;background:var(--clay);color:var(--warm-white);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.1rem;transition:all 0.3s ease">Read our full philosophy →</a>
+    <h2 style="font-size:2.8rem;margin-bottom:1.5rem;color:var(--warm-white);font-style:italic">Ready to rebuild your village?</h2>
+    <p style="font-size:1.3rem;line-height:1.8;opacity:0.95;margin-bottom:2rem">Join families in your area who are done trying to do it alone. Early access opens soon.</p>
+    <a href="#download" class="cta-button">Join Waitlist Now →</a>
   </div>
 </section>
 
+<!-- DOWNLOAD SECTION - RIGHT AFTER FLOW -->
 <section class="download-section" id="download">
   <h2>Download Kith</h2>
-  <p>Join the waitlist to get early access when we launch in your area</p>
+  <p>Scan to join the waitlist • Get early access when we launch in your area</p>
   <div class="qr-container">
     <div class="qr-item">
       <div class="qr-code">
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="5" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="25" y="5" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="35" y="5" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="45" y="5" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="60" y="5" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="70" y="5" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="80" y="5" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="5" y="25" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="15" y="25" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="25" y="25" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="40" y="25" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="50" y="25" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="70" y="25" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="80" y="25" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="90" y="25" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="5" y="35" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="15" y="35" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="25" y="40" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="35" y="35" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="50" y="40" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="60" y="35" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="75" y="35" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="90" y="35" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="5" y="45" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="25" y="50" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="35" y="45" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="45" y="50" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="60" y="45" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="70" y="50" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="80" y="45" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="5" y="65" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="15" y="65" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="30" y="65" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="40" y="70" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="55" y="65" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="65" y="70" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="75" y="65" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="90" y="65" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="5" y="80" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="25" y="80" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="35" y="85" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="50" y="80" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="60" y="85" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="70" y="80" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="80" y="80" width="15" height="15" fill="#2B2B2B"/>
+          <rect x="10" y="10" width="30" height="30" fill="#2B2B2B"/>
+          <rect x="60" y="10" width="30" height="30" fill="#2B2B2B"/>
+          <rect x="10" y="60" width="30" height="30" fill="#2B2B2B"/>
+          <rect x="45" y="45" width="20" height="20" fill="#2B2B2B"/>
         </svg>
       </div>
-      <h3>iOS</h3>
-      <p>Scan with Camera app</p>
-      <a href="#" class="store-badge">App Store</a>
+      <div class="qr-label">iOS</div>
     </div>
     <div class="qr-item">
       <div class="qr-code">
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="5" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="25" y="5" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="40" y="5" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="50" y="5" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="65" y="5" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="80" y="5" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="5" y="25" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="15" y="25" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="30" y="25" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="40" y="25" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="60" y="25" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="75" y="25" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="85" y="25" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="5" y="35" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="15" y="35" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="25" y="40" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="45" y="40" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="55" y="35" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="70" y="35" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="85" y="35" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="5" y="50" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="25" y="50" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="35" y="55" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="50" y="50" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="60" y="55" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="75" y="50" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="80" y="50" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="5" y="70" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="15" y="70" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="30" y="70" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="40" y="75" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="60" y="70" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="70" y="75" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="85" y="70" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="5" y="85" width="15" height="15" fill="#2B2B2B"/>
-          <rect x="25" y="85" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="35" y="90" width="10" height="10" fill="#2B2B2B"/>
-          <rect x="50" y="85" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="65" y="90" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="75" y="85" width="5" height="5" fill="#2B2B2B"/>
-          <rect x="80" y="85" width="15" height="15" fill="#2B2B2B"/>
+          <rect x="10" y="10" width="30" height="30" fill="#2B2B2B"/>
+          <rect x="60" y="10" width="30" height="30" fill="#2B2B2B"/>
+          <rect x="10" y="60" width="30" height="30" fill="#2B2B2B"/>
+          <rect x="50" y="50" width="15" height="15" fill="#2B2B2B"/>
         </svg>
       </div>
-      <h3>Android</h3>
-      <p>Scan with Camera app</p>
-      <a href="#" class="store-badge">Google Play</a>
+      <div class="qr-label">Android</div>
     </div>
   </div>
-  <p class="waitlist-note">Coming soon • Join the waitlist for early access in your area</p>
+  <p style="margin-top:2rem;font-size:1.1rem">Or email yourself the link: <a href="mailto:?subject=Kith Waitlist&body=Join at kith.app" style="color:var(--warm-white);text-decoration:underline;font-weight:700">kith.app</a></p>
 </section>
 
 </body>
