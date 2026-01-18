@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paid Services & Provider Network | Village Network</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--clay:#C95D3D;
+--terracotta:#E87A5D;
+--warm-white:#FFFEF9;
+--cream:#FFF8F0;
+--sage:#7A9B76;
+--deep-green:#5A7A56;
+--charcoal:#2B2B2B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:'DM Sans',sans-serif;
+background:var(--warm-white);
+color:var(--charcoal);
+line-height:1.6;
+}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
+
+/* Header */
+.site-header{
+background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);
+padding:1.5rem 2rem;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+.header-content{
+max-width:1200px;
+margin:0 auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.logo-link{
+display:flex;
+align-items:center;
+gap:1rem;
+text-decoration:none;
+color:var(--warm-white);
+}
+.logo-svg{width:40px;height:40px}
+.brand-name{
+font-family:'Fraunces',serif;
+font-weight:700;
+font-size:1.5rem;
+letter-spacing:1px;
+}
+.nav-links{
+display:flex;
+gap:1rem;
+}
+.nav-link{
+color:var(--warm-white);
+text-decoration:none;
+font-weight:500;
+padding:0.5rem 1.5rem;
+border-radius:25px;
+transition:all 0.3s ease;
+background:rgba(255,255,255,0.1);
+}
+.nav-link:hover{
+background:rgba(255,255,255,0.2);
+transform:translateY(-2px);
+}
+.nav-link.active{
+background:var(--warm-white);
+color:var(--sage);
+}
+
+/* Page Hero */
+.page-hero{
+padding:6rem 2rem 4rem;
+text-align:center;
+background:var(--cream);
+}
+.page-hero h1{
+font-size:clamp(2.5rem,6vw,4.5rem);
+color:var(--clay);
+margin-bottom:1.5rem;
+font-style:italic;
+line-height:1.2;
+}
+.page-hero p{
+font-size:1.3rem;
+max-width:700px;
+margin:0 auto;
+opacity:0.8;
+}
+
+/* Content Section */
+.content{
+padding:6rem 2rem;
+background:var(--warm-white);
+}
+.content .container{
+max-width:1000px;
+margin:0 auto;
+}
+.content h2{
+font-size:2.5rem;
+color:var(--clay);
+margin-bottom:2rem;
+font-style:italic;
+}
+.content p{
+font-size:1.15rem;
+line-height:1.8;
+margin-bottom:1.5rem;
+}
+.content strong{
+color:var(--clay);
+font-weight:700;
+}
+
+/* Options Grid */
+.options-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:2.5rem;
+margin:3rem 0;
+}
+.option-card{
+background:var(--cream);
+padding:2.5rem;
+border-radius:25px;
+border-top:6px solid var(--sage);
+}
+.option-card h3{
+font-size:1.8rem;
+color:var(--clay);
+margin-bottom:1rem;
+}
+.option-card .label{
+display:inline-block;
+padding:0.4rem 1rem;
+background:var(--sage);
+color:var(--warm-white);
+border-radius:20px;
+font-size:0.85rem;
+font-weight:700;
+margin-bottom:1.5rem;
+}
+.option-card p{
+font-size:1.05rem;
+line-height:1.7;
+margin-bottom:1rem;
+}
+.option-card ul{
+list-style:none;
+margin-top:1.5rem;
+}
+.option-card li{
+padding:0.5rem 0;
+padding-left:1.5rem;
+position:relative;
+font-size:1.05rem;
+}
+.option-card li::before{
+content:'✓';
+position:absolute;
+left:0;
+color:var(--sage);
+font-weight:700;
+}
+
+/* How it Works */
+.how-it-works{
+background:var(--charcoal);
+color:var(--warm-white);
+padding:4rem 2.5rem;
+border-radius:25px;
+margin:3rem 0;
+}
+.how-it-works h3{
+font-size:2rem;
+margin-bottom:2rem;
+}
+.steps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:2rem;
+}
+.step{
+text-align:center;
+}
+.step-number{
+display:inline-block;
+width:50px;
+height:50px;
+background:var(--clay);
+color:var(--warm-white);
+border-radius:50%;
+font-size:1.5rem;
+font-weight:700;
+line-height:50px;
+margin-bottom:1rem;
+}
+.step h4{
+font-size:1.2rem;
+margin-bottom:0.5rem;
+}
+.step p{
+font-size:1rem;
+opacity:0.9;
+}
+
+/* Provider Network */
+.provider-section{
+background:linear-gradient(135deg,var(--sage),var(--deep-green));
+color:var(--warm-white);
+padding:4rem 2.5rem;
+border-radius:25px;
+margin:3rem 0;
+}
+.provider-section h3{
+font-size:2rem;
+margin-bottom:1.5rem;
+}
+.provider-section p{
+font-size:1.1rem;
+line-height:1.8;
+margin-bottom:1rem;
+}
+.provider-benefits{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:1.5rem;
+margin-top:2rem;
+}
+.provider-benefit{
+background:rgba(255,255,255,0.1);
+padding:1.5rem;
+border-radius:15px;
+}
+.provider-benefit h4{
+font-size:1.2rem;
+margin-bottom:0.5rem;
+}
+.provider-benefit p{
+font-size:1rem;
+opacity:0.95;
+margin:0;
+}
+
+/* Pricing */
+.pricing{
+background:var(--cream);
+padding:3rem;
+border-radius:25px;
+margin:3rem 0;
+}
+.pricing h3{
+font-size:2rem;
+color:var(--clay);
+margin-bottom:1.5rem;
+}
+.pricing-table{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:2rem;
+}
+.pricing-item{
+padding:1rem 0;
+border-bottom:2px solid rgba(201,93,61,0.2);
+}
+.pricing-item:last-child{
+border-bottom:none;
+}
+.pricing-item strong{
+font-size:1.1rem;
+color:var(--clay);
+}
+.pricing-item p{
+margin:0.5rem 0 0;
+font-size:1rem;
+}
+
+/* CTA Section */
+.cta-section{
+padding:6rem 2rem;
+background:linear-gradient(135deg,var(--clay) 0%,var(--terracotta) 100%);
+color:var(--warm-white);
+text-align:center;
+}
+.cta-section h2{
+font-size:2.5rem;
+margin-bottom:1.5rem;
+}
+.cta-section p{
+font-size:1.2rem;
+margin-bottom:2rem;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+}
+.cta-button{
+display:inline-block;
+padding:1.2rem 3rem;
+background:var(--warm-white);
+color:var(--clay);
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+font-size:1.2rem;
+transition:all 0.3s ease;
+}
+.cta-button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width:768px){
+.header-content{flex-direction:column;gap:1rem}
+.nav-links{flex-direction:column;width:100%}
+.nav-link{text-align:center}
+.options-grid,.provider-benefits,.steps,.pricing-table{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-content">
+    <a href="index.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="30" r="8" fill="#FFFEF9"/>
+        <circle cx="30" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
+        <circle cx="70" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
+        <circle cx="50" cy="80" r="5" fill="#FFFEF9" opacity="0.6"/>
+        <circle cx="20" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
+        <circle cx="80" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
+        <line x1="50" y1="38" x2="30" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
+        <line x1="50" y1="38" x2="70" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
+        <line x1="30" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
+        <line x1="70" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
+        <line x1="30" y1="66" x2="20" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
+        <line x1="70" y1="66" x2="80" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
+      </svg>
+      <span class="brand-name">VILLAGE NETWORK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="how-it-works.html" class="nav-link">How It Works</a>
+      <a href="alternatives.html" class="nav-link">Why Not [Other Tools]</a>
+      <a href="about.html" class="nav-link">Our Story</a>
+      <a href="index.html#final-cta" class="nav-link" style="background:var(--warm-white);color:var(--sage)">Join Waitlist</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <h1>When you need paid help</h1>
+  <p>Community first, paid options when your network can't cover it</p>
+</section>
+
+<section class="content">
+  <div class="container">
+    <h2>The philosophy</h2>
+    <p><strong>Most exchanges happen through time credits—free and reciprocal.</strong> You watch Dave's kids for 4 hours, you earn 4 hours. That's the foundation.</p>
+    
+    <p>But we heard you: sometimes your network can't cover it, and you'd gladly pay for reliable help. Maybe everyone in your circle is tapped out. Maybe you need specialized care. Maybe you just want the flexibility of cash.</p>
+    
+    <p><strong>Village Network gives you options:</strong></p>
+
+    <div class="options-grid">
+      <div class="option-card">
+        <span class="label">FREE • DEFAULT</span>
+        <h3>Time Banking</h3>
+        <p>The core of Village Network. Help someone, earn credit. Need help, spend credit. Fully tracked, automatically balanced, no money changes hands.</p>
+        <ul>
+          <li>Childcare swaps</li>
+          <li>Skill sharing</li>
+          <li>Tool lending</li>
+          <li>Transportation</li>
+          <li>House sitting</li>
+          <li>Meal trains</li>
+        </ul>
+      </div>
+
+      <div class="option-card">
+        <span class="label" style="background:var(--clay)">PAID • OPTIONAL</span>
+        <h3>Direct Member Payment</h3>
+        <p>Pay trusted network members directly for services when time credits aren't enough. They set their rates, you decide if it works for you.</p>
+        <ul>
+          <li>Regular babysitting gigs</li>
+          <li>Specialized tutoring</li>
+          <li>Professional services (design, accounting, etc)</li>
+          <li>Major projects requiring expertise</li>
+        </ul>
+      </div>
+
+      <div class="option-card" style="grid-column:1/-1">
+        <span class="label" style="background:var(--terracotta)">PAID • VETTED PROFESSIONALS</span>
+        <h3>Provider Network</h3>
+        <p>When your personal network can't cover it, hire from our curated network of background-checked professionals. Not strangers from the internet—providers vetted by Village Network and trusted by families in your area.</p>
+        <ul>
+          <li>Licensed childcare providers</li>
+          <li>Certified tutors and educators</li>
+          <li>Home repair professionals</li>
+          <li>Medical/eldercare specialists</li>
+          <li>Emergency backup care</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="how-it-works">
+      <h3>How direct member payment works</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Member sets availability</h4>
+          <p>Sarah marks that she's available for paid babysitting: $20/hour, weeknights only</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>You book & pay in-app</h4>
+          <p>You request Tuesday night care, pay through the app (card on file or Apple Pay)</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Sarah gets paid directly</h4>
+          <p>Village Network processes payment, Sarah receives funds (minus small processing fee)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="provider-section">
+      <h3>Our vetted provider network</h3>
+      <p><strong>Not everyone in your personal network can help with every need.</strong> That's where our provider network comes in—trusted professionals who've been background-checked, reference-verified, and trusted by other families.</p>
+      
+      <div class="provider-benefits">
+        <div class="provider-benefit">
+          <h4>🛡️ Thoroughly vetted</h4>
+          <p>Background checks, license verification, references from real families in the network</p>
+        </div>
+        <div class="provider-benefit">
+          <h4>📍 Local to your area</h4>
+          <p>Providers are based in your community, available when you need them</p>
+        </div>
+        <div class="provider-benefit">
+          <h4>⭐ Rated by network families</h4>
+          <p>See reviews from families in your extended network, not strangers</p>
+        </div>
+        <div class="provider-benefit">
+          <h4>💳 Protected payments</h4>
+          <p>Book and pay securely through the app, with service guarantees</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing">
+      <h3>Pricing & fees</h3>
+      <div class="pricing-table">
+        <div class="pricing-item">
+          <strong>Network coordination</strong>
+          <p>Always free. Time banking, messaging, network management—no charge, ever.</p>
+        </div>
+        <div class="pricing-item">
+          <strong>Direct member payments</strong>
+          <p>Members set their own rates. Village Network takes 5% processing fee (covers payment processing + platform costs).</p>
+        </div>
+        <div class="pricing-item">
+          <strong>Provider network bookings</strong>
+          <p>Providers set their rates (competitive with local market). Village Network takes 15% to cover vetting, insurance, and platform costs.</p>
+        </div>
+        <div class="pricing-item">
+          <strong>Emergency backup care</strong>
+          <p>Premium rates for same-day emergency care from vetted providers. Typically 20-30% higher than standard rates.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:4rem">Why this model works</h2>
+    <p><strong>Community is the foundation.</strong> Time banking handles 80% of exchanges. But when you need specialized skills, consistent paid help, or backup when everyone's tapped out—you have options.</p>
+    
+    <p>You're not choosing between free community care and expensive strangers. You're building a trusted network where <strong>both</strong> reciprocity and payment are possible, depending on what the situation needs.</p>
+    
+    <p>Free coordination. Paid options when you need them. All within your trusted circle.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to build your network?</h2>
+  <p>Start with free coordination. Add paid options when you need them.</p>
+  <a href="index.html#final-cta" class="cta-button">Join Waitlist →</a>
+</section>
+
+</body>
+</html>
